@@ -1,0 +1,29 @@
+{
+  "name": "cyphersystem-clean",
+  "title": "Cypher System (Clean)",
+  "description": "The Cypher System system for FoundryVTT!",
+  "version": "1.0.0",
+  "minimumCoreVersion": "0.5.5",
+  "compatibleCoreVersion": "0.6.2",
+  "templateVersion": 2,
+  "author": "Cornell Daly",
+  "esmodules": ["dist/cyphersystem.min.js"],
+  "styles": ["dist/cyphersystem.min/css"],
+  "scripts": [],
+  "packs": [],
+  "languages": [
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "gridDistance": 5,
+  "gridUnits": "ft",
+  "primaryTokenAttribute": "health",
+  "secondaryTokenAttribute": "power",
+  "url": "",
+  "manifest": "",
+  "download": "",
+  "license": "LICENSE.txt"
+}

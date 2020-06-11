@@ -1,0 +1,289 @@
+/*! cyphersystem v1.0.0 | (c) 2020 Cornell Daly | MIT License | https://github.com/bojjenclon/ */
+
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* Global styles */
+/* line 1, scss/global/_window.scss */
+.window-app {
+  font-family: "Karla", sans-serif;
+}
+
+/* line 6, scss/global/_window.scss */
+.rollable:hover, .rollable:focus {
+  color: #000;
+  text-shadow: 0 0 10px red;
+  cursor: pointer;
+}
+
+/* line 1, scss/global/_grid.scss */
+.grid,
+.grid-2col {
+  display: grid;
+  grid-column: span 2 / span 2;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 10px 0;
+  padding: 0;
+}
+
+/* line 11, scss/global/_grid.scss */
+.grid-3col {
+  grid-column: span 3 / span 3;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* line 16, scss/global/_grid.scss */
+.grid-4col {
+  grid-column: span 4 / span 4;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* line 21, scss/global/_grid.scss */
+.grid-5col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* line 26, scss/global/_grid.scss */
+.grid-6col {
+  grid-column: span 5 / span 5;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* line 31, scss/global/_grid.scss */
+.grid-7col {
+  grid-column: span 7 / span 7;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+/* line 36, scss/global/_grid.scss */
+.grid-8col {
+  grid-column: span 8 / span 8;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+}
+
+/* line 41, scss/global/_grid.scss */
+.grid-9col {
+  grid-column: span 9 / span 9;
+  grid-template-columns: repeat(9, minmax(0, 1fr));
+}
+
+/* line 46, scss/global/_grid.scss */
+.grid-10col {
+  grid-column: span 10 / span 10;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+/* line 51, scss/global/_grid.scss */
+.grid-11col {
+  grid-column: span 11 / span 11;
+  grid-template-columns: repeat(11, minmax(0, 1fr));
+}
+
+/* line 56, scss/global/_grid.scss */
+.grid-12col {
+  grid-column: span 12 / span 12;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+/* line 61, scss/global/_grid.scss */
+.flex-group-center,
+.flex-group-left,
+.flex-group-right {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 5px;
+  border: 1px solid #999;
+}
+
+/* line 71, scss/global/_grid.scss */
+.flex-group-left {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  text-align: left;
+}
+
+/* line 76, scss/global/_grid.scss */
+.flex-group-right {
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  text-align: right;
+}
+
+/* line 1, scss/global/_flex.scss */
+.flex-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+/* line 7, scss/global/_flex.scss */
+.flex-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+/* Styles limited to cyphersystem sheets */
+/* line 1, scss/components/_forms.scss */
+.cyphersystem .item-form {
+  font-family: "Karla", sans-serif;
+}
+
+/* line 5, scss/components/_forms.scss */
+.cyphersystem .sheet-header {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 210px;
+          flex: 0 0 210px;
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  margin-bottom: 10px;
+}
+
+/* line 14, scss/components/_forms.scss */
+.cyphersystem .sheet-header .profile-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  height: 100px;
+  margin-right: 10px;
+}
+
+/* line 20, scss/components/_forms.scss */
+.cyphersystem .sheet-header .header-fields {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 24, scss/components/_forms.scss */
+.cyphersystem .sheet-header h1.charname {
+  height: 50px;
+  padding: 0px;
+  margin: 5px 0;
+  border-bottom: 0;
+}
+
+/* line 29, scss/components/_forms.scss */
+.cyphersystem .sheet-header h1.charname input {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* line 37, scss/components/_forms.scss */
+.cyphersystem .sheet-tabs {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+}
+
+/* line 41, scss/components/_forms.scss */
+.cyphersystem .sheet-body,
+.cyphersystem .sheet-body .tab,
+.cyphersystem .sheet-body .tab .editor {
+  height: 100%;
+}
+
+/* line 48, scss/components/_forms.scss */
+.cyphersystem .tox .tox-editor-container {
+  background: #fff;
+}
+
+/* line 52, scss/components/_forms.scss */
+.cyphersystem .tox .tox-edit-area {
+  padding: 0 8px;
+}
+
+/* line 1, scss/components/_resource.scss */
+.cyphersystem .resource-label {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* line 20, scss/components/_tabs.scss */
+.cyphersystem .tabs {
+  height: 40px;
+  border-top: 1px solid #AAA;
+  border-bottom: 1px solid #AAA;
+}
+
+/* line 25, scss/components/_tabs.scss */
+.cyphersystem .tabs .item {
+  line-height: 40px;
+  font-weight: bold;
+}
+
+/* line 30, scss/components/_tabs.scss */
+.cyphersystem .tabs .item.active {
+  text-decoration: underline;
+  text-shadow: none;
+}
+
+/* line 1, scss/components/_items.scss */
+.cyphersystem .items-list {
+  list-style: none;
+  margin: 7px 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* line 7, scss/components/_items.scss */
+.cyphersystem .items-list .item-header {
+  font-weight: bold;
+}
+
+/* line 11, scss/components/_items.scss */
+.cyphersystem .items-list .item {
+  height: 30px;
+  line-height: 24px;
+  padding: 3px 0;
+  border-bottom: 1px solid #BBB;
+}
+
+/* line 17, scss/components/_items.scss */
+.cyphersystem .items-list .item .item-image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 24px;
+          flex: 0 0 24px;
+  margin-right: 5px;
+}
+
+/* line 22, scss/components/_items.scss */
+.cyphersystem .items-list .item img {
+  display: block;
+}
+
+/* line 27, scss/components/_items.scss */
+.cyphersystem .items-list .item-name {
+  margin: 0;
+}
+
+/* line 31, scss/components/_items.scss */
+.cyphersystem .items-list .item-controls {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 86px;
+          flex: 0 0 86px;
+  text-align: right;
+}

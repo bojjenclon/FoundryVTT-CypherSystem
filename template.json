@@ -1,0 +1,210 @@
+{
+  "Actor": {
+    "types": ["pc", "npc"],
+
+    "pc": {
+      "version": 1,
+      
+      "sentence": {
+        "descriptor": "",
+        "type": "",
+        "focus": ""
+      },
+
+      "tier": 1,
+      "effort": 1,
+      "xp": 0,
+
+      "advances": {
+        "stats": false,
+        "edge": false,
+        "effort": false,
+        "skills": false,
+        "other": false
+      },
+
+      "recoveryMod": 1,
+      "recoveries": {
+        "action": false,
+        "tenMins": false,
+        "oneHour": false,
+        "tenHours": false
+      },
+
+      "damageTrack": 1,
+
+      "stats": {
+        "might": {
+            "value": 0,
+            "pool": 0,
+            "edge": 0
+        },
+        "speed": {
+            "value": 0,
+            "pool": 0,
+            "edge": 0
+        },
+        "intellect": {
+            "value": 0,
+            "pool": 0,
+            "edge": 0
+        }
+      },
+
+      "money": 0
+    },
+
+    "npc": {
+      "version": 1,
+
+      "level": 1,
+
+      "health": {
+        "value": 3,
+        "max": 3
+      },
+      "damage": 1,
+      "armor": 0,
+      "movement": 1,
+      
+      "description": "",
+      "motive": "",
+      "modifications": "",
+      "combat": "",
+      "interaction": "",
+      "use": "",
+      "loot": ""
+    }
+  },
+
+  "Item": {
+    "types": [
+      "ability",
+      "skill",
+
+      "armor",
+      "weapon",
+      "gear",
+
+      "cypher",
+      "artifact",
+      "oddity"
+    ],
+
+    "templates": {
+      "common": {
+        "notes": ""
+      },
+
+      "identifiable": {
+        "identified": false
+      },
+
+      "hasLevel": {
+        "level": null,
+        "levelDie": ""
+      },
+
+      "ranged": {
+        "range": 0
+      },
+
+      "sellable": {
+        "price": 0
+      },
+
+      "hasWeight": {
+        "weight": 0
+      },
+
+      "equippable": {
+        "equipped": false
+      },
+
+      "hasQuantity": {
+        "quantity": 1
+      },
+
+      "hasCost": {
+        "cost": {
+          "value": 0,
+          "pool": 0
+        }
+      }
+    },
+
+    "ability": {
+      "templates": ["common", "ranged", "hasCost"],
+
+      "version": 1,
+      
+      "sourceType": "",
+      "sourceValue": "",
+
+      "isEnabler": true
+    },
+
+    "skill": {
+      "templates": ["common"],
+
+      "version": 1,
+      
+      "pool": 0,
+      "training": 1
+    },
+
+    "weapon": {
+      "templates": ["common", "ranged", "sellable", "hasWeight", "hasQuantity", "equippable"],
+
+      "version": 1,
+      
+      "damage": 1,
+      "category": 0
+    },
+
+    "armor": {
+      "templates": ["common", "sellable", "hasWeight", "hasQuantity", "equippable"],
+      
+      "version": 1,
+      
+      "armor": 0,
+      "additionalSpeedEffortCost": 1
+    },
+
+    "gear": {
+      "templates": ["common", "sellable", "hasQuantity"],
+      
+      "version": 1
+    },
+
+    "cypher": {
+      "templates": ["common", "identifiable", "hasLevel"],
+      
+      "version": 1,
+      
+      "form": "",
+      "effect": ""
+    },
+
+    "artifact": {
+      "templates": ["common", "identifiable", "hasLevel"],
+
+      "version": 1,
+
+      "form": "",
+      "effect": "",
+
+      "depletion": {
+        "isDepleting": true,
+        "die": "d6",
+        "threshold": 1
+      }
+    },
+
+    "oddity": {
+      "templates": ["common"],
+
+      "version": 1
+    }
+  }
+}
