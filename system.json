@@ -8,7 +8,7 @@
   "templateVersion": 2,
   "author": "Cornell Daly",
   "esmodules": ["dist/cyphersystem.min.js"],
-  "styles": ["dist/cyphersystem.min/css"],
+  "styles": ["dist/cyphersystem.min.css"],
   "scripts": [],
   "packs": [],
   "languages": [
