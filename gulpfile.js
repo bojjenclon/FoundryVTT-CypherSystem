@@ -21,7 +21,10 @@ var settings = {
  */
 
 var paths = {
-	input: '.',
+	input: [
+		'module/**/*.js',
+		'scss/**/*.scss'
+	],
 	output: 'dist/',
 	scripts: {
 		input: 'module/cyphersystem.js',

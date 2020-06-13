@@ -3,5 +3,9 @@
 
   "CSR.pool.might": "Might",
   "CSR.pool.speed": "Speed",
-  "CSR.pool.intellect": "Intellect"
+  "CSR.pool.intellect": "Intellect",
+
+  "CSR.placeholder.descriptor": "Descriptor",
+  "CSR.placeholder.type": "Type",
+  "CSR.placeholder.focus": "Focus"
 }

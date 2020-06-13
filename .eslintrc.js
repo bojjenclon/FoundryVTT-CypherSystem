@@ -18,7 +18,9 @@ module.exports = {
         "Items": "readonly",
         "ActorSheet": "readonly",
         "ItemSheet": "readonly",
-        "Handlebars": "readonly"
+        "Handlebars": "readonly",
+        "Roll": "readonly",
+        "ChatMessage": "readonly"
     },
     "parserOptions": {
         "ecmaVersion": 2018,

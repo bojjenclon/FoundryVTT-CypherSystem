@@ -1,0 +1,153 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+
+  {{!-- Sheet Header --}}
+  <header class="sheet-header">
+    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="150" width="150" />
+
+    <div class="sentence">
+      <div class="flexrow">
+        <input class="name" type="text" name="actor.name" value="{{actor.name}}" data-dtype="String" />
+        <span> is a </span>
+      </div>
+      <div class="flexrow">
+        <input class="descriptor" type="text" name="data.sentence.descriptor" value="{{data.sentence.descriptor}}"
+          placeholder="{{localize 'CSR.placeholder.descriptor'}}" data-dtype="String" />
+        <input class="type" type="text" name="data.sentence.type" value="{{data.sentence.type}}"
+          placeholder="{{localize 'CSR.placeholder.type'}}" data-dtype="String" />
+      </div>
+      <div class="flexrow">
+        <span> who </span>
+        <input class="focus" type="text" name="data.sentence.focus" value="{{data.sentence.focus}}"
+          placeholder="{{localize 'CSR.placeholder.focus'}}" data-dtype="String" />
+      </div>
+    </div>
+  </header>
+
+  <div class="content">
+    {{!-- Sheet Tab Navigation --}}
+    <nav class="sheet-tabs" data-group="primary">
+      <ul>
+        <li><a class="item" title="Stats" data-tab="stats"><i class="fas fa-vial"></i></a></li>
+        <li><a class="item" title="Skills" data-tab="skills"><i class="fas fa-hiking"></i></a></li>
+        <li><a class="item" title="Abilities" data-tab="abilities"><i class="fas fa-book"></i></a></li>
+        <li><a class="item" title="Cyphers" data-tab="cyphers"><i class="fas fa-hat-wizard"></i></a></li>
+        <li><a class="item" title="Equipment" data-tab="equipment"><i class="fas fa-wrench"></i></a></li>
+        <li><a class="item" title="Biography" data-tab="bio"><i class="fas fa-pen-nib"></i></a></li>
+      </ul>
+    </nav>
+
+    {{!-- Sheet Body --}}
+    <section class="sheet-body">
+
+      {{!-- Stats Tab --}}
+      <div class="tab stats" data-group="primary" data-tab="stats">
+        <h1>Stats</h1>
+
+        <div class="content">
+          {{> "systems/cyphersystemClean/templates/actor/partials/pools.html"}}
+
+          <hr>
+
+          <nav class="stats-tabs" data-group="secondary">
+            <a class="item" data-tab="advancement"><i class="fas fa-sort-numeric-up"></i> Advancement</a>
+            <a class="item" data-tab="damage"><i class="fas fa-heartbeat"></i> Damage Track</a>
+            <a class="item" data-tab="recovery"><i class="fas fa-medkit"></i> Recovery</a>
+          </nav>
+
+          <hr>
+
+          <section class="stats-body">
+            <div class="tab advancement" data-group="secondary" data-tab="advancement">
+              <div class="grid grid-3col tier-grid">
+                <div class="input-group">
+                  <label for="data.tier">Tier</label>
+                  <input type="number" name="data.tier" value="{{data.tier}}" placeholder="1" min="1" max="6"
+                    data-dtype="Number" class="tier" />
+                </div>
+                <div class="input-group">
+                  <label for="data.effort">Effort</label>
+                  <input type="number" name="data.effort" value="{{data.effort}}" placeholder="1" min="1" max="99"
+                    data-dtype="Number" class="tier" /></h2>
+                </div>
+                <div class="input-group">
+                  <label for="data.xp">XP</label>
+                  <input type="number" name="data.xp" value="{{data.xp}}" placeholder="0" min="0" max="99"
+                    data-dtype="Number" /></h2>
+                </div>
+              </div>
+
+              <div class="advances">
+                <ul>
+                  {{#each advances as |advance|}}
+                  <li class="no-pip">
+                    <div class="checkbox">
+                      <input type="checkbox" name="data.advances.{{advance.name}}" id="data.advances.{{advance.name}}"
+                        data-dtype="Boolean" {{checked advance.isChecked}} />
+                      <label for="data.advances.{{advance.name}}">{{advance.label}}</label>
+                    </div>
+                  </li>
+                  {{/each}}
+                </ul>
+              </div>
+            </div>
+
+            <div class="tab damage" data-group="secondary" data-tab="damage">
+              <p>Damage</p>
+            </div>
+
+            <div class="tab recovery" data-group="secondary" data-tab="recovery">
+              <p>Recovery</p>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      {{!-- Skills Tab --}}
+      <div class="tab skills" data-group="primary" data-tab="skills">
+        <h1>Skills</h1>
+
+        <div class="content">
+
+        </div>
+      </div>
+
+      {{!-- Abilities Tab --}}
+      <div class="tab abilities" data-group="primary" data-tab="abilities">
+        <h1>Abilities</h1>
+
+        <div class="content">
+
+        </div>
+      </div>
+
+      {{!-- Cyphers Tab --}}
+      <div class="tab cyphers" data-group="primary" data-tab="cyphers">
+        <h1>Cyphers</h1>
+
+        <div class="content">
+
+        </div>
+      </div>
+
+      {{!-- Equipment Tab --}}
+      <div class="tab equipment" data-group="primary" data-tab="equipment">
+        <h1>Equipment</h1>
+
+        <div class="content">
+
+        </div>
+      </div>
+
+      {{!-- Biography Tab --}}
+      <div class="tab biography" data-group="primary" data-tab="bio">
+        <h1>Bio</h1>
+
+        <div class="content">
+          {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}
+        </div>
+      </div>
+
+    </section>
+  </div>
+
+</form>

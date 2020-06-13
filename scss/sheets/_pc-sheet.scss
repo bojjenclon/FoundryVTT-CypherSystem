@@ -1,0 +1,240 @@
+&.sheet.actor {
+  min-width : 672px;
+  min-height: 600px;
+
+  max-width: 1280px;
+  max-height: 960px;
+}
+
+.window-content {
+  padding: 0;
+
+  form {
+    overflow: hidden;
+  }
+}
+
+.sheet-header {
+  flex-basis : 160px;
+  align-items: center;
+
+  padding: 8px;
+
+  .sentence {
+    font-size: 1.5em;
+
+    margin-top: -8px;
+
+    >* {
+      margin    : 0 4px;
+      margin-top: 8px;
+    }
+
+    .flexrow {
+      align-items: center;
+    }
+
+    input {
+      flex: 1;
+
+      padding: 16px 8px;
+
+      &.name {
+        min-width: 10em;
+      }
+
+      &.descriptor {
+        min-width: 14em;
+      }
+
+      &.type {
+        min-width: 8em;
+      }
+
+      &.focus {
+        min-width: 18em;
+      }
+
+      &:not(:last-child) {
+        margin-right: 4px;
+      }
+    }
+
+    span {
+      flex       : 0 1 0;
+      white-space: nowrap;
+
+      // "is a"
+      &:last-child {
+        margin-left: 4px;
+      }
+
+      // "who"
+      &:first-child {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.content {
+  display: flex;
+
+  overflow: hidden;
+
+  .sheet-tabs {
+    flex-shrink: 1;
+
+    padding: 6px 4px;
+
+    border-top             : 1px solid #aaa;
+    border-right           : 1px solid #aaa;
+    border-top-right-radius: 4px;
+
+    ul {
+      list-style-type: none;
+
+      display        : flex;
+      align-items    : center;
+      justify-content: space-between;
+      flex-direction : column;
+
+      height: 100%;
+
+      margin : 0;
+      padding: 0;
+
+      li {
+        font-size: 2em;
+
+        a.active {
+          color: #b72020;
+        }
+      }
+    }
+  }
+
+  .sheet-body {
+    flex-grow: 1;
+
+    margin-left   : 12px;
+    padding-bottom: 8px;
+
+    hr {
+      width: 100%;
+      margin: 1em 0;
+    }
+
+    .tab {
+      padding-right: 8px;
+
+      &.active {
+        display       : flex;
+        flex-direction: column;
+      }
+
+      .content {
+        overflow-y: auto;
+        flex-direction: column;
+      }
+
+      .input-group {
+        display       : flex;
+        flex-direction: row;
+
+        label {
+          font-weight: bold;
+          font-size  : 1.5em;
+        }
+      }
+
+      // Stats Tab
+      &.stats {
+        .pool-action {
+          display        : flex;
+          flex-direction : row;
+          align-items    : center;
+          justify-content: center;
+
+          margin-bottom: 2px;
+
+          label {
+            display: inline-block;
+            margin : 0;
+            cursor : pointer;
+          }
+
+          i {
+            margin-left: 4px;
+          }
+        }
+
+        .current {
+          label {
+            font-size    : 1em;
+            margin-bottom: 4px;
+          }
+
+          input {
+            font-size: 2.8rem;
+
+            height: 60px;
+            width : 100px;
+          }
+        }
+
+        .flexcol:first-child {
+          margin-right: 4px;
+        }
+
+        .stat-pools {
+          display: flex;
+          justify-content: space-around;
+          flex: 1;
+
+          label {
+            display      : block;
+            margin-bottom: 2px;
+            font-weight  : bold;
+            text-align   : center;
+          }
+        }
+
+        nav.stats-tabs {
+          display: flex;
+          justify-content: space-around;
+
+          a {
+            font-size: 1.2em;
+            font-weight: bold;
+
+            &.active {
+              color: #b72020;
+            }
+          }
+        }
+
+        .tier-grid {
+          .input-group {
+            justify-content: center;
+          }
+
+          label {
+            margin: 0 0.5em 0 0.5em;
+          }
+
+          input[type="number"] {
+            width: 3em;
+          }
+        }
+      }
+
+      // Bio Tab
+      &.bio {
+        .editor {
+          flex: 1;
+        }
+      }
+    }
+  }
+}

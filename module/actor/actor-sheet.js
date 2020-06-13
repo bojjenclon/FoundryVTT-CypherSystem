@@ -1,3 +1,7 @@
+/* globals $ mergeObject duplicate */
+
+import { CSR } from '../config.js';
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -8,11 +12,26 @@ export class CypherSystemActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["cyphersystem", "sheet", "actor"],
-      template: "systems/cyphersystem/templates/actor/actor-sheet.html",
-      width: 600,
+      width: 700,
       height: 600,
-      tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
+      tabs: [{ 
+        navSelector: ".sheet-tabs", 
+        contentSelector: ".sheet-body", 
+        initial: "description" 
+      }, {
+        navSelector: '.stats-tabs',
+        contentSelector: '.stats-body',
+        initial: 'advancement'
+      }]
     });
+  }
+
+  /**
+   * Get the correct HTML template path to use for rendering this particular sheet
+   * @type {String}
+   */
+  get template() {
+    return "systems/cyphersystemClean/templates/actor/pc-sheet.html";
   }
 
   /* -------------------------------------------- */
@@ -20,10 +39,19 @@ export class CypherSystemActorSheet extends ActorSheet {
   /** @override */
   getData() {
     const data = super.getData();
-    data.dtypes = ["String", "Number", "Boolean"];
-    for (let attr of Object.values(data.data.attributes)) {
-      attr.isCheckbox = attr.dtype === "Boolean";
-    }
+    
+    data.isGM = game.user.isGM;
+
+    data.advances = Object.entries(data.actor.data.advances).map(
+      ([key, value]) => {
+        return {
+          name: key,
+          label: CSR.advances[key],
+          isChecked: value,
+        };
+      }
+    );
+
     return data;
   }
 

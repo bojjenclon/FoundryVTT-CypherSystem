@@ -4,9 +4,12 @@ import { CypherSystemActorSheet } from "./actor/actor-sheet.js";
 import { CypherSystemItem } from "./item/item.js";
 import { CypherSystemItemSheet } from "./item/item-sheet.js";
 
+import { registerHandlebarHelpers } from './handlebars-helpers.js';
+import { preloadHandlebarsTemplates } from './template.js';
+
 Hooks.once('init', async function() {
 
-  game.cyphersystem = {
+  game.cyphersystemClean = {
     CypherSystemActor,
     CypherSystemItem
   };
@@ -26,22 +29,18 @@ Hooks.once('init', async function() {
 
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
-  Actors.registerSheet("cyphersystem", CypherSystemActorSheet, { makeDefault: true });
+  Actors.registerSheet('cyphersystemClean', CypherSystemActorSheet, {
+    types: ['pc'],
+    makeDefault: true,
+  });
+  Actors.registerSheet('cyphersystemClean', CypherSystemActorSheet, {
+    types: ['npc'],
+    makeDefault: true,
+  });
+
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("cyphersystem", CypherSystemItemSheet, { makeDefault: true });
+  Items.registerSheet("cyphersystemClean", CypherSystemItemSheet, { makeDefault: true });
 
-  // If you need to add Handlebars helpers, here are a few useful examples:
-  Handlebars.registerHelper('concat', function() {
-    var outStr = '';
-    for (var arg in arguments) {
-      if (typeof arguments[arg] != 'object') {
-        outStr += arguments[arg];
-      }
-    }
-    return outStr;
-  });
-
-  Handlebars.registerHelper('toLowerCase', function(str) {
-    return str.toLowerCase();
-  });
+  registerHandlebarHelpers();
+  preloadHandlebarsTemplates();
 });

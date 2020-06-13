@@ -1,5 +1,5 @@
 {
-  "name": "cyphersystem-clean",
+  "name": "cyphersystemClean",
   "title": "Cypher System (Clean)",
   "description": "The Cypher System system for FoundryVTT!",
   "version": "1.0.0",
@@ -7,8 +7,8 @@
   "compatibleCoreVersion": "0.6.2",
   "templateVersion": 2,
   "author": "Cornell Daly",
-  "esmodules": ["dist/cyphersystem.min.js"],
-  "styles": ["dist/cyphersystem.min.css"],
+  "esmodules": ["module/cyphersystem.js"],
+  "styles": ["dist/cyphersystem.css"],
   "scripts": [],
   "packs": [],
   "languages": [

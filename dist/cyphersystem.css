@@ -134,7 +134,23 @@
           justify-content: space-between;
 }
 
+/* line 11, scss/global/_flex.scss */
+.break {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  height: 0;
+}
+
 /* Styles limited to cyphersystem sheets */
+/* line 13, scss/cyphersystem.scss */
+.cyphersystem {
+  /*Outer box of the fake checkbox*/
+  /*Checkmark of the fake checkbox*/
+  /*Hide the checkmark by default*/
+  /*Unhide on the checked state*/
+  /*Adding focus styles on the outer-box of the fake checkbox*/
+}
+
 /* line 1, scss/components/_forms.scss */
 .cyphersystem .item-form {
   font-family: "Karla", sans-serif;
@@ -166,18 +182,19 @@
   -webkit-box-flex: 0;
       -ms-flex: 0 0 100px;
           flex: 0 0 100px;
-  height: 100px;
+  height: 150px;
   margin-right: 10px;
+  border: none;
 }
 
-/* line 20, scss/components/_forms.scss */
+/* line 22, scss/components/_forms.scss */
 .cyphersystem .sheet-header .header-fields {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 24, scss/components/_forms.scss */
+/* line 26, scss/components/_forms.scss */
 .cyphersystem .sheet-header h1.charname {
   height: 50px;
   padding: 0px;
@@ -185,35 +202,88 @@
   border-bottom: 0;
 }
 
-/* line 29, scss/components/_forms.scss */
+/* line 31, scss/components/_forms.scss */
 .cyphersystem .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-/* line 37, scss/components/_forms.scss */
+/* line 39, scss/components/_forms.scss */
 .cyphersystem .sheet-tabs {
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
 }
 
-/* line 41, scss/components/_forms.scss */
+/* line 43, scss/components/_forms.scss */
 .cyphersystem .sheet-body,
 .cyphersystem .sheet-body .tab,
 .cyphersystem .sheet-body .tab .editor {
   height: 100%;
 }
 
-/* line 48, scss/components/_forms.scss */
+/* line 50, scss/components/_forms.scss */
 .cyphersystem .tox .tox-editor-container {
   background: #fff;
 }
 
-/* line 52, scss/components/_forms.scss */
+/* line 54, scss/components/_forms.scss */
 .cyphersystem .tox .tox-edit-area {
   padding: 0 8px;
+}
+
+/* line 59, scss/components/_forms.scss */
+.cyphersystem input[type="number"] {
+  height: 24px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1px 3px;
+  margin: 0;
+  color: #191813;
+  border: 1px solid #7a7971;
+  border-radius: 3px;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+/* line 72, scss/components/_forms.scss */
+.cyphersystem input[type="number"]::-webkit-outer-spin-button, .cyphersystem input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* line 78, scss/components/_forms.scss */
+.cyphersystem input[type="number"].tier {
+  width: calc(1rem + 1ch);
+}
+
+/* line 83, scss/components/_forms.scss */
+.cyphersystem input:disabled,
+.cyphersystem input:disabled:hover {
+  border: 1px solid #7a7971;
+  color: #6b6969;
+}
+
+/* line 89, scss/components/_forms.scss */
+.cyphersystem textarea {
+  font-family: Karla;
+  resize: none;
+}
+
+/* line 95, scss/components/_forms.scss */
+.cyphersystem textarea:focus {
+  outline: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+/* line 100, scss/components/_forms.scss */
+.cyphersystem li.no-pip {
+  list-style-type: none;
 }
 
 /* line 1, scss/components/_resource.scss */
@@ -286,4 +356,393 @@
       -ms-flex: 0 0 86px;
           flex: 0 0 86px;
   text-align: right;
+}
+
+/* line 3, scss/components/_checkbox.scss */
+.cyphersystem .checkbox {
+  margin-left: 1em;
+}
+
+/* line 7, scss/components/_checkbox.scss */
+.cyphersystem .checkbox input[type="checkbox"] {
+  display: none;
+  width: 0;
+  margin: 0;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+
+/* line 15, scss/components/_checkbox.scss */
+.cyphersystem .checkbox label {
+  position: relative;
+  display: inline-block;
+  padding-left: 24px;
+}
+
+/* line 22, scss/components/_checkbox.scss */
+.cyphersystem .checkbox.no-label label {
+  padding-left: 12px;
+}
+
+/* line 26, scss/components/_checkbox.scss */
+.cyphersystem .checkbox label::before,
+.cyphersystem .checkbox label::after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+}
+
+/* line 35, scss/components/_checkbox.scss */
+.cyphersystem .checkbox label::before {
+  height: 14px;
+  width: 14px;
+  border: 1px solid #7a7971;
+  border-radius: 2px;
+  left: 0px;
+  top: 1px;
+}
+
+/* line 47, scss/components/_checkbox.scss */
+.cyphersystem .checkbox label::after {
+  height: 5px;
+  width: 9px;
+  border-left: 2px solid;
+  border-bottom: 2px solid;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  left: 3px;
+  top: 5px;
+}
+
+/* line 60, scss/components/_checkbox.scss */
+.cyphersystem .checkbox input[type="checkbox"] + label::after {
+  content: none;
+}
+
+/* line 65, scss/components/_checkbox.scss */
+.cyphersystem .checkbox input[type="checkbox"]:checked + label::after {
+  content: "";
+}
+
+/* line 70, scss/components/_checkbox.scss */
+.cyphersystem .checkbox input[type="checkbox"]:focus + label::before {
+  outline: #3b99fc auto 5px;
+}
+
+/* line 1, scss/sheets/_pc-sheet.scss */
+.cyphersystem.sheet.actor {
+  min-width: 672px;
+  min-height: 600px;
+  max-width: 1280px;
+  max-height: 960px;
+}
+
+/* line 9, scss/sheets/_pc-sheet.scss */
+.cyphersystem .window-content {
+  padding: 0;
+}
+
+/* line 12, scss/sheets/_pc-sheet.scss */
+.cyphersystem .window-content form {
+  overflow: hidden;
+}
+
+/* line 17, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header {
+  -ms-flex-preferred-size: 160px;
+      flex-basis: 160px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 8px;
+}
+
+/* line 23, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence {
+  font-size: 1.5em;
+  margin-top: -8px;
+}
+
+/* line 28, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence > * {
+  margin: 0 4px;
+  margin-top: 8px;
+}
+
+/* line 33, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence .flexrow {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 37, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 16px 8px;
+}
+
+/* line 42, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence input.name {
+  min-width: 10em;
+}
+
+/* line 46, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence input.descriptor {
+  min-width: 14em;
+}
+
+/* line 50, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence input.type {
+  min-width: 8em;
+}
+
+/* line 54, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence input.focus {
+  min-width: 18em;
+}
+
+/* line 58, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence input:not(:last-child) {
+  margin-right: 4px;
+}
+
+/* line 63, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence span {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  white-space: nowrap;
+}
+
+/* line 68, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence span:last-child {
+  margin-left: 4px;
+}
+
+/* line 73, scss/sheets/_pc-sheet.scss */
+.cyphersystem .sheet-header .sentence span:first-child {
+  margin-right: 8px;
+}
+
+/* line 80, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+}
+
+/* line 85, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-tabs {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  padding: 6px 4px;
+  border-top: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  border-top-right-radius: 4px;
+}
+
+/* line 94, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-tabs ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 107, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-tabs ul li {
+  font-size: 2em;
+}
+
+/* line 110, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-tabs ul li a.active {
+  color: #b72020;
+}
+
+/* line 117, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 12px;
+  padding-bottom: 8px;
+}
+
+/* line 123, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body hr {
+  width: 100%;
+  margin: 1em 0;
+}
+
+/* line 128, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab {
+  padding-right: 8px;
+}
+
+/* line 131, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 136, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab .content {
+  overflow-y: auto;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/* line 141, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+/* line 145, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab .input-group label {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/* line 153, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .pool-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 2px;
+}
+
+/* line 161, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .pool-action label {
+  display: inline-block;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* line 167, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .pool-action i {
+  margin-left: 4px;
+}
+
+/* line 173, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .current label {
+  font-size: 1em;
+  margin-bottom: 4px;
+}
+
+/* line 178, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .current input {
+  font-size: 2.8rem;
+  height: 60px;
+  width: 100px;
+}
+
+/* line 186, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .flexcol:first-child {
+  margin-right: 4px;
+}
+
+/* line 190, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .stat-pools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 195, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .stat-pools label {
+  display: block;
+  margin-bottom: 2px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* line 203, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats nav.stats-tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/* line 207, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats nav.stats-tabs a {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* line 211, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats nav.stats-tabs a.active {
+  color: #b72020;
+}
+
+/* line 218, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .tier-grid .input-group {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 222, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .tier-grid label {
+  margin: 0 0.5em 0 0.5em;
+}
+
+/* line 226, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .tier-grid input[type="number"] {
+  width: 3em;
+}
+
+/* line 234, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.bio .editor {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
