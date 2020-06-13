@@ -1,0 +1,21 @@
+<div class="skills">
+  <div class="flexrow">
+    <select name="skillsStatFilter">
+      <option value="-1" data-dtype="Number">&nbsp;</option>
+
+      {{#select skillsStatFilter}}
+      {{#each stats as |stat idx|}}
+      <option value="{{idx}}" data-dtype="Number">{{this}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+  </div>
+
+  <ul>
+    {{#each data.items.skills as |skill|}}
+    <li class="no-pip">
+      <p>{{skill.name}}</p>
+    </li>
+    {{/each}}
+  </ul>
+</div>

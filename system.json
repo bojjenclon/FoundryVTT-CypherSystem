@@ -8,8 +8,8 @@
   "templateVersion": 2,
   "author": "Cornell Daly",
   "esmodules": ["module/cyphersystem.js"],
-  "styles": ["dist/cyphersystem.css"],
-  "scripts": [],
+  "styles": ["dist/cyphersystem.css", "lib/select2/select2.min.css"],
+  "scripts": ["lib/select2/select2.min.js"],
   "packs": [],
   "languages": [
     {

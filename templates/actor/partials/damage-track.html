@@ -1,0 +1,13 @@
+<div class="damage">
+  <select name="data.damageTrack">
+    {{#select data.damageTrack}}
+    {{#each damageTrackData as |track id|}}
+    <option value="{{id}}" data-dtype="Number">{{this.label}}</option>
+    {{/each}}
+    {{/select}}
+  </select>
+  
+  <div class="description">
+    <p>{{damageTrackDescription}}</p>
+  </div>  
+</div>

@@ -58,45 +58,15 @@
 
           <section class="stats-body">
             <div class="tab advancement" data-group="secondary" data-tab="advancement">
-              <div class="grid grid-3col tier-grid">
-                <div class="input-group">
-                  <label for="data.tier">Tier</label>
-                  <input type="number" name="data.tier" value="{{data.tier}}" placeholder="1" min="1" max="6"
-                    data-dtype="Number" class="tier" />
-                </div>
-                <div class="input-group">
-                  <label for="data.effort">Effort</label>
-                  <input type="number" name="data.effort" value="{{data.effort}}" placeholder="1" min="1" max="99"
-                    data-dtype="Number" class="tier" /></h2>
-                </div>
-                <div class="input-group">
-                  <label for="data.xp">XP</label>
-                  <input type="number" name="data.xp" value="{{data.xp}}" placeholder="0" min="0" max="99"
-                    data-dtype="Number" /></h2>
-                </div>
-              </div>
-
-              <div class="advances">
-                <ul>
-                  {{#each advances as |advance|}}
-                  <li class="no-pip">
-                    <div class="checkbox">
-                      <input type="checkbox" name="data.advances.{{advance.name}}" id="data.advances.{{advance.name}}"
-                        data-dtype="Boolean" {{checked advance.isChecked}} />
-                      <label for="data.advances.{{advance.name}}">{{advance.label}}</label>
-                    </div>
-                  </li>
-                  {{/each}}
-                </ul>
-              </div>
+              {{> "systems/cyphersystemClean/templates/actor/partials/advancement.html"}}
             </div>
 
             <div class="tab damage" data-group="secondary" data-tab="damage">
-              <p>Damage</p>
+              {{> "systems/cyphersystemClean/templates/actor/partials/damage-track.html"}}
             </div>
 
             <div class="tab recovery" data-group="secondary" data-tab="recovery">
-              <p>Recovery</p>
+              {{> "systems/cyphersystemClean/templates/actor/partials/recovery.html"}}
             </div>
           </section>
         </div>
@@ -107,7 +77,7 @@
         <h1>Skills</h1>
 
         <div class="content">
-
+          {{> "systems/cyphersystemClean/templates/actor/partials/skills.html"}}
         </div>
       </div>
 

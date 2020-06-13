@@ -141,8 +141,68 @@
   height: 0;
 }
 
+/* line 2, scss/global/_select2.scss */
+.select2-container--numenera .select2-selection--single {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid #aaa;
+  border-radius: 4px;
+}
+
+/* line 7, scss/global/_select2.scss */
+.select2-container--numenera .select2-selection--single .select2-selection__rendered {
+  color: #444;
+  font-weight: bold;
+  line-height: 28px;
+}
+
+/* line 13, scss/global/_select2.scss */
+.select2-container--numenera .select2-selection--single .select2-selection__arrow {
+  height: 26px;
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  width: 20px;
+}
+
+/* line 20, scss/global/_select2.scss */
+.select2-container--numenera .select2-selection--single .select2-selection__arrow b {
+  border-color: #888 transparent transparent transparent;
+  border-style: solid;
+  border-width: 5px 4px 0 4px;
+  height: 0;
+  left: 50%;
+  margin-left: -4px;
+  margin-top: -2px;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+
+/* line 35, scss/global/_select2.scss */
+.select2-container--numenera .select2-results > .select2-results__options {
+  background: url(ui/parchment.jpg);
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* line 42, scss/global/_select2.scss */
+.select2-container--numenera .select2-dropdown {
+  background: url(ui/parchment.jpg);
+}
+
+/* line 46, scss/global/_select2.scss */
+.select2-container--numenera .select2-results__option[aria-selected=true] {
+  background-color: #ddd;
+}
+
+/* line 50, scss/global/_select2.scss */
+.select2-container--numenera .select2-results__option--highlighted[aria-selected] {
+  background-color: #5897fb;
+  color: white;
+}
+
 /* Styles limited to cyphersystem sheets */
-/* line 13, scss/cyphersystem.scss */
+/* line 14, scss/cyphersystem.scss */
 .cyphersystem {
   /*Outer box of the fake checkbox*/
   /*Checkmark of the fake checkbox*/
@@ -636,6 +696,11 @@
 }
 
 /* line 153, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats label {
+  margin: 0 0.5em 0 0.5em;
+}
+
+/* line 157, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -653,37 +718,42 @@
   margin-bottom: 2px;
 }
 
-/* line 161, scss/sheets/_pc-sheet.scss */
-.cyphersystem .content .sheet-body .tab.stats .pool-action label {
+/* line 165, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool {
+  white-space: nowrap;
+}
+
+/* line 168, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool label {
   display: inline-block;
   margin: 0;
   cursor: pointer;
 }
 
-/* line 167, scss/sheets/_pc-sheet.scss */
-.cyphersystem .content .sheet-body .tab.stats .pool-action i {
+/* line 174, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool i {
   margin-left: 4px;
 }
 
-/* line 173, scss/sheets/_pc-sheet.scss */
+/* line 181, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .current label {
   font-size: 1em;
   margin-bottom: 4px;
 }
 
-/* line 178, scss/sheets/_pc-sheet.scss */
+/* line 186, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .current input {
   font-size: 2.8rem;
   height: 60px;
   width: 100px;
 }
 
-/* line 186, scss/sheets/_pc-sheet.scss */
+/* line 194, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .flexcol:first-child {
   margin-right: 4px;
 }
 
-/* line 190, scss/sheets/_pc-sheet.scss */
+/* line 198, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .stat-pools {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -695,7 +765,7 @@
           flex: 1;
 }
 
-/* line 195, scss/sheets/_pc-sheet.scss */
+/* line 203, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .stat-pools label {
   display: block;
   margin-bottom: 2px;
@@ -703,7 +773,7 @@
   text-align: center;
 }
 
-/* line 203, scss/sheets/_pc-sheet.scss */
+/* line 211, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -712,35 +782,81 @@
       justify-content: space-around;
 }
 
-/* line 207, scss/sheets/_pc-sheet.scss */
+/* line 215, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs a {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 211, scss/sheets/_pc-sheet.scss */
+/* line 219, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs a.active {
   color: #b72020;
 }
 
-/* line 218, scss/sheets/_pc-sheet.scss */
+/* line 226, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .tier-grid .input-group {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-/* line 222, scss/sheets/_pc-sheet.scss */
-.cyphersystem .content .sheet-body .tab.stats .tier-grid label {
-  margin: 0 0.5em 0 0.5em;
-}
-
-/* line 226, scss/sheets/_pc-sheet.scss */
+/* line 230, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .tier-grid input[type="number"] {
   width: 3em;
 }
 
-/* line 234, scss/sheets/_pc-sheet.scss */
+/* line 235, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .advances {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #666;
+  font-size: 1.2em;
+}
+
+/* line 243, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .damage {
+  text-align: center;
+}
+
+/* line 246, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .damage .description {
+  text-align: left;
+  margin-top: 1em;
+  font-size: 1.5em;
+}
+
+/* line 256, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/* line 260, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group label,
+.cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group input {
+  -webkit-box-flex: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+}
+
+/* line 265, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group i {
+  margin-left: 0.5em;
+}
+
+/* line 271, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.stats .recovery .actions {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #666;
+  font-size: 1.2em;
+}
+
+/* line 283, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.bio .editor {
   -webkit-box-flex: 1;
       -ms-flex: 1;

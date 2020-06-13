@@ -93,7 +93,7 @@ CSR.damageTrack = [
 
 CSR.recoveries = {
   'action': '1 Action',
-  'tenMin': '10 min',
+  'tenMins': '10 mins',
   'oneHour': '1 hour',
   'tenHours': '10 hours'
 };

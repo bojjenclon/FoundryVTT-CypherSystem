@@ -11,7 +11,7 @@ var settings = {
 	polyfills: false,
 	styles: true,
 	svgs: false,
-	copy: false,
+	copy: true,
 	reload: false
 };
 
@@ -40,7 +40,7 @@ var paths = {
 		output: 'dist/svg/'
 	},
 	copy: {
-		input: 'src/copy/**/*',
+		input: 'copy/**/*',
 		output: 'dist/'
 	},
 	reload: './dist/'

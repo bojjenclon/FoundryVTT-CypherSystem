@@ -15,6 +15,11 @@ export const preloadHandlebarsTemplates = async() => {
 
       // Actor Partials
       "systems/cyphersystemClean/templates/actor/partials/pools.html",
+      "systems/cyphersystemClean/templates/actor/partials/advancement.html",
+      "systems/cyphersystemClean/templates/actor/partials/damage-track.html",
+      "systems/cyphersystemClean/templates/actor/partials/recovery.html",
+
+      "systems/cyphersystemClean/templates/actor/partials/skills.html",
 
       //Item Sheets
       "systems/cyphersystemClean/templates/item/item-sheet.html",

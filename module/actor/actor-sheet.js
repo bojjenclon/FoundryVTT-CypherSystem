@@ -2,6 +2,9 @@
 
 import { CSR } from '../config.js';
 
+//Sort function for order
+const sortFunction = (a, b) => a.data.order < b.data.order ? -1 : a.data.order > b.data.order ? 1 : 0;
+
 /**
  * Extend the basic ActorSheet with some very simple modifications
  * @extends {ActorSheet}
@@ -36,11 +39,29 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
+  constructor(...args) {
+    super(...args);
+
+    this.skillsStatFilter = -1;
+  }
+
+  _sortItemData(data, type, field) {
+    const items = data.data.items;
+    if (!items[field]) {
+      items[field] = items.filter(i => i.type === type).sort(sortFunction);
+    }
+  }
+
   /** @override */
   getData() {
     const data = super.getData();
     
     data.isGM = game.user.isGM;
+
+    data.ranges = CSR.ranges;
+    data.stats = CSR.stats;
+    data.weaponTypes = CSR.weaponTypes;
+    data.weights = CSR.weightClasses;
 
     data.advances = Object.entries(data.actor.data.advances).map(
       ([key, value]) => {
@@ -52,6 +73,26 @@ export class CypherSystemActorSheet extends ActorSheet {
       }
     );
 
+    data.damageTrackData = CSR.damageTrack;
+    data.damageTrackDescription = CSR.damageTrack[data.data.damageTrack].description;
+
+    data.recoveriesData = Object.entries(
+      data.actor.data.recoveries
+    ).map(([key, value]) => {
+      return {
+        key,
+        label: CSR.recoveries[key],
+        checked: value,
+      };
+    });
+
+    data.data.items = data.actor.items || {};
+    data.data.sorts = this.sorts || {};
+
+    this._sortItemData(data, 'skill', 'skills');
+
+    data.skillsStatFilter = this.skillsStatFilter;
+
     return data;
   }
 
@@ -60,76 +101,24 @@ export class CypherSystemActorSheet extends ActorSheet {
     super.activateListeners(html);
 
     // Everything below here is only needed if the sheet is editable
-    if (!this.options.editable) return;
-
-    // Add Inventory Item
-    html.find('.item-create').click(this._onItemCreate.bind(this));
-
-    // Update Inventory Item
-    html.find('.item-edit').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      const item = this.actor.getOwnedItem(li.data("itemId"));
-      item.sheet.render(true);
-    });
-
-    // Delete Inventory Item
-    html.find('.item-delete').click(ev => {
-      const li = $(ev.currentTarget).parents(".item");
-      this.actor.deleteOwnedItem(li.data("itemId"));
-      li.slideUp(200, () => this.render(false));
-    });
-
-    // Rollable abilities.
-    html.find('.rollable').click(this._onRoll.bind(this));
-  }
-
-  /* -------------------------------------------- */
-
-  /**
-   * Handle creating a new Owned Item for the actor using initial data defined in the HTML dataset
-   * @param {Event} event   The originating click event
-   * @private
-   */
-  _onItemCreate(event) {
-    event.preventDefault();
-    const header = event.currentTarget;
-    // Get the type of item to create.
-    const type = header.dataset.type;
-    // Grab any data associated with this control.
-    const data = duplicate(header.dataset);
-    // Initialize a default name.
-    const name = `New ${type.capitalize()}`;
-    // Prepare the item object.
-    const itemData = {
-      name: name,
-      type: type,
-      data: data
-    };
-    // Remove the type from the dataset since it's in the itemData.type prop.
-    delete itemData.data["type"];
-
-    // Finally, create the item!
-    return this.actor.createOwnedItem(itemData);
-  }
-
-  /**
-   * Handle clickable rolls.
-   * @param {Event} event   The originating click event
-   * @private
-   */
-  _onRoll(event) {
-    event.preventDefault();
-    const element = event.currentTarget;
-    const dataset = element.dataset;
-
-    if (dataset.roll) {
-      let roll = new Roll(dataset.roll, this.actor.data.data);
-      let label = dataset.label ? `Rolling ${dataset.label}` : '';
-      roll.roll().toMessage({
-        speaker: ChatMessage.getSpeaker({ actor: this.actor }),
-        flavor: label
-      });
+    if (!this.options.editable) {
+      return;
     }
-  }
 
+    // Setup select elements
+    html.find('select[name="data.damageTrack"]').select2({
+      theme: 'numenera',
+      width: '130px',
+      minimumResultsForSearch: Infinity
+    });
+
+    const skillsStatFilter = html.find('select[name="skillsStatFilter"]').select2({
+      theme: 'numenera',
+      width: '130px',
+      minimumResultsForSearch: Infinity
+    });
+    skillsStatFilter.on('change', evt => {
+      this.skillsStatFilter = evt.target.value;
+    });
+  }
 }

@@ -1,0 +1,31 @@
+<div class="grid grid-3col tier-grid">
+  <div class="input-group">
+    <label for="data.tier">Tier</label>
+    <input type="number" name="data.tier" value="{{data.tier}}" placeholder="1" min="1" max="6"
+      data-dtype="Number" class="tier" />
+  </div>
+  <div class="input-group">
+    <label for="data.effort">Effort</label>
+    <input type="number" name="data.effort" value="{{data.effort}}" placeholder="1" min="1" max="99"
+      data-dtype="Number" class="tier" /></h2>
+  </div>
+  <div class="input-group">
+    <label for="data.xp">XP</label>
+    <input type="number" name="data.xp" value="{{data.xp}}" placeholder="0" min="0" max="99"
+      data-dtype="Number" /></h2>
+  </div>
+</div>
+
+<div class="advances">
+  <ul class="grid">
+    {{#each advances as |advance|}}
+    <li class="no-pip">
+      <div class="checkbox">
+        <input type="checkbox" name="data.advances.{{advance.name}}" id="data.advances.{{advance.name}}"
+          data-dtype="Boolean" {{checked advance.isChecked}} />
+        <label for="data.advances.{{advance.name}}">{{advance.label}}</label>
+      </div>
+    </li>
+    {{/each}}
+  </ul>
+</div>

@@ -32,6 +32,7 @@
       },
 
       "damageTrack": 1,
+      "armor": 0,
 
       "stats": {
         "might": {
