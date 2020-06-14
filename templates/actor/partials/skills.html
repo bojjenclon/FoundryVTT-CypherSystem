@@ -1,21 +1,41 @@
 <div class="skills">
-  <div class="flexrow">
-    <select name="skillsStatFilter">
-      <option value="-1" data-dtype="Number">&nbsp;</option>
+  <div class="filters">
+    <strong>Filter:</strong>
 
-      {{#select skillsStatFilter}}
+    <select name="skillsPoolFilter">
+      <option value="-1" data-dtype="Number">{{localize "CSR.heading.pool"}}</option>
+
+      {{#select skillsPoolFilter}}
       {{#each stats as |stat idx|}}
-      <option value="{{idx}}" data-dtype="Number">{{this}}</option>
+      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.pool." (toLowerCase this))}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+
+    <select name="skillsTrainingFilter">
+      <option value="-1" data-dtype="Number">{{localize "CSR.heading.training"}}</option>
+
+      {{#select skillsTrainingFilter}}
+      {{#each trainingLevels as |training idx|}}
+      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.training." (toLowerCase this))}}</option>
       {{/each}}
       {{/select}}
     </select>
   </div>
 
-  <ul>
-    {{#each data.items.skills as |skill|}}
-    <li class="no-pip">
-      <p>{{skill.name}}</p>
-    </li>
-    {{/each}}
-  </ul>
+  <hr>
+
+  <div class="grid">
+    <ul class="skill-list">
+      {{#each data.items.skills as |skill|}}
+      <li class="no-pip">
+        <a class="skill {{#if (eq skill._id ../selectedSkill._id)}}active{{/if}}" data-id="{{skill._id}}"><span class='monospace icons'>{{{trainingIcon skill.data.training}}}{{{poolIcon skill.data.pool}}}</span> {{skill.name}}</a>
+      </li>
+      {{/each}}
+    </ul>
+
+    <div class="skill-info">
+      {{{skillInfo}}}
+    </div>
+  </div>
 </div>

@@ -5,7 +5,15 @@
   "CSR.pool.speed": "Speed",
   "CSR.pool.intellect": "Intellect",
 
+  "CSR.training.inability": "Inability",
+  "CSR.training.untrained": "Untrained",
+  "CSR.training.trained": "Trained",
+  "CSR.training.specialized": "Specialized",
+
   "CSR.placeholder.descriptor": "Descriptor",
   "CSR.placeholder.type": "Type",
-  "CSR.placeholder.focus": "Focus"
+  "CSR.placeholder.focus": "Focus",
+
+  "CSR.heading.pool": "Pool",
+  "CSR.heading.training": "Training"
 }

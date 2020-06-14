@@ -36,6 +36,13 @@ CSR.skillLevels = {
   's': 'Specialized'
 };
 
+CSR.trainingLevels = [
+  'Inability',
+  'Untrained',
+  'Trained',
+  'Specialized'
+];
+
 CSR.types = [
   {
     abbrev: 'a',

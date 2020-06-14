@@ -16,11 +16,31 @@ export const registerHandlebarHelpers = () => {
     return val;
   });
 
-  Handlebars.registerHelper('sortIcon', (sortInfo, field) => {
-    if (sortInfo.field !== field) {
-      return '';
+  Handlebars.registerHelper('trainingIcon', val => {
+    switch (val) {
+      case 0:
+        return `<span title="${game.i18n.localize('CSR.training.inability')}">[I]</span>`;
+      case 1:
+        return `<span title="${game.i18n.localize('CSR.training.untrained')}">[U]</span>`;
+      case 2:
+        return `<span title="${game.i18n.localize('CSR.training.trained')}">[T]</span>`;
+      case 3:
+        return `<span title="${game.i18n.localize('CSR.training.specialized')}">[S]</span>`;
     }
 
-    return `&nbsp;<i class="fas fa-long-arrow-alt-${sortInfo.asc ? 'up' : 'down'}"></i>`;
+    return '';
+  });
+
+  Handlebars.registerHelper('poolIcon', val => {
+    switch (val) {
+      case 0:
+        return `<span title="${game.i18n.localize('CSR.pool.might')}">[M]</span>`;
+      case 1:
+        return `<span title="${game.i18n.localize('CSR.pool.speed')}">[S]</span>`;
+      case 2:
+        return `<span title="${game.i18n.localize('CSR.pool.intellect')}">[I]</span>`;
+    }
+
+    return '';
   });
 };

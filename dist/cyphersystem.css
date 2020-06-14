@@ -1,6 +1,26 @@
 /*! cyphersystem v1.0.0 | (c) 2020 Cornell Daly | MIT License | https://github.com/bojjenclon/ */
 
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+/* line 6, scss/utils/_typography.scss */
+.monospace {
+  font-family: monospace, monospace;
+}
+
+/* line 10, scss/utils/_typography.scss */
+.text-left {
+  text-align: left;
+}
+
+/* line 14, scss/utils/_typography.scss */
+.text-center {
+  text-align: center;
+}
+
+/* line 18, scss/utils/_typography.scss */
+.text-right {
+  text-align: right;
+}
+
 /* Global styles */
 /* line 1, scss/global/_window.scss */
 .window-app {
@@ -856,7 +876,79 @@
   font-size: 1.2em;
 }
 
-/* line 283, scss/sheets/_pc-sheet.scss */
+/* line 282, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 287, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills .filters strong {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-right: 1em;
+}
+
+/* line 293, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills .filters > span {
+  margin-right: 4px;
+}
+
+/* line 298, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills ul.skill-list {
+  margin: 0;
+  padding: 0 0 0 0.5em;
+}
+
+/* line 302, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills ul.skill-list li {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* line 306, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills ul.skill-list li:not(:first-child) {
+  margin-top: 8px;
+}
+
+/* line 310, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills ul.skill-list li .icons {
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* line 315, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills ul.skill-list li a.active {
+  color: #b72020;
+}
+
+/* line 321, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills .skill-info {
+  padding-right: 0.5em;
+}
+
+/* line 324, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills .skill-info > .grid {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 328, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills .skill-info .actions {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+/* line 338, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.bio .editor {
   -webkit-box-flex: 1;
       -ms-flex: 1;
