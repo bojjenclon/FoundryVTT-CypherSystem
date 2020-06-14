@@ -1,0 +1,29 @@
+form.roll-dialog {
+  label {
+    font-weight: bold;
+  }
+
+  input[type="number"] {
+    height       : 24px;
+    background   : rgba(0, 0, 0, 0.05);
+    padding      : 1px 3px;
+    margin       : 0;
+    color        : #191813;
+    border       : 1px solid #aaa;
+    border-radius: 3px;
+    user-select  : text;
+    text-align   : center;
+  
+    -moz-appearance: textfield;
+  
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin            : 0;
+    }
+  
+    &.tier {
+        width: calc(1rem + 1ch);
+    }
+  }
+}

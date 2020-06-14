@@ -221,8 +221,41 @@
   color: white;
 }
 
+/* line 2, scss/global/roll-dialog.scss */
+form.roll-dialog label {
+  font-weight: bold;
+}
+
+/* line 6, scss/global/roll-dialog.scss */
+form.roll-dialog input[type="number"] {
+  height: 24px;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 1px 3px;
+  margin: 0;
+  color: #191813;
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  -webkit-user-select: text;
+     -moz-user-select: text;
+      -ms-user-select: text;
+          user-select: text;
+  text-align: center;
+  -moz-appearance: textfield;
+}
+
+/* line 19, scss/global/roll-dialog.scss */
+form.roll-dialog input[type="number"]::-webkit-outer-spin-button, form.roll-dialog input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* line 25, scss/global/roll-dialog.scss */
+form.roll-dialog input[type="number"].tier {
+  width: calc(1rem + 1ch);
+}
+
 /* Styles limited to cyphersystem sheets */
-/* line 14, scss/cyphersystem.scss */
+/* line 15, scss/cyphersystem.scss */
 .cyphersystem {
   /*Outer box of the fake checkbox*/
   /*Checkmark of the fake checkbox*/

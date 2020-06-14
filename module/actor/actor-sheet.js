@@ -1,6 +1,9 @@
 /* globals mergeObject Dialog */
 
 import { CSR } from '../config.js';
+import { CypherRolls } from '../rolls.js';
+
+import EnumPools from '../enums/enum-pool.js';
 
 /**
  * Extend the basic ActorSheet with some very simple modifications
@@ -112,6 +115,25 @@ export class CypherSystemActorSheet extends ActorSheet {
     return data;
   }
 
+  _rollItemDialog(pool) {
+    const { actor } = this;
+    const actorData = actor.data.data;
+    const poolName = EnumPools[pool];
+
+    CypherRolls.Roll({
+      event,
+      parts: ['1d20'],
+      data: {
+        statId: pool,
+        maxEffort: actorData.effort,
+      },
+      speaker: ChatMessage.getSpeaker({ actor }),
+      flavor: `${actor.name} used ${poolName}`,
+      title: 'Use Pool',
+      actor
+    });
+  }
+
   _deleteItemDialog(itemId, callback) {
     const confirmationDialog = new Dialog({
       title: game.i18n.localize("CSR.dialog.deleteTitle"),
@@ -197,7 +219,7 @@ export class CypherSystemActorSheet extends ActorSheet {
       html.find('.skill-info .actions .roll').click(evt => {
         evt.preventDefault();
 
-        console.log('roll');
+        this._rollItemDialog(selectedSkill.data.data.pool);
       });
 
       html.find('.skill-info .actions .edit').click(evt => {

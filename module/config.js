@@ -29,55 +29,12 @@ CSR.stats = [
   'Intellect',
 ];
 
-CSR.skillLevels = {
-  'i': 'Inability',
-  'u': 'Untrained',
-  't': 'Trained',
-  's': 'Specialized'
-};
-
 CSR.trainingLevels = [
   'Inability',
   'Untrained',
   'Trained',
   'Specialized'
 ];
-
-CSR.types = [
-  {
-    abbrev: 'a',
-    name: 'Arkus',
-  },
-  {
-    abbrev: 'd',
-    name: 'Delve',
-  },
-  {
-    abbrev: 'g',
-    name: 'Glaive',
-  },
-  {
-    abbrev: 'j',
-    name: 'Jack',
-  },
-  {
-    abbrev: 'n',
-    name: 'Nano',
-  },
-  {
-    abbrev: 'w',
-    name: 'Wright',
-  },
-];
-
-CSR.typePowers = {
-  'g': 'Combat Maneuvers',
-  'j': 'Tricks of the Trade',
-  'n': 'Esoteries',
-  'a': 'Precepts',
-  'd': 'Delve Lores',
-  'w': 'Inspired Techniques',
-};
 
 CSR.damageTrack = [
   {
