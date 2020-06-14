@@ -17,6 +17,14 @@
   "CSR.heading.pool": "Pool",
   "CSR.heading.training": "Training",
 
+  "CSR.heading.filter": "Filter",
+
+  "CSR.tooltip.stats": "Stats",
+  "CSR.tooltip.skills": "Skills",
+  "CSR.tooltip.abilities": "Abilities",
+  "CSR.tooltip.equipment": "Equipment",
+  "CSR.tooltip.biography": "Biography",
+
   "CSR.tooltip.roll": "Roll",
   "CSR.tooltip.edit": "Edit",
   "CSR.tooltip.delete": "Delete",
@@ -24,6 +32,6 @@
   "CSR.dialog.deleteTitle": "Confirm Delete",
   "CSR.dialog.deleteContent": "Are you sure you want to delete this item? This action cannot be undone, and some items may not be recoverable.",
   "CSR.dialog.deleteButton": "Delete",
-  
+
   "CSR.dialog.cancelButton": "Cancel"
 }
