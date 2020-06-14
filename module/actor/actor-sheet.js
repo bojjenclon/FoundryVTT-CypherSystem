@@ -222,6 +222,17 @@ export class CypherSystemActorSheet extends ActorSheet {
       return;
     }
 
+    // Hack, for some reason the inner tab's content doesn't show 
+    // when changing primary tabs within the sheet
+    html.find('.item[data-tab="stats"]').click(() => {
+      const selectedSubTab = html.find('.stats-tabs .item.active').first();
+      const selectedSubPage = html.find(`.stats-body .tab[data-tab="${selectedSubTab.data('tab')}"]`);
+
+      setTimeout(() => {
+        selectedSubPage.addClass('active');
+      }, 0);
+    });
+
     this._statsTabListeners(html);
     this._skillsTabListeners(html);
   }
