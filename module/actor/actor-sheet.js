@@ -179,7 +179,11 @@ export class CypherSystemActorSheet extends ActorSheet {
 
       this._onSubmit(evt);
 
-      const el = evt.target;
+      let el = evt.target;
+      // Account for clicking a child element
+      while (!el.dataset.id) {
+        el = el.parentElement;
+      }
       const skillId = el.dataset.id;
 
       const actor = this.actor;
