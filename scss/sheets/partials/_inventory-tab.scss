@@ -1,4 +1,17 @@
 &.inventory {
+  .content {
+    overflow-y: hidden;
+
+    padding-right: 0;
+
+    .inventory {
+      display: flex;
+      flex-direction: column;
+
+      overflow: hidden;
+    }
+  }
+
   .filters {
     display: flex;
     align-items: center;
@@ -20,7 +33,13 @@
     font-size: 1.1em;
   }
 
+  .wrapper {
+    overflow: hidden;
+  }
+
   ul.inventory-list {
+    overflow-y: auto;
+
     margin: 0;
     padding: 0 0 0 0.5em;
 
@@ -44,7 +63,9 @@
   }
 
   .inventory-info {
-    padding-right: 0.5em;
+    overflow-y: auto;
+
+    padding-right: 1em;
 
     > .grid {
       align-items: center;
