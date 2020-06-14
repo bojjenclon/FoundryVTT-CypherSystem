@@ -936,52 +936,58 @@ form.roll-dialog input[type="number"].tier {
 }
 
 /* line 298, scss/sheets/_pc-sheet.scss */
+.cyphersystem .content .sheet-body .tab.skills .add-skill {
+  margin-left: 8px;
+  font-size: 1.1em;
+}
+
+/* line 303, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list {
   margin: 0;
   padding: 0 0 0 0.5em;
 }
 
-/* line 302, scss/sheets/_pc-sheet.scss */
+/* line 307, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 306, scss/sheets/_pc-sheet.scss */
+/* line 311, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li:not(:first-child) {
   margin-top: 8px;
 }
 
-/* line 310, scss/sheets/_pc-sheet.scss */
+/* line 315, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li .icons {
   font-size: 0.8em;
   vertical-align: middle;
 }
 
-/* line 315, scss/sheets/_pc-sheet.scss */
+/* line 320, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li a.active {
   color: #b72020;
 }
 
-/* line 321, scss/sheets/_pc-sheet.scss */
+/* line 326, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info {
   padding-right: 0.5em;
 }
 
-/* line 324, scss/sheets/_pc-sheet.scss */
+/* line 329, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info > .grid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-/* line 328, scss/sheets/_pc-sheet.scss */
+/* line 333, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info .actions {
   margin: 0;
   font-size: 1.1em;
 }
 
-/* line 338, scss/sheets/_pc-sheet.scss */
+/* line 343, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.bio .editor {
   -webkit-box-flex: 1;
       -ms-flex: 1;

@@ -39,6 +39,12 @@ export class CypherSystemActor extends Actor {
     }
   }
 
+  getSkillLevel(skill) {
+    const { data } = skill.data;
+
+    return data.training - 1;
+  }
+
   getEffortCostFromStat(pool, effortLevel) {
     const value = {
       cost: 0,
@@ -51,11 +57,12 @@ export class CypherSystemActor extends Actor {
     }
 
     const actorData = this.data.data;
-    const stat = actorData.stats[pool];
+    const poolName = EnumPools[pool];
+    const stat = actorData.stats[poolName.toLowerCase()];
 
     //The first effort level costs 3 pts from the pool, extra levels cost 2
     //Substract the related Edge, too
-    const availableEffortFromPool = (stat.pool.current + stat.edge - 1) / 2;
+    const availableEffortFromPool = (stat.value + stat.edge - 1) / 2;
 
     //A PC can use as much as their Effort score, but not more
     //They're also limited by their current pool value
@@ -66,7 +73,7 @@ export class CypherSystemActor extends Actor {
 
     let warning = null;
     if (effortLevel > availableEffortFromPool) {
-      warning = `Not enough points in your ${EnumPools[pool]} pool for that level of Effort`;
+      warning = `Not enough points in your ${poolName} pool for that level of Effort`;
     }
 
     value.cost = cost;
@@ -78,8 +85,9 @@ export class CypherSystemActor extends Actor {
 
   canSpendFromPool(pool, amount, applyEdge=true) {
     const actorData = this.data.data;
-    const stat = actorData.stats[pool];
-    const poolAmount = stat.pool.current;
+    const poolName = EnumPools[pool].toLowerCase();
+    const stat = actorData.stats[poolName];
+    const poolAmount = stat.value;
 
     return (applyEdge ? amount - stat.edge : amount) <= poolAmount;
   }
@@ -90,11 +98,11 @@ export class CypherSystemActor extends Actor {
     }
 
     const actorData = this.data.data;
-    const stat = actorData.stats[pool];
+    const poolName = EnumPools[pool];
+    const stat = actorData.stats[poolName.toLowerCase()];
 
     const data = {};
-    const poolName = EnumPools[pool];
-    data[`data.stats.${poolName.toLowerCase()}.pool.current`] = Math.max(0, stat.pool.current - amount);
+    data[`data.stats.${poolName.toLowerCase()}.value`] = Math.max(0, stat.value - amount);
     this.update(data);
 
     return true;

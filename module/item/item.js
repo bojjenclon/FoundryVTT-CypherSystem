@@ -1,5 +1,7 @@
 /* globals Item game */
 
+import { CypherRolls } from '../rolls.js';
+
 import EnumPools from '../enums/enum-pool.js';
 import EnumTraining from '../enums/enum-training.js';
 
@@ -25,6 +27,52 @@ export class CypherSystemItem extends Item {
       this._prepareSkillData();
     }
   }
+
+  /**
+   * Roll
+   */
+
+  _skillRoll() {
+    const actor = this.actor;
+    const actorData = actor.data.data;
+
+    const { name } = this;
+    const item = this.data;
+    const { pool, } = item.data;
+    const assets = actor.getSkillLevel(this);
+    
+    const parts = ['1d20'];
+    if (assets !== 0) {
+      const sign = assets < 0 ? '-' : '+';
+      parts.push(`${sign} ${Math.abs(assets) * 3}`);
+    }
+
+    CypherRolls.Roll({
+      event,
+      parts,
+      data: {
+        pool,
+        abilityCost: 0,
+        maxEffort: actorData.effort,
+        assets
+      },
+      speaker: ChatMessage.getSpeaker({ actor }),
+      flavor: `${actor.name} used ${name}`,
+      title: 'Use Skill',
+      actor
+    });
+  }
+
+  roll() {
+    switch (this.type) {
+      case 'skill':
+        this._skillRoll();
+    }
+  }
+
+  /**
+   * Info
+   */
 
   _skillInfo() {
     const { data } = this;
@@ -58,9 +106,6 @@ export class CypherSystemItem extends Item {
     `;
   }
 
-  /**
-   * Returns specific 
-   */
   get info() {
     switch (this.type) {
       case 'skill':

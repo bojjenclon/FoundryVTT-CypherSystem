@@ -2,6 +2,7 @@
 
 import { CSR } from '../config.js';
 import { CypherRolls } from '../rolls.js';
+import { CypherSystemItem } from '../item/item.js';
 
 import EnumPools from '../enums/enum-pool.js';
 
@@ -115,7 +116,17 @@ export class CypherSystemActorSheet extends ActorSheet {
     return data;
   }
 
-  _rollItemDialog(pool) {
+  _createItem(itemName) {
+    const itemData = {
+      name: `New ${itemName.capitalize()}`,
+      type: itemName,
+      data: new CypherSystemItem({}),
+    };
+
+    this.actor.createOwnedItem(itemData, { renderSheet: true });
+  }
+
+  _rollPoolDialog(pool) {
     const { actor } = this;
     const actorData = actor.data.data;
     const poolName = EnumPools[pool];
@@ -167,6 +178,18 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   _statsTabListeners(html) {
     // Stats Setup
+    html.find('.roll-pool').click(evt => {
+      evt.preventDefault();
+
+      let el = evt.target;
+      while (!el.dataset.pool) {
+        el = el.parentElement;
+      }
+      const { pool } = el.dataset;
+
+      this._rollPoolDialog(parseInt(pool, 10));
+    });
+
     html.find('select[name="data.damageTrack"]').select2({
       theme: 'numenera',
       width: '130px',
@@ -176,6 +199,12 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   _skillsTabListeners(html) {
     // Skills Setup
+    html.find('.add-skill').click(evt => {
+      evt.preventDefault();
+
+      this._createItem('skill');
+    });
+    
     const skillsPoolFilter = html.find('select[name="skillsPoolFilter"]').select2({
       theme: 'numenera',
       width: '130px',
@@ -219,7 +248,8 @@ export class CypherSystemActorSheet extends ActorSheet {
       html.find('.skill-info .actions .roll').click(evt => {
         evt.preventDefault();
 
-        this._rollItemDialog(selectedSkill.data.data.pool);
+        selectedSkill.roll();
+        // this._rollItemDialog(selectedSkill.data.data.pool);
       });
 
       html.find('.skill-info .actions .edit').click(evt => {

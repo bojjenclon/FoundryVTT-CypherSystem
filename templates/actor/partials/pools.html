@@ -3,19 +3,19 @@
   <div class="flexrow" data-stat="{{id}}">
     <div class="flexcol current">
       <div class="pool-action">
-        <a class="roll-pool" data-pool="{{id}}">
-          <label for="data.stats.{{id}}.pool.current">{{toUpperCase id}}</label>
+        <a class="roll-pool" data-pool="{{@index}}">
+          <label for="data.stats.{{id}}.value">{{toUpperCase id}}</label>
           <i class="fas fa-dice-d20"></i>
         </a>
       </div>
   
-      <input name="data.stats.{{id}}.pool.current" type="number" value="{{stat.pool.current}}" data-dtype="Number" min="0"
-        max="{{stat.pool.maximum}}" placeholder="0" />
+      <input name="data.stats.{{id}}.value" type="number" value="{{stat.value}}" data-dtype="Number" min="0"
+        max="{{stat.pool}}" placeholder="0" />
     </div>
     
     <div class="flexcol">
-      <label for="data.stats.{{id}}.pool.maximum">Max</label>
-      <input name="data.stats.{{id}}.pool.maximum" type="number" value="{{stat.pool.maximum}}" class="stats"
+      <label for="data.stats.{{id}}.pool">Max</label>
+      <input name="data.stats.{{id}}.pool" type="number" value="{{stat.pool}}" class="stats"
         data-dtype="Number" min="0" max="99" placeholder="0" />
   
       <label for="data.stats.{{id}}.edge">Edge</label>
