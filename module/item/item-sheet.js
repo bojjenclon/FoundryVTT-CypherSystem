@@ -18,11 +18,7 @@ export class CypherSystemItemSheet extends ItemSheet {
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
         initial: "description"
-      }],
-      scrollY: [
-        '.tab.inventory .inventory-list',
-        '.tab.inventory .inventory-info',
-      ]
+      }]
     });
   }
 

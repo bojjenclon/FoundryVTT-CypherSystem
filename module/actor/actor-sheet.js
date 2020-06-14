@@ -1,4 +1,4 @@
-/* globals mergeObject Dialog */
+/* globals mergeObject Dialog ContextMenu */
 
 import { CSR } from '../config.js';
 import { CypherRolls } from '../rolls.js';
@@ -27,7 +27,11 @@ export class CypherSystemActorSheet extends ActorSheet {
         navSelector: '.stats-tabs',
         contentSelector: '.stats-body',
         initial: 'advancement'
-      }]
+      }],
+      scrollY: [
+        '.tab.inventory .inventory-list',
+        '.tab.inventory .inventory-info',
+      ]
     });
   }
 
@@ -391,11 +395,43 @@ export class CypherSystemActorSheet extends ActorSheet {
   }
 
   _inventoryTabListeners(html) {
-    // Abilities Setup
-    html.find('.add-inventory').click(evt => {
+    // Inventory Setup
+
+    const ctxtMenuEl = html.find('.contextmenu');
+    const addInvBtn = html.find('.add-inventory');
+
+    const menuItems = [];
+    CSR.inventoryTypes.forEach(type => {
+      menuItems.push({
+        name: game.i18n.localize(`CSR.inventory.${type}`),
+        icon: '',
+        callback: () => {
+          this._createItem(type);
+        }
+      });
+    });
+    const ctxtMenuObj = new ContextMenu(html, '.active', menuItems);
+    
+    addInvBtn.click(evt => {
       evt.preventDefault();
 
-      // TODO: Context menu to choose item type
+      // A bit of a hack to ensure the context menu isn't
+      // cut off due to the sheet's content relying on
+      // overflow hidden. Instead, we nest the menu inside
+      // a floating absolutely positioned div, set to overlap
+      // the add inventory item icon.
+      ctxtMenuEl.offset(addInvBtn.offset());
+
+      ctxtMenuObj.render(ctxtMenuEl.find('.container'));
+    });
+
+    html.on('mousedown', evt => {
+      if (evt.target === addInvBtn[0]) {
+        return;
+      }
+
+      // Close the context menu if user clicks anywhere else
+      ctxtMenuObj.close();
     });
 
     const inventoryTypeFilter = html.find('select[name="inventoryTypeFilter"]').select2({

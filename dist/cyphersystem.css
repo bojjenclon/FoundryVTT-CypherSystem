@@ -1216,6 +1216,11 @@ form.roll-dialog input[type="number"].tier {
           flex: 1;
 }
 
+/* line 297, scss/sheets/_pc-sheet.scss */
+.cyphersystem .contextmenu {
+  position: absolute;
+}
+
 /* line 1, scss/sheets/_item-sheet.scss */
 .cyphersystem .item-sheet {
   display: -webkit-box;
