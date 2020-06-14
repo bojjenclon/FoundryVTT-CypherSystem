@@ -15,5 +15,15 @@
   "CSR.placeholder.focus": "Focus",
 
   "CSR.heading.pool": "Pool",
-  "CSR.heading.training": "Training"
+  "CSR.heading.training": "Training",
+
+  "CSR.tooltip.roll": "Roll",
+  "CSR.tooltip.edit": "Edit",
+  "CSR.tooltip.delete": "Delete",
+
+  "CSR.dialog.deleteTitle": "Confirm Delete",
+  "CSR.dialog.deleteContent": "Are you sure you want to delete this item? This action cannot be undone, and some items may not be recoverable.",
+  "CSR.dialog.deleteButton": "Delete",
+  
+  "CSR.dialog.cancelButton": "Cancel"
 }

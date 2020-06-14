@@ -114,12 +114,12 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   _deleteItemDialog(itemId, callback) {
     const confirmationDialog = new Dialog({
-      title: game.i18n.localize("CSR.deleteDialogTitle"),
-      content: `<p>${game.i18n.localize("CSR.deleteDialogContent")}</p><hr />`,
+      title: game.i18n.localize("CSR.dialog.deleteTitle"),
+      content: `<p>${game.i18n.localize("CSR.dialog.deleteContent")}</p><hr />`,
       buttons: {
         confirm: {
           icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize("CSR.deleteButton"),
+          label: game.i18n.localize("CSR.dialog.deleteButton"),
           callback: () => {
             this.actor.deleteOwnedItem(itemId);
 
@@ -130,7 +130,7 @@ export class CypherSystemActorSheet extends ActorSheet {
         },
         cancel: {
           icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize("CSR.cancelButton"),
+          label: game.i18n.localize("CSR.dialog.cancelButton"),
           callback: () => {
             if (callback) {
               callback(false);

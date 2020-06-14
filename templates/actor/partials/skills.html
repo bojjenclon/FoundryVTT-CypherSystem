@@ -29,7 +29,7 @@
     <ul class="skill-list">
       {{#each data.items.skills as |skill|}}
       <li class="no-pip">
-        <a class="skill {{#if (eq skill._id ../selectedSkill._id)}}active{{/if}}" data-id="{{skill._id}}"><span class='monospace icons'>{{{trainingIcon skill.data.training}}}{{{poolIcon skill.data.pool}}}</span> {{skill.name}}</a>
+        <a class="skill {{#if (eq skill._id ../selectedSkill._id)}}active{{/if}}" data-id="{{skill._id}}"><span class='monospace icons'>{{{poolIcon skill.data.pool}}}{{{trainingIcon skill.data.training}}}</span> {{skill.name}}</a>
       </li>
       {{/each}}
     </ul>
