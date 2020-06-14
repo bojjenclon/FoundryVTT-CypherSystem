@@ -28,6 +28,9 @@ export const preloadHandlebarsTemplates = async() => {
       "systems/cyphersystemClean/templates/actor/partials/info/armor-info.html",
       "systems/cyphersystemClean/templates/actor/partials/info/weapon-info.html",
       "systems/cyphersystemClean/templates/actor/partials/info/gear-info.html",
+      "systems/cyphersystemClean/templates/actor/partials/info/cypher-info.html",
+      "systems/cyphersystemClean/templates/actor/partials/info/artifact-info.html",
+      "systems/cyphersystemClean/templates/actor/partials/info/oddity-info.html",
 
       //Item Sheets
       "systems/cyphersystemClean/templates/item/item-sheet.html",
@@ -35,6 +38,9 @@ export const preloadHandlebarsTemplates = async() => {
       "systems/cyphersystemClean/templates/item/armor-sheet.html",
       "systems/cyphersystemClean/templates/item/weapon-sheet.html",
       "systems/cyphersystemClean/templates/item/gear-sheet.html",
+      "systems/cyphersystemClean/templates/item/cypher-sheet.html",
+      "systems/cyphersystemClean/templates/item/artifact-sheet.html",
+      "systems/cyphersystemClean/templates/item/oddity-sheet.html",
   ];
 
   // Load the template parts
