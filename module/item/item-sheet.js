@@ -12,8 +12,8 @@ export class CypherSystemItemSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["cyphersystem", "sheet", "item"],
-      width: 520,
-      height: 480,
+      width: 500,
+      height: 500,
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
@@ -30,12 +30,29 @@ export class CypherSystemItemSheet extends ItemSheet {
 
   /* -------------------------------------------- */
 
+  _skillData(data) {
+    data.stats = CSR.stats;
+    data.trainingLevels = CSR.trainingLevels;
+  }
+
+  _abilityData(data) {
+    data.data.ranges = CSR.optionalRanges;
+    data.data.stats = CSR.stats;
+  }
+
   /** @override */
   getData() {
     const data = super.getData();
 
-    data.stats = CSR.stats;
-    data.trainingLevels = CSR.trainingLevels;
+    const { type } = this.item.data;
+    switch (type) {
+      case 'skill':
+        this._skillData(data);
+        break;
+      case 'ability':
+        this._abilityData(data);
+        break;
+    }
 
     return data;
   }
@@ -54,6 +71,8 @@ export class CypherSystemItemSheet extends ItemSheet {
   /* -------------------------------------------- */
 
   _skillListeners(html) {
+    html.closest('.window-app.sheet.item').addClass('skill-window');
+
     html.find('select[name="data.stat"]').select2({
       theme: 'numenera',
       width: '110px',
@@ -64,6 +83,38 @@ export class CypherSystemItemSheet extends ItemSheet {
       theme: 'numenera',
       width: '110px',
       minimumResultsForSearch: Infinity
+    });
+  }
+
+  _abilityListeners(html) {
+    html.closest('.window-app.sheet.item').addClass('ability-window');
+
+    html.find('select[name="data.isEnabler"]').select2({
+      theme: 'numenera',
+      width: '220px',
+      minimumResultsForSearch: Infinity
+    });
+
+    html.find('select[name="data.cost.pool"]').select2({
+      theme: 'numenera',
+      width: '85px',
+      minimumResultsForSearch: Infinity
+    });
+
+    html.find('select[name="data.range"]').select2({
+      theme: 'numenera',
+      width: '120px',
+      minimumResultsForSearch: Infinity
+    });
+
+    const cbIdentified = html.find('#cb-identified');
+    cbIdentified.on('change', (ev) => {
+      ev.preventDefault();
+      ev.stopPropagation();
+
+      this.item.update({
+        'data.identified': ev.target.checked
+      });
     });
   }
 
@@ -78,7 +129,11 @@ export class CypherSystemItemSheet extends ItemSheet {
     const { type } = this.item.data;
     switch (type) {
       case 'skill':
-        return this._skillListeners(html);
+        this._skillListeners(html);
+        break;
+      case 'ability':
+        this._abilityListeners(html);
+        break;
     }
   }
 }

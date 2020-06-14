@@ -20,6 +20,10 @@ export const preloadHandlebarsTemplates = async() => {
       "systems/cyphersystemClean/templates/actor/partials/recovery.html",
 
       "systems/cyphersystemClean/templates/actor/partials/skills.html",
+      "systems/cyphersystemClean/templates/actor/partials/abilities.html",
+
+      "systems/cyphersystemClean/templates/actor/partials/info/skill-info.html",
+      "systems/cyphersystemClean/templates/actor/partials/info/ability-info.html",
 
       //Item Sheets
       "systems/cyphersystemClean/templates/item/item-sheet.html",

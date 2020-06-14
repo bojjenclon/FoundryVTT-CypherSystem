@@ -3,6 +3,7 @@
 import { CSR } from '../config.js';
 import { CypherRolls } from '../rolls.js';
 import { CypherSystemItem } from '../item/item.js';
+import { deepProp } from '../utils.js';
 
 import EnumPools from '../enums/enum-pool.js';
 
@@ -46,6 +47,9 @@ export class CypherSystemActorSheet extends ActorSheet {
     this.skillsPoolFilter = -1;
     this.skillsTrainingFilter = -1;
     this.selectedSkill = null;
+
+    this.abilityPoolFilter = -1;
+    this.selectedAbility = null;
   }
 
   _generateItemData(data, type, field) {
@@ -57,11 +61,47 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   _filterItemData(data, itemField, filterField, filterValue) {
     const items = data.data.items;
-    items[itemField] = items[itemField].filter(itm => itm.data[filterField] === filterValue);
+    items[itemField] = items[itemField].filter(itm => deepProp(itm.data, filterField) === filterValue);
+  }
+
+  async _skillData(data) {
+    this._generateItemData(data, 'skill', 'skills');
+
+    data.skillsPoolFilter = this.skillsPoolFilter;
+    data.skillsTrainingFilter = this.skillsTrainingFilter;
+
+    if (data.skillsPoolFilter > -1) {
+      this._filterItemData(data, 'skills', 'pool', parseInt(data.skillsPoolFilter, 10));
+    }
+    if (data.skillsTrainingFilter > -1) {
+      this._filterItemData(data, 'skills', 'training', parseInt(data.skillsTrainingFilter, 10));
+    }
+
+    data.selectedSkill = this.selectedSkill;
+    data.skillInfo = '';
+    if (data.selectedSkill) {
+      data.skillInfo = await data.selectedSkill.getInfo();
+    }
+  }
+
+  async _abilityData(data) {
+    this._generateItemData(data, 'ability', 'abilities');
+
+    data.abilityPoolFilter = this.abilityPoolFilter;
+
+    if (data.abilityPoolFilter > -1) {
+      this._filterItemData(data, 'abilities', 'cost.pool', parseInt(data.abilityPoolFilter, 10));
+    }
+
+    data.selectedAbility = this.selectedAbility;
+    data.abilityInfo = '';
+    if (data.selectedAbility) {
+      data.abilityInfo = await data.selectedAbility.getInfo();
+    }
   }
 
   /** @override */
-  getData() {
+  async getData() {
     const data = super.getData();
     
     data.isGM = game.user.isGM;
@@ -98,20 +138,8 @@ export class CypherSystemActorSheet extends ActorSheet {
 
     data.data.items = data.actor.items || {};
 
-    this._generateItemData(data, 'skill', 'skills');
-
-    data.skillsPoolFilter = this.skillsPoolFilter;
-    data.skillsTrainingFilter = this.skillsTrainingFilter;
-
-    if (data.skillsPoolFilter > -1) {
-      this._filterItemData(data, 'skills', 'pool', parseInt(data.skillsPoolFilter, 10));
-    }
-    if (data.skillsTrainingFilter > -1) {
-      this._filterItemData(data, 'skills', 'training', parseInt(data.skillsTrainingFilter, 10));
-    }
-
-    data.selectedSkill = this.selectedSkill;
-    data.skillInfo = data.selectedSkill ? this.selectedSkill.info : '';
+    await this._skillData(data);
+    await this._abilityData(data);
 
     return data;
   }
@@ -270,6 +298,69 @@ export class CypherSystemActorSheet extends ActorSheet {
     }
   }
 
+  _abilityTabListeners(html) {
+    // Abilities Setup
+    html.find('.add-ability').click(evt => {
+      evt.preventDefault();
+
+      this._createItem('ability');
+    });
+
+    const abilityPoolFilter = html.find('select[name="abilityPoolFilter"]').select2({
+      theme: 'numenera',
+      width: '130px',
+      minimumResultsForSearch: Infinity
+    });
+    abilityPoolFilter.on('change', evt => {
+      this.abilityPoolFilter = evt.target.value;
+    });
+
+    const abilities = html.find('a.ability');
+
+    abilities.on('click', evt => {
+      evt.preventDefault();
+
+      this._onSubmit(evt);
+
+      let el = evt.target;
+      // Account for clicking a child element
+      while (!el.dataset.id) {
+        el = el.parentElement;
+      }
+      const abilityId = el.dataset.id;
+
+      const actor = this.actor;
+      const ability = actor.getOwnedItem(abilityId);
+
+      this.selectedAbility = ability;
+    });
+
+    const { selectedAbility } = this;
+    if (selectedAbility) {
+      html.find('.ability-info .actions .roll').click(evt => {
+        evt.preventDefault();
+
+        selectedAbility.roll();
+      });
+
+      html.find('.ability-info .actions .edit').click(evt => {
+        evt.preventDefault();
+
+        this.selectedAbility.sheet.render(true);
+      });
+
+      html.find('.ability-info .actions .delete').click(evt => {
+        evt.preventDefault();
+
+        this._deleteItemDialog(this.selectedAbility._id, didDelete => {
+          if (didDelete) {
+            this.selectedAbility = null;
+          }
+        });
+      });
+    }
+  }
+
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
@@ -291,5 +382,6 @@ export class CypherSystemActorSheet extends ActorSheet {
 
     this._statsTabListeners(html);
     this._skillsTabListeners(html);
+    this._abilityTabListeners(html);
   }
 }

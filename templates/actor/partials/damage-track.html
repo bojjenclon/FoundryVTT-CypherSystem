@@ -1,8 +1,8 @@
 <div class="damage">
-  <select name="data.damageTrack">
+  <select name="data.damageTrack" data-dtype="Number">
     {{#select data.damageTrack}}
     {{#each damageTrackData as |track id|}}
-    <option value="{{id}}" data-dtype="Number">{{this.label}}</option>
+    <option value="{{id}}">{{this.label}}</option>
     {{/each}}
     {{/select}}
   </select>

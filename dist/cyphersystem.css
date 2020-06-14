@@ -39,11 +39,6 @@ body {
   cursor: pointer;
 }
 
-/* line 14, scss/global/_window.scss */
-.sheet-container {
-  padding: 4px;
-}
-
 /* line 1, scss/global/_grid.scss */
 .grid,
 .grid-2col {
@@ -184,7 +179,7 @@ body {
 /* line 2, scss/global/_select2.scss */
 .select2-container--numenera .select2-selection--single {
   background: rgba(0, 0, 0, 0.05);
-  border: 1px solid #aaa;
+  border: 1px solid #7a7971;
   border-radius: 4px;
 }
 
@@ -935,7 +930,7 @@ form.roll-dialog input[type="number"].tier {
   font-size: 1.2em;
 }
 
-/* line 282, scss/sheets/_pc-sheet.scss */
+/* line 2, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .filters {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -948,7 +943,7 @@ form.roll-dialog input[type="number"].tier {
           justify-content: flex-end;
 }
 
-/* line 287, scss/sheets/_pc-sheet.scss */
+/* line 7, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .filters strong {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
@@ -956,72 +951,150 @@ form.roll-dialog input[type="number"].tier {
   margin-right: 1em;
 }
 
-/* line 293, scss/sheets/_pc-sheet.scss */
+/* line 13, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .filters > span {
   margin-right: 4px;
 }
 
-/* line 298, scss/sheets/_pc-sheet.scss */
+/* line 18, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .add-skill {
   margin-left: 8px;
   font-size: 1.1em;
 }
 
-/* line 303, scss/sheets/_pc-sheet.scss */
+/* line 23, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list {
   margin: 0;
   padding: 0 0 0 0.5em;
 }
 
-/* line 307, scss/sheets/_pc-sheet.scss */
+/* line 27, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 311, scss/sheets/_pc-sheet.scss */
+/* line 31, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li:not(:first-child) {
   margin-top: 8px;
 }
 
-/* line 315, scss/sheets/_pc-sheet.scss */
+/* line 35, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li .icons {
   font-size: 0.8em;
   vertical-align: middle;
 }
 
-/* line 320, scss/sheets/_pc-sheet.scss */
+/* line 40, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li a.active {
   color: #b72020;
 }
 
-/* line 326, scss/sheets/_pc-sheet.scss */
+/* line 46, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info {
   padding-right: 0.5em;
 }
 
-/* line 329, scss/sheets/_pc-sheet.scss */
+/* line 49, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info > .grid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-/* line 333, scss/sheets/_pc-sheet.scss */
+/* line 53, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info .actions {
   margin: 0;
   font-size: 1.1em;
 }
 
-/* line 343, scss/sheets/_pc-sheet.scss */
+/* line 2, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 7, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities .filters strong {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-right: 1em;
+}
+
+/* line 13, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities .filters > span {
+  margin-right: 4px;
+}
+
+/* line 18, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities .add-ability {
+  margin-left: 8px;
+  font-size: 1.1em;
+}
+
+/* line 23, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities ul.ability-list {
+  margin: 0;
+  padding: 0 0 0 0.5em;
+}
+
+/* line 27, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities ul.ability-list li {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* line 31, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities ul.ability-list li:not(:first-child) {
+  margin-top: 8px;
+}
+
+/* line 35, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities ul.ability-list li .icons {
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* line 40, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities ul.ability-list li a.active {
+  color: #b72020;
+}
+
+/* line 46, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities .ability-info {
+  padding-right: 0.5em;
+}
+
+/* line 49, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities .ability-info > .grid {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 53, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities .ability-info .actions {
+  margin: 0;
+  font-size: 1.1em;
+}
+
+/* line 286, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.bio .editor {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 1, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet {
+/* line 1, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1030,26 +1103,27 @@ form.roll-dialog input[type="number"].tier {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 100%;
+  padding: 4px;
 }
 
-/* line 7, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet hr {
+/* line 9, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet hr {
   width: 100%;
 }
 
-/* line 11, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet label {
+/* line 13, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet label {
   font-size: 1.1em;
   font-weight: bold;
 }
 
-/* line 16, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet > .flexrow {
+/* line 18, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet > .flexrow {
   height: 100%;
 }
 
-/* line 20, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet .profile-img {
+/* line 22, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet .profile-img {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;
@@ -1057,44 +1131,65 @@ form.roll-dialog input[type="number"].tier {
   height: auto;
 }
 
-/* line 26, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet .lhs {
+/* line 28, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet .lhs {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 25%;
           flex: 0 1 25%;
   margin-right: 1em;
 }
 
-/* line 32, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet .rhs {
+/* line 34, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet .rhs {
   height: 100%;
   padding: 8px;
 }
 
-/* line 37, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet .rhs div:not(:last-child),
-.cyphersystem .skill-sheet .rhs hr {
+/* line 39, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet .rhs div:not(:last-child),
+.cyphersystem .item-sheet .rhs hr {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;
 }
 
-/* line 42, scss/sheets/_skill-sheet.scss */
-.cyphersystem .skill-sheet .rhs .grid {
+/* line 44, scss/sheets/_item-sheet.scss */
+.cyphersystem .item-sheet .rhs .grid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-/* line 47, scss/sheets/_skill-sheet.scss */
+/* line 8, scss/sheets/_skill-sheet.scss */
 .cyphersystem .skill-sheet .desc-wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 50, scss/sheets/_skill-sheet.scss */
+/* line 11, scss/sheets/_skill-sheet.scss */
 .cyphersystem .skill-sheet .desc-wrapper label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 4px;
+}
+
+/* line 1, scss/sheets/_ability-sheet.scss */
+.cyphersystem.ability-window {
+  min-width: 550px;
+  min-height: 575px;
+}
+
+/* line 7, scss/sheets/_ability-sheet.scss */
+.cyphersystem .ability-sheet .desc-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 10, scss/sheets/_ability-sheet.scss */
+.cyphersystem .ability-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;

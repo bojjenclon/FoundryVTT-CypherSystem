@@ -1,4 +1,4 @@
-/* globals Item game */
+/* globals Item renderTemplate */
 
 import { CypherRolls } from '../rolls.js';
 
@@ -38,7 +38,7 @@ export class CypherSystemItem extends Item {
 
     const { name } = this;
     const item = this.data;
-    const { pool, } = item.data;
+    const { pool } = item.data;
     const assets = actor.getSkillLevel(this);
     
     const parts = ['1d20'];
@@ -63,10 +63,56 @@ export class CypherSystemItem extends Item {
     });
   }
 
+  _abilityRoll() {
+    const actor = this.actor;
+    const actorData = actor.data.data;
+
+    const { name } = this;
+    const item = this.data;
+    const { isEnabler, cost } = item.data;
+
+    if (!isEnabler) {
+      const { pool } = cost;
+
+      if (actor.canSpendFromPool(pool, parseInt(cost.amount, 10))) {
+        CypherRolls.Roll({
+          event,
+          parts: ['1d20'],
+          data: {
+            pool,
+            abilityCost: cost.amount,
+            maxEffort: actorData.effort
+          },
+          speaker: ChatMessage.getSpeaker({ actor }),
+          flavor: `${actor.name} used ${name}`,
+          title: 'Use Ability',
+          actor
+        });
+      } else {
+        const poolName = EnumPools[pool];
+        ChatMessage.create([{
+          speaker: ChatMessage.getSpeaker({ actor }),
+          flavor: 'Ability Failed',
+          content: `Not enough points in ${poolName} pool.`
+        }]);
+      }
+    } else {
+      ChatMessage.create([{
+        speaker: ChatMessage.getSpeaker({ actor }),
+        flavor: 'Invalid Ability',
+        content: `This ability is an Enabler and cannot be rolled for.`
+      }]);
+    }
+  }
+
   roll() {
     switch (this.type) {
       case 'skill':
         this._skillRoll();
+        break;
+      case 'ability':
+        this._abilityRoll();
+        break;
     }
   }
 
@@ -74,44 +120,51 @@ export class CypherSystemItem extends Item {
    * Info
    */
 
-  _skillInfo() {
+  async _skillInfo() {
     const { data } = this;
 
     const training = EnumTraining[data.data.training];
     const pool = EnumPools[data.data.pool];
 
-    const i18nTraining = game.i18n.localize(`CSR.training.${training.toLowerCase()}`);
-    const i18nPool = game.i18n.localize(`CSR.pool.${pool.toLowerCase()}`);
+    const params = {
+      name: data.name,
+      training: training.toLowerCase(),
+      pool: pool.toLowerCase(),
+      notes: data.data.notes,
+    };
+    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/skill-info.html', params);
 
-    const i18nRoll = game.i18n.localize('CSR.tooltip.roll');
-    const i18nEdit = game.i18n.localize('CSR.tooltip.edit');
-    const i18nDelete = game.i18n.localize('CSR.tooltip.delete');
-
-    return `
-      <h2>${data.name}</h2>
-      <div class="grid grid-3col">
-        <strong class="text-left">${i18nTraining}</strong>
-        <strong class="text-center">${i18nPool}</strong>
-        <div class="text-center">
-          <div class="grid grid-3col actions">
-            <a class="roll" title="${i18nRoll}"><i class="fas fa-dice-d20"></i></a>
-            <a class="edit" title="${i18nEdit}"><i class="fas fa-edit"></i></a>
-            <a class="delete" title="${i18nDelete}"><i class="fas fa-trash"></i></a>
-          </div>
-        </div>
-      </div>
-      
-      <hr>
-      <p>${data.data.notes}</p>
-    `;
+    return html;
   }
 
-  get info() {
+  async _abilityInfo() {
+    const { data } = this;
+
+    const pool = EnumPools[data.data.cost.pool];
+
+    const params = {
+      name: data.name,
+      pool: pool.toLowerCase(),
+      isEnabler: data.data.isEnabler,
+      notes: data.data.notes,
+    };
+    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/ability-info.html', params);
+
+    return html;
+  }
+
+  async getInfo() {
+    let html = '';
+
     switch (this.type) {
       case 'skill':
-        return this._skillInfo();
+        html = await this._skillInfo();
+        break;
+      case 'ability':
+        html = await this._abilityInfo();
+        break;
     }
 
-    return '';
+    return html;
   }
 }

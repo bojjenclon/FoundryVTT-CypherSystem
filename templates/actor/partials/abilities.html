@@ -1,0 +1,33 @@
+<div class="abilities">
+  <div class="filters">
+    <strong>{{localize "CSR.heading.filter"}}</strong>
+
+    <select name="abilityPoolFilter" data-dtype="Number">
+      <option value="-1" data-dtype="Number">{{localize "CSR.heading.pool"}}</option>
+
+      {{#select abilityPoolFilter}}
+      {{#each stats as |stat idx|}}
+      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.pool." (toLowerCase this))}}</option>
+      {{/each}}
+      {{/select}}
+    </select>
+
+    <a class="add-ability"><i class="fas fa-plus"></i></a>
+  </div>
+
+  <hr>
+
+  <div class="grid">
+    <ul class="ability-list">
+      {{#each data.items.abilities as |ability|}}
+      <li class="no-pip">
+        <a class="ability {{#if (eq ability._id ../selectedAbility._id)}}active{{/if}}" data-id="{{ability._id}}"><span class='monospace icons'>{{{poolIcon ability.data.cost.pool}}}</span> {{ability.name}}</a>
+      </li>
+      {{/each}}
+    </ul>
+
+    <div class="ability-info">
+      {{{abilityInfo}}}
+    </div>
+  </div>
+</div>

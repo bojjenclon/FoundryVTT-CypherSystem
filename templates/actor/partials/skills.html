@@ -2,7 +2,7 @@
   <div class="filters">
     <strong>{{localize "CSR.heading.filter"}}</strong>
 
-    <select name="skillsPoolFilter">
+    <select name="skillsPoolFilter" data-dtype="Number">
       <option value="-1" data-dtype="Number">{{localize "CSR.heading.pool"}}</option>
 
       {{#select skillsPoolFilter}}
@@ -12,7 +12,7 @@
       {{/select}}
     </select>
 
-    <select name="skillsTrainingFilter">
+    <select name="skillsTrainingFilter" data-dtype="Number">
       <option value="-1" data-dtype="Number">{{localize "CSR.heading.training"}}</option>
 
       {{#select skillsTrainingFilter}}

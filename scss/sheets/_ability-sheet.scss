@@ -1,10 +1,9 @@
-.skill-sheet {
-  // .rhs {
-  //   .grid {
-  //     align-items: center;
-  //   }
-  // }
+&.ability-window {
+  min-width: 550px;
+  min-height: 575px;
+}
 
+.ability-sheet {
   .desc-wrapper {
     flex: 1;
 
