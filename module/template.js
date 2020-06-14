@@ -23,6 +23,7 @@ export const preloadHandlebarsTemplates = async() => {
 
       //Item Sheets
       "systems/cyphersystemClean/templates/item/item-sheet.html",
+      "systems/cyphersystemClean/templates/item/skill-sheet.html",
   ];
 
   // Load the template parts

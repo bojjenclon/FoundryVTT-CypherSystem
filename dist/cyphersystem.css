@@ -2,21 +2,26 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 /* line 6, scss/utils/_typography.scss */
+body {
+  font-size: 14px;
+}
+
+/* line 10, scss/utils/_typography.scss */
 .monospace {
   font-family: monospace, monospace;
 }
 
-/* line 10, scss/utils/_typography.scss */
+/* line 14, scss/utils/_typography.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 14, scss/utils/_typography.scss */
+/* line 18, scss/utils/_typography.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 18, scss/utils/_typography.scss */
+/* line 22, scss/utils/_typography.scss */
 .text-right {
   text-align: right;
 }
@@ -32,6 +37,11 @@
   color: #000;
   text-shadow: 0 0 10px red;
   cursor: pointer;
+}
+
+/* line 14, scss/global/_window.scss */
+.sheet-container {
+  padding: 4px;
 }
 
 /* line 1, scss/global/_grid.scss */
@@ -159,6 +169,16 @@
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   height: 0;
+}
+
+/* line 16, scss/global/_flex.scss */
+.flex-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 /* line 2, scss/global/_select2.scss */
@@ -397,6 +417,12 @@ form.roll-dialog input[type="number"].tier {
 /* line 100, scss/components/_forms.scss */
 .cyphersystem li.no-pip {
   list-style-type: none;
+}
+
+/* line 104, scss/components/_forms.scss */
+.cyphersystem h1 input[type="text"] {
+  height: auto;
+  margin-bottom: 0.25em;
 }
 
 /* line 1, scss/components/_resource.scss */
@@ -992,4 +1018,85 @@ form.roll-dialog input[type="number"].tier {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+}
+
+/* line 1, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+}
+
+/* line 7, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet hr {
+  width: 100%;
+}
+
+/* line 11, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet label {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+/* line 16, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet > .flexrow {
+  height: 100%;
+}
+
+/* line 20, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet .profile-img {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  width: 100%;
+  height: auto;
+}
+
+/* line 26, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet .lhs {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 25%;
+          flex: 0 1 25%;
+  margin-right: 1em;
+}
+
+/* line 32, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet .rhs {
+  height: 100%;
+  padding: 8px;
+}
+
+/* line 37, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet .rhs div:not(:last-child),
+.cyphersystem .skill-sheet .rhs hr {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+}
+
+/* line 42, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet .rhs .grid {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 47, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet .desc-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 50, scss/sheets/_skill-sheet.scss */
+.cyphersystem .skill-sheet .desc-wrapper label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 4px;
 }

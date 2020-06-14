@@ -1,0 +1,56 @@
+.skill-sheet {
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+
+  hr {
+    width: 100%;
+  }
+
+  label {
+    font-size: 1.1em;
+    font-weight: bold;
+  }
+
+  > .flexrow {
+    height: 100%;
+  }
+
+  .profile-img {
+    flex: 0 1 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .lhs {
+    flex: 0 1 25%;
+
+    margin-right: 1em;
+  }
+
+  .rhs {
+    height: 100%;
+
+    padding: 8px;
+
+    div:not(:last-child),
+    hr {
+      flex: 0 1 0;
+    }
+
+    .grid {
+      align-items: center;
+    }
+  }
+
+  .desc-wrapper {
+    flex: 1;
+
+    label {
+      flex: 0 1 0;
+
+      margin-bottom: 4px;
+    }
+  }
+}

@@ -100,3 +100,8 @@ textarea:focus {
 li.no-pip {
   list-style-type: none;
 }
+
+h1 input[type="text"] {
+  height: auto;
+  margin-bottom: 0.25em;
+}
