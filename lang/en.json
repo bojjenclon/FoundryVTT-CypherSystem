@@ -38,6 +38,9 @@
   "CSR.placeholder.armorName": "Armor Name",
   "CSR.placeholder.weaponName": "Weapon Name",
   "CSR.placeholder.gearName": "Gear Name",
+  "CSR.placeholder.cypherName": "Cypher Name",
+  "CSR.placeholder.artifactName": "Artifact Name",
+  "CSR.placeholder.oddityName": "Oddity Name",
 
   "CSR.heading.pool": "Pool",
   "CSR.heading.training": "Training",
@@ -53,6 +56,11 @@
   "CSR.heading.damage": "Damage",
   "CSR.heading.range": "Range",
   "CSR.heading.weaponCategory": "Category",
+  "CSR.heading.identified": "Identified",
+  "CSR.heading.level": "Level",
+  "CSR.heading.form": "Form",
+  "CSR.heading.effect": "Effect",
+  "CSR.heading.depletion": "Depletion",
 
   "CSR.tooltip.stats": "Stats",
   "CSR.tooltip.skills": "Skills",

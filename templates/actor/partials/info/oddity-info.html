@@ -1,0 +1,16 @@
+<h2>{{name}}</h2>
+
+<div class="grid">
+  <strong class="text-left">{{localize (concat 'CSR.inventory.' type)}}</strong>
+  <div class="text-right">
+    <div class="actions">
+      <a class="edit" title="{{localize 'CSR.tooltip.edit'}}"><i class="fas fa-edit"></i></a>
+      <a class="delete" title="{{localize 'CSR.tooltip.delete'}}"><i class="fas fa-trash"></i></a>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<strong>{{localize 'CSR.heading.description'}}</strong>
+<p>{{notes}}</p>

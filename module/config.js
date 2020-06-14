@@ -98,3 +98,8 @@ CSR.supportsMacros = [
   'skill',
   'ability'
 ];
+
+CSR.hasLevelDie = [
+  'cypher',
+  'artifact'
+];

@@ -216,6 +216,56 @@ export class CypherSystemItem extends Item {
     return html;
   }
 
+  async _cypherInfo() {
+    const { data } = this;
+
+    const params = {
+      name: data.name,
+      type: this.type,
+      isGM: game.user.isGM,
+      identified: data.data.identified,
+      level: data.data.level,
+      form: data.data.form,
+      effect: data.data.effect,
+    };
+    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/cypher-info.html', params);
+
+    return html;
+  }
+
+  async _artifactInfo() {
+    const { data } = this;
+
+    const params = {
+      name: data.name,
+      type: this.type,
+      isGM: game.user.isGM,
+      identified: data.data.identified,
+      level: data.data.level,
+      form: data.data.form,
+      isDepleting: data.data.depletion.isDepleting,
+      depletionThreshold: data.data.depletion.threshold,
+      depletionDie: data.data.depletion.die,
+      effect: data.data.effect,
+    };
+    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/artifact-info.html', params);
+
+    return html;
+  }
+
+  async _oddityInfo() {
+    const { data } = this;
+
+    const params = {
+      name: data.name,
+      type: this.type,
+      notes: data.data.notes,
+    };
+    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/oddity-info.html', params);
+
+    return html;
+  }
+
   async getInfo() {
     let html = '';
 
@@ -234,6 +284,15 @@ export class CypherSystemItem extends Item {
         break;
       case 'gear':
         html = await this._gearInfo();
+        break;
+      case 'cypher':
+        html = await this._cypherInfo();
+        break;
+      case 'artifact':
+        html = await this._artifactInfo();
+        break;
+      case 'oddity':
+        html = await this._oddityInfo();
         break;
     }
 

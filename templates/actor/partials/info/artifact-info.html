@@ -1,0 +1,52 @@
+<h2>{{name}}</h2>
+
+<div class="grid grid-col">
+  <strong class="text-left">{{localize (concat 'CSR.inventory.' type)}}</strong>
+  <div class="text-right">
+    <div class="actions">
+      <a class="edit" title="{{localize 'CSR.tooltip.edit'}}"><i class="fas fa-edit"></i></a>
+      <a class="delete" title="{{localize 'CSR.tooltip.delete'}}"><i class="fas fa-trash"></i></a>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.identified'}}</strong>
+  <div class='text-right'>{{#if identified}}{{localize 'CSR.yes'}}{{else}}{{localize 'CSR.no'}}{{/if}}</div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.level'}}</strong>
+  <div class='text-right'>{{#if (or identified isGM)}}{{level}}{{else}}?{{/if}}</div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.form'}}</strong>
+  <div class='text-right'>{{#if (or identified isGM)}}{{form}}{{else}}?{{/if}}</div>
+</div>
+
+<hr>
+
+{{#if isDepleting}}
+<div class="grid">
+  <strong>{{localize 'CSR.heading.depletion'}}</strong>
+  <div class='text-right'>
+    {{#if (or identified isGM)}}
+    {{depletionThreshold}} in {{depletionDie}}
+    {{else}}
+    ?
+    {{/if}}
+  </div>
+</div>
+
+<hr>
+{{/if}}
+
+<strong>{{localize 'CSR.heading.effect'}}</strong>
+<p>{{effect}}</p>

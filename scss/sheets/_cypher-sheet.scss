@@ -1,0 +1,16 @@
+&.cypher-window {
+  min-width: 525px;
+  min-height: 475px;
+}
+
+.cypher-sheet {
+  .desc-wrapper {
+    flex: 1;
+
+    label {
+      flex: 0 1 0;
+
+      margin-bottom: 4px;
+    }
+  }
+}

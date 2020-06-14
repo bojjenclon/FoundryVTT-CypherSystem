@@ -1,6 +1,7 @@
 /* global Actor:false */
 
 import EnumPools from '../enums/enum-pool.js';
+import { CSR } from '../config.js';
 
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
@@ -108,4 +109,33 @@ export class CypherSystemActor extends Actor {
     return true;
   }
 
+  /**
+   * @override
+   */
+  async createEmbeddedEntity(...args) {
+    const [_, data] = args;
+
+    // Roll the "level die" to determine the item's level, if possible
+    if (data.data && CSR.hasLevelDie.includes(data.type)) {
+      const itemData = data.data;
+
+      if (!itemData.level && itemData.levelDie) {
+        try {
+          // See if the formula is valid
+          itemData.level = new Roll(itemData.levelDie).roll().total;
+          await this.update({
+            _id: this._id,
+            "data.level": itemData.level,
+          });
+        } catch (e) {
+          // If not, fallback to sane default
+          itemData.level = itemData.level || null;
+        }
+      } else {
+        itemData.level = itemData.level || null;
+      }
+    }
+
+    return super.createEmbeddedEntity(...args);
+  }
 }

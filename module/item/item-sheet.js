@@ -18,7 +18,10 @@ export class CypherSystemItemSheet extends ItemSheet {
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
         initial: "description"
-      }]
+      }],
+      scrollY: [
+        '.tab.inventory .inventory-list'
+      ]
     });
   }
 
@@ -51,7 +54,18 @@ export class CypherSystemItemSheet extends ItemSheet {
   }
 
   _gearData(data) {
+  }
 
+  _cypherData(data) {
+    data.isGM = game.user.isGM;
+  }
+
+  _artifactData(data) {
+    data.isGM = game.user.isGM;
+  }
+
+  _oddityData(data) {
+    data.isGM = game.user.isGM;
   }
 
   /** @override */
@@ -74,6 +88,15 @@ export class CypherSystemItemSheet extends ItemSheet {
         break;
       case 'gear':
         this._gearData(data);
+        break;
+      case 'cypher':
+        this._cypherData(data);
+        break;
+      case 'artifact':
+        this._artifactData(data);
+        break;
+      case 'oddity':
+        this._oddityData(data);
         break;
     }
 
@@ -177,6 +200,18 @@ export class CypherSystemItemSheet extends ItemSheet {
     html.closest('.window-app.sheet.item').addClass('gear-window');
   }
 
+  _cypherListeners(html) {
+    html.closest('.window-app.sheet.item').addClass('cypher-window');
+  }
+
+  _artifactListeners(html) {
+    html.closest('.window-app.sheet.item').addClass('artifact-window');
+  }
+
+  _oddityListeners(html) {
+    html.closest('.window-app.sheet.item').addClass('oddity-window');
+  }
+
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
@@ -201,6 +236,15 @@ export class CypherSystemItemSheet extends ItemSheet {
         break;
       case 'gear':
         this._gearListeners(html);
+        break;
+      case 'cypher':
+        this._cypherListeners(html);
+        break;
+      case 'artifact':
+        this._artifactListeners(html);
+        break;
+      case 'oddity':
+        this._oddityListeners(html);
         break;
     }
   }

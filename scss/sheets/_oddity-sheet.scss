@@ -1,0 +1,16 @@
+&.oddity-window {
+  min-width: 400px;
+  min-height: 250px;
+}
+
+.oddity-sheet {
+  .desc-wrapper {
+    flex: 1;
+
+    label {
+      flex: 0 1 0;
+
+      margin-bottom: 4px;
+    }
+  }
+}

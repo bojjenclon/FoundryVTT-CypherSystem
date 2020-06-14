@@ -371,7 +371,7 @@ form.roll-dialog input[type="number"].tier {
 .cyphersystem input[type="number"] {
   height: 24px;
   background: rgba(0, 0, 0, 0.05);
-  padding: 1px 3px;
+  padding: 2px 4px;
   margin: 0;
   color: #191813;
   border: 1px solid #7a7971;
@@ -405,22 +405,23 @@ form.roll-dialog input[type="number"].tier {
 /* line 89, scss/components/_forms.scss */
 .cyphersystem textarea {
   font-family: Karla;
+  border-color: #7a7971;
   resize: none;
 }
 
-/* line 95, scss/components/_forms.scss */
+/* line 97, scss/components/_forms.scss */
 .cyphersystem textarea:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-/* line 100, scss/components/_forms.scss */
+/* line 102, scss/components/_forms.scss */
 .cyphersystem li.no-pip {
   list-style-type: none;
 }
 
-/* line 104, scss/components/_forms.scss */
+/* line 106, scss/components/_forms.scss */
 .cyphersystem h1 input[type="text"] {
   height: auto;
   margin-bottom: 0.25em;
@@ -1356,6 +1357,69 @@ form.roll-dialog input[type="number"].tier {
 
 /* line 10, scss/sheets/_gear-sheet.scss */
 .cyphersystem .gear-sheet .desc-wrapper label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 4px;
+}
+
+/* line 1, scss/sheets/_cypher-sheet.scss */
+.cyphersystem.cypher-window {
+  min-width: 525px;
+  min-height: 475px;
+}
+
+/* line 7, scss/sheets/_cypher-sheet.scss */
+.cyphersystem .cypher-sheet .desc-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 10, scss/sheets/_cypher-sheet.scss */
+.cyphersystem .cypher-sheet .desc-wrapper label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 4px;
+}
+
+/* line 1, scss/sheets/_artifact-sheet.scss */
+.cyphersystem.artifact-window {
+  min-width: 575px;
+  min-height: 550px;
+}
+
+/* line 7, scss/sheets/_artifact-sheet.scss */
+.cyphersystem .artifact-sheet .desc-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 10, scss/sheets/_artifact-sheet.scss */
+.cyphersystem .artifact-sheet .desc-wrapper label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 4px;
+}
+
+/* line 1, scss/sheets/_oddity-sheet.scss */
+.cyphersystem.oddity-window {
+  min-width: 400px;
+  min-height: 250px;
+}
+
+/* line 7, scss/sheets/_oddity-sheet.scss */
+.cyphersystem .oddity-sheet .desc-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 10, scss/sheets/_oddity-sheet.scss */
+.cyphersystem .oddity-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;

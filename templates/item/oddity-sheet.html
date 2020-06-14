@@ -1,0 +1,16 @@
+<form class="{{cssClass}} csr item-sheet oddity-sheet" autocomplete="off" id="oddity-sheet-{{item._id}}">
+  <h1><input type="text" name="name" value="{{item.name}}" placeholder="{{localize 'CSR.placeholder.oddityName'}}" /></h1>
+
+  <div class="flexrow">
+    <div class="flexcol lhs">
+      <img class="profile-img" src="{{item.img}}" title="{{item.name}}" data-edit="img" height="150" width="150" />
+    </div>
+
+    <div class="flexcol rhs">
+      <div class="flexcol desc-wrapper">
+        <label>{{localize "CSR.heading.description"}}</label>
+        <textarea class="description" name="data.notes">{{data.notes}}</textarea>
+      </div>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,65 @@
+<form class="{{cssClass}} csr item-sheet cypher-sheet" autocomplete="off" id="cypher-sheet-{{item._id}}">
+  <h1><input type="text" name="name" value="{{item.name}}" placeholder="{{localize 'CSR.placeholder.cypherName'}}" />
+  </h1>
+
+  <div class="flexrow">
+    <div class="flexcol lhs">
+      <img class="profile-img" src="{{item.img}}" title="{{item.name}}" data-edit="img" height="150" width="150" />
+    </div>
+
+    <div class="flexcol rhs">
+      <div class="grid">
+        <label>{{localize "CSR.heading.identified"}}</label>
+
+        <div class="flex-right">
+          <div class="checkbox no-label">
+            <input type="checkbox" name="data.identified" id="data.identified" data-dtype="Boolean"
+              {{checked data.identified}} />
+            <label for="data.identified">&nbsp;</label>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="grid">
+        <label>{{localize "CSR.heading.level"}}</label>
+
+        <div class="flex-right">
+          {{#if (or data.identified isGM)}}
+          {{#if data.level}}
+          <input type="number" name="data.level" value="{{data.level}}" data-dtype="Number" />
+          {{else}}
+          <input type="text" name="data.levelDie" value="{{data.levelDie}}" data-dtype="String" />
+          {{/if}}
+          {{else}}
+          <input type="hidden" name="data.levelDie" value="{{data.levelDie}}" data-dtype="String" />
+          <input type="text" value="?" data-dtype="String" disabled />
+          {{/if}}
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="grid">
+        <label>{{localize "CSR.heading.form"}}</label>
+
+        <div class="flex-right">
+          {{#if (or data.identified isGM)}}
+          <textarea name="data.form" rows="4">{{data.form}}</textarea>
+          {{else}}
+          <input type="hidden" name="data.form" value="{{data.form}}" data-dtype="String" />
+          <input type="text" value="?" data-dtype="String" disabled />
+          {{/if}}
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="flexcol desc-wrapper">
+        <label>{{localize "CSR.heading.effect"}}</label>
+        <textarea class="description" name="data.effect">{{data.effect}}</textarea>
+      </div>
+    </div>
+  </div>
+</form>
