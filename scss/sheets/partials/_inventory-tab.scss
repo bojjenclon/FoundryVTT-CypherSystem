@@ -1,4 +1,4 @@
-&.abilities {
+&.inventory {
   .filters {
     display: flex;
     align-items: center;
@@ -15,12 +15,12 @@
     }
   }
 
-  .add-ability {
+  .add-inventory {
     margin-left: 8px;
     font-size: 1.1em;
   }
 
-  ul.ability-list {
+  ul.inventory-list {
     margin: 0;
     padding: 0 0 0 0.5em;
 
@@ -43,7 +43,7 @@
     }
   }
 
-  .ability-info {
+  .inventory-info {
     padding-right: 0.5em;
 
     > .grid {

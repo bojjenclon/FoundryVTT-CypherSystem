@@ -4,6 +4,9 @@ import { CypherRolls } from '../rolls.js';
 
 import EnumPools from '../enums/enum-pool.js';
 import EnumTraining from '../enums/enum-training.js';
+import EnumWeight from '../enums/enum-weight.js';
+import EnumRange from '../enums/enum-range.js';
+import EnumWeaponCategory from '../enums/enum-weapon-category.js';
 
 /**
  * Extend the basic Item with some very simple modifications.
@@ -153,6 +156,66 @@ export class CypherSystemItem extends Item {
     return html;
   }
 
+  async _armorInfo() {
+    const { data } = this;
+
+    const weight = EnumWeight[data.data.weight];
+
+    const params = {
+      name: this.name,
+      type: this.type,
+      equipped: data.equipped,
+      quantity: data.data.quantity,
+      weight: weight.toLowerCase(),
+      armor: data.data.armor,
+      additionalSpeedEffortCost: data.data.additionalSpeedEffortCost,
+      price: data.data.price,
+      notes: data.data.notes,
+    };
+    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/armor-info.html', params);
+
+    return html;
+  }
+
+  async _weaponInfo() {
+    const { data } = this;
+
+    const weight = EnumWeight[data.data.weight];
+    const range = EnumRange[data.data.range];
+    const category = EnumWeaponCategory[data.data.category];
+
+    const params = {
+      name: this.name,
+      type: this.type,
+      equipped: data.equipped,
+      quantity: data.data.quantity,
+      weight: weight.toLowerCase(),
+      range: range.toLowerCase(),
+      category: category.toLowerCase(),
+      damage: data.data.damage,
+      price: data.data.price,
+      notes: data.data.notes,
+    };
+    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/weapon-info.html', params);
+
+    return html;
+  }
+
+  async _gearInfo() {
+    const { data } = this;
+
+    const params = {
+      name: data.name,
+      type: this.type,
+      quantity: data.data.quantity,
+      price: data.data.price,
+      notes: data.data.notes,
+    };
+    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/gear-info.html', params);
+
+    return html;
+  }
+
   async getInfo() {
     let html = '';
 
@@ -162,6 +225,15 @@ export class CypherSystemItem extends Item {
         break;
       case 'ability':
         html = await this._abilityInfo();
+        break;
+      case 'armor':
+        html = await this._armorInfo();
+        break;
+      case 'weapon':
+        html = await this._weaponInfo();
+        break;
+      case 'gear':
+        html = await this._gearInfo();
         break;
     }
 

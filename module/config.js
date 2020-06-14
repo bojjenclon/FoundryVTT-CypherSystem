@@ -11,6 +11,16 @@ CSR.itemTypes = [
   'gear'
 ];
 
+CSR.inventoryTypes = [
+  'weapon',
+  'armor',
+  'gear',
+
+  'cypher',
+  'artifact',
+  'oddity'
+];
+
 CSR.weightClasses = [
   'Light',
   'Medium',

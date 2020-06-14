@@ -43,4 +43,26 @@ export const registerHandlebarHelpers = () => {
 
     return '';
   });
+
+  Handlebars.registerHelper('typeIcon', val => {
+    switch (val) {
+      // TODO: Add skill and ability?
+      
+      case 'armor':
+        return `<span title="${game.i18n.localize('CSR.inventory.armor')}">[a]</span>`;
+      case 'weapon':
+        return `<span title="${game.i18n.localize('CSR.inventory.weapon')}">[w]</span>`;
+      case 'gear':
+        return `<span title="${game.i18n.localize('CSR.inventory.gear')}">[g]</span>`;
+      
+      case 'cypher':
+        return `<span title="${game.i18n.localize('CSR.inventory.cypher')}">[C]</span>`;
+      case 'artifact':
+        return `<span title="${game.i18n.localize('CSR.inventory.armor')}">[A]</span>`;
+      case 'oddity':
+        return `<span title="${game.i18n.localize('CSR.inventory.armor')}">[O]</span>`;
+    }
+
+    return '';
+  });
 };

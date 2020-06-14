@@ -1,0 +1,58 @@
+<h2>{{name}}</h2>
+
+<div class="grid grid-col">
+  <strong class="text-left">{{localize (concat 'CSR.inventory.' type)}}</strong>
+  <div class="text-right">
+    <div class="actions">
+      <a class="edit" title="{{localize 'CSR.tooltip.edit'}}"><i class="fas fa-edit"></i></a>
+      <a class="delete" title="{{localize 'CSR.tooltip.delete'}}"><i class="fas fa-trash"></i></a>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.quantity'}}</strong>
+  <div class='text-right'>{{quantity}}</div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.equipped'}}</strong>
+  <div class='text-right'>{{#if equipped}}{{localize 'CSR.yes'}}{{else}}{{localize 'CSR.no'}}{{/if}}</div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.weight'}}</strong>
+  <div class='text-right'>{{localize (concat 'CSR.weight.' weight)}}</div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.armor'}}</strong>
+  <div class='text-right'>{{armor}}</div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.additionalSpeedEffortCost'}}</strong>
+  <div class='text-right'>{{additionalSpeedEffortCost}}</div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.price'}}</strong>
+  <div class='text-right'>{{price}}</div>
+</div>
+
+<hr>
+
+<strong>{{localize 'CSR.heading.description'}}</strong>
+<p>{{notes}}</p>

@@ -10,19 +10,54 @@
   "CSR.training.trained": "Trained",
   "CSR.training.specialized": "Specialized",
 
+  "CSR.weight.light": "Light",
+  "CSR.weight.medium": "Medium",
+  "CSR.weight.heavy": "Heavy",
+
+  "CSR.range.immediate": "Immediate",
+  "CSR.range.short": "Short",
+  "CSR.range.long": "Long",
+  "CSR.range.veryLong": "Very Long",
+
+  "CSR.weapon.bashing": "Bashing",
+  "CSR.weapon.bladed": "Bladed",
+  "CSR.weapon.ranged": "Ranged",
+
+  "CSR.inventory.armor": "Armor",
+  "CSR.inventory.weapon": "Weapon",
+  "CSR.inventory.gear": "Gear",
+  "CSR.inventory.cypher": "Cypher",
+  "CSR.inventory.artifact": "Artifact",
+  "CSR.inventory.oddity": "Oddity",
+
   "CSR.placeholder.descriptor": "Descriptor",
   "CSR.placeholder.type": "Type",
   "CSR.placeholder.focus": "Focus",
+  "CSR.placeholder.skillName": "Skill Name",
+  "CSR.placeholder.abilityName": "Ability Name",
+  "CSR.placeholder.armorName": "Armor Name",
+  "CSR.placeholder.weaponName": "Weapon Name",
+  "CSR.placeholder.gearName": "Gear Name",
 
   "CSR.heading.pool": "Pool",
   "CSR.heading.training": "Training",
   "CSR.heading.description": "Description",
   "CSR.heading.filter": "Filter",
+  "CSR.heading.type": "Type",
+  "CSR.heading.quantity": "Quantity",
+  "CSR.heading.weight": "Weight",
+  "CSR.heading.armor": "Armor",
+  "CSR.heading.additionalSpeedEffortCost": "Additional Speed Effort Cost",
+  "CSR.heading.price": "Price",
+  "CSR.heading.equipped": "Equipped",
+  "CSR.heading.damage": "Damage",
+  "CSR.heading.range": "Range",
+  "CSR.heading.weaponCategory": "Category",
 
   "CSR.tooltip.stats": "Stats",
   "CSR.tooltip.skills": "Skills",
   "CSR.tooltip.abilities": "Abilities",
-  "CSR.tooltip.equipment": "Equipment",
+  "CSR.tooltip.inventory": "Inventory",
   "CSR.tooltip.biography": "Biography",
 
   "CSR.tooltip.roll": "Roll",
@@ -33,5 +68,8 @@
   "CSR.dialog.deleteContent": "Are you sure you want to delete this item? This action cannot be undone, and some items may not be recoverable.",
   "CSR.dialog.deleteButton": "Delete",
 
-  "CSR.dialog.cancelButton": "Cancel"
+  "CSR.dialog.cancelButton": "Cancel",
+
+  "CSR.yes": "Yes",
+  "CSR.no": "No"
 }

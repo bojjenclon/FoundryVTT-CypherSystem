@@ -21,13 +21,20 @@ export const preloadHandlebarsTemplates = async() => {
 
       "systems/cyphersystemClean/templates/actor/partials/skills.html",
       "systems/cyphersystemClean/templates/actor/partials/abilities.html",
+      "systems/cyphersystemClean/templates/actor/partials/inventory.html",
 
       "systems/cyphersystemClean/templates/actor/partials/info/skill-info.html",
       "systems/cyphersystemClean/templates/actor/partials/info/ability-info.html",
+      "systems/cyphersystemClean/templates/actor/partials/info/armor-info.html",
+      "systems/cyphersystemClean/templates/actor/partials/info/weapon-info.html",
+      "systems/cyphersystemClean/templates/actor/partials/info/gear-info.html",
 
       //Item Sheets
       "systems/cyphersystemClean/templates/item/item-sheet.html",
       "systems/cyphersystemClean/templates/item/skill-sheet.html",
+      "systems/cyphersystemClean/templates/item/armor-sheet.html",
+      "systems/cyphersystemClean/templates/item/weapon-sheet.html",
+      "systems/cyphersystemClean/templates/item/gear-sheet.html",
   ];
 
   // Load the template parts

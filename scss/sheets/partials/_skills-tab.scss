@@ -51,9 +51,11 @@
     }
 
     .actions {
-      margin: 0;
-
       font-size: 1.1em;
+
+      a:not(:last-child) {
+        margin-right: 4px;
+      }
     }
   }
 }

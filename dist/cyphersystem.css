@@ -1,29 +1,35 @@
 /*! cyphersystem v1.0.0 | (c) 2020 Cornell Daly | MIT License | https://github.com/bojjenclon/ */
 
 @import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-/* line 6, scss/utils/_typography.scss */
+/* line 8, scss/utils/_typography.scss */
 body {
   font-size: 14px;
 }
 
-/* line 10, scss/utils/_typography.scss */
+/* line 12, scss/utils/_typography.scss */
 .monospace {
   font-family: monospace, monospace;
 }
 
-/* line 14, scss/utils/_typography.scss */
+/* line 16, scss/utils/_typography.scss */
 .text-left {
   text-align: left;
 }
 
-/* line 18, scss/utils/_typography.scss */
+/* line 20, scss/utils/_typography.scss */
 .text-center {
   text-align: center;
 }
 
-/* line 22, scss/utils/_typography.scss */
+/* line 24, scss/utils/_typography.scss */
 .text-right {
   text-align: right;
+}
+
+/* line 28, scss/utils/_typography.scss */
+h1,
+h2 {
+  padding-bottom: 4px;
 }
 
 /* Global styles */
@@ -750,9 +756,10 @@ form.roll-dialog input[type="number"].tier {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-right: 6px;
 }
 
-/* line 141, scss/sheets/_pc-sheet.scss */
+/* line 143, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab .input-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -763,18 +770,18 @@ form.roll-dialog input[type="number"].tier {
           flex-direction: row;
 }
 
-/* line 145, scss/sheets/_pc-sheet.scss */
+/* line 147, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab .input-group label {
   font-weight: bold;
   font-size: 1.5em;
 }
 
-/* line 153, scss/sheets/_pc-sheet.scss */
+/* line 155, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats label {
   margin: 0 0.5em 0 0.5em;
 }
 
-/* line 157, scss/sheets/_pc-sheet.scss */
+/* line 159, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -792,42 +799,42 @@ form.roll-dialog input[type="number"].tier {
   margin-bottom: 2px;
 }
 
-/* line 165, scss/sheets/_pc-sheet.scss */
+/* line 167, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool {
   white-space: nowrap;
 }
 
-/* line 168, scss/sheets/_pc-sheet.scss */
+/* line 170, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool label {
   display: inline-block;
   margin: 0;
   cursor: pointer;
 }
 
-/* line 174, scss/sheets/_pc-sheet.scss */
+/* line 176, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool i {
   margin-left: 4px;
 }
 
-/* line 181, scss/sheets/_pc-sheet.scss */
+/* line 183, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .current label {
   font-size: 1em;
   margin-bottom: 4px;
 }
 
-/* line 186, scss/sheets/_pc-sheet.scss */
+/* line 188, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .current input {
   font-size: 2.8rem;
   height: 60px;
   width: 100px;
 }
 
-/* line 194, scss/sheets/_pc-sheet.scss */
+/* line 196, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .flexcol:first-child {
   margin-right: 4px;
 }
 
-/* line 198, scss/sheets/_pc-sheet.scss */
+/* line 200, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .stat-pools {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -839,7 +846,7 @@ form.roll-dialog input[type="number"].tier {
           flex: 1;
 }
 
-/* line 203, scss/sheets/_pc-sheet.scss */
+/* line 205, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .stat-pools label {
   display: block;
   margin-bottom: 2px;
@@ -847,7 +854,7 @@ form.roll-dialog input[type="number"].tier {
   text-align: center;
 }
 
-/* line 211, scss/sheets/_pc-sheet.scss */
+/* line 213, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -856,30 +863,30 @@ form.roll-dialog input[type="number"].tier {
       justify-content: space-around;
 }
 
-/* line 215, scss/sheets/_pc-sheet.scss */
+/* line 217, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs a {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 219, scss/sheets/_pc-sheet.scss */
+/* line 221, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs a.active {
   color: #b72020;
 }
 
-/* line 226, scss/sheets/_pc-sheet.scss */
+/* line 228, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .tier-grid .input-group {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-/* line 230, scss/sheets/_pc-sheet.scss */
+/* line 232, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .tier-grid input[type="number"] {
   width: 3em;
 }
 
-/* line 235, scss/sheets/_pc-sheet.scss */
+/* line 237, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .advances {
   margin-top: 8px;
   padding-top: 8px;
@@ -887,19 +894,19 @@ form.roll-dialog input[type="number"].tier {
   font-size: 1.2em;
 }
 
-/* line 243, scss/sheets/_pc-sheet.scss */
+/* line 245, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .damage {
   text-align: center;
 }
 
-/* line 246, scss/sheets/_pc-sheet.scss */
+/* line 248, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .damage .description {
   text-align: left;
   margin-top: 1em;
   font-size: 1.5em;
 }
 
-/* line 256, scss/sheets/_pc-sheet.scss */
+/* line 258, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -909,7 +916,7 @@ form.roll-dialog input[type="number"].tier {
           justify-content: center;
 }
 
-/* line 260, scss/sheets/_pc-sheet.scss */
+/* line 262, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group label,
 .cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group input {
   -webkit-box-flex: 0;
@@ -917,12 +924,12 @@ form.roll-dialog input[type="number"].tier {
           flex-grow: 0;
 }
 
-/* line 265, scss/sheets/_pc-sheet.scss */
+/* line 267, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group i {
   margin-left: 0.5em;
 }
 
-/* line 271, scss/sheets/_pc-sheet.scss */
+/* line 273, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery .actions {
   margin-top: 16px;
   padding-top: 16px;
@@ -1004,8 +1011,12 @@ form.roll-dialog input[type="number"].tier {
 
 /* line 53, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info .actions {
-  margin: 0;
   font-size: 1.1em;
+}
+
+/* line 56, scss/sheets/partials/_skills-tab.scss */
+.cyphersystem .content .sheet-body .tab.skills .skill-info .actions a:not(:last-child) {
+  margin-right: 4px;
 }
 
 /* line 2, scss/sheets/partials/_abilities-tab.scss */
@@ -1082,11 +1093,97 @@ form.roll-dialog input[type="number"].tier {
 
 /* line 53, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities .ability-info .actions {
-  margin: 0;
   font-size: 1.1em;
 }
 
-/* line 286, scss/sheets/_pc-sheet.scss */
+/* line 56, scss/sheets/partials/_abilities-tab.scss */
+.cyphersystem .content .sheet-body .tab.abilities .ability-info .actions a:not(:last-child) {
+  margin-right: 4px;
+}
+
+/* line 2, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+/* line 7, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .filters strong {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-right: 1em;
+}
+
+/* line 13, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .filters > span {
+  margin-right: 4px;
+}
+
+/* line 18, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .add-inventory {
+  margin-left: 8px;
+  font-size: 1.1em;
+}
+
+/* line 23, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory ul.inventory-list {
+  margin: 0;
+  padding: 0 0 0 0.5em;
+}
+
+/* line 27, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+/* line 31, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li:not(:first-child) {
+  margin-top: 8px;
+}
+
+/* line 35, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li .icons {
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* line 40, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li a.active {
+  color: #b72020;
+}
+
+/* line 46, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .inventory-info {
+  padding-right: 0.5em;
+}
+
+/* line 49, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .inventory-info > .grid {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 53, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .inventory-info .actions {
+  font-size: 1.1em;
+}
+
+/* line 56, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .inventory-info .actions a:not(:last-child) {
+  margin-right: 4px;
+}
+
+/* line 289, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.bio .editor {
   -webkit-box-flex: 1;
       -ms-flex: 1;
@@ -1160,14 +1257,20 @@ form.roll-dialog input[type="number"].tier {
           align-items: center;
 }
 
-/* line 8, scss/sheets/_skill-sheet.scss */
+/* line 1, scss/sheets/_skill-sheet.scss */
+.cyphersystem.skill-window {
+  min-width: 500px;
+  min-height: 400px;
+}
+
+/* line 7, scss/sheets/_skill-sheet.scss */
 .cyphersystem .skill-sheet .desc-wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 11, scss/sheets/_skill-sheet.scss */
+/* line 10, scss/sheets/_skill-sheet.scss */
 .cyphersystem .skill-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
@@ -1190,6 +1293,69 @@ form.roll-dialog input[type="number"].tier {
 
 /* line 10, scss/sheets/_ability-sheet.scss */
 .cyphersystem .ability-sheet .desc-wrapper label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 4px;
+}
+
+/* line 1, scss/sheets/_armor-sheet.scss */
+.cyphersystem.armor-window {
+  min-width: 630px;
+  min-height: 575px;
+}
+
+/* line 7, scss/sheets/_armor-sheet.scss */
+.cyphersystem .armor-sheet .desc-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 10, scss/sheets/_armor-sheet.scss */
+.cyphersystem .armor-sheet .desc-wrapper label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 4px;
+}
+
+/* line 1, scss/sheets/_weapon-sheet.scss */
+.cyphersystem.weapon-window {
+  min-width: 565px;
+  min-height: 625px;
+}
+
+/* line 7, scss/sheets/_weapon-sheet.scss */
+.cyphersystem .weapon-sheet .desc-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 10, scss/sheets/_weapon-sheet.scss */
+.cyphersystem .weapon-sheet .desc-wrapper label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 4px;
+}
+
+/* line 1, scss/sheets/_gear-sheet.scss */
+.cyphersystem.gear-window {
+  min-width: 500px;
+  min-height: 350px;
+}
+
+/* line 7, scss/sheets/_gear-sheet.scss */
+.cyphersystem .gear-sheet .desc-wrapper {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+/* line 10, scss/sheets/_gear-sheet.scss */
+.cyphersystem .gear-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;

@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-$font-primary: 'Karla', sans-serif;
-$font-secondary: 'Karla', sans-serif;
+$font-primary: 'Karla',
+sans-serif;
+$font-secondary: 'Karla',
+sans-serif;
 
 body {
   font-size: 14px;
@@ -21,4 +23,9 @@ body {
 
 .text-right {
   text-align: right;
+}
+
+h1,
+h2 {
+  padding-bottom: 4px;
 }

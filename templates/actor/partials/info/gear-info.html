@@ -1,15 +1,27 @@
 <h2>{{name}}</h2>
 
-<div class="grid grid-3col">
-  <strong class="text-left">{{localize (concat 'CSR.pool.' pool)}}</strong>
-  <strong class="text-center">{{#if isEnabler}}{{localize 'Enabler'}}{{else}}{{localize 'Action'}}{{/if}}</strong>
+<div class="grid">
+  <strong class="text-left">{{localize (concat 'CSR.inventory.' type)}}</strong>
   <div class="text-right">
     <div class="actions">
-      <a class="roll" title="{{localize 'CSR.tooltip.roll'}}"><i class="fas fa-dice-d20"></i></a>
       <a class="edit" title="{{localize 'CSR.tooltip.edit'}}"><i class="fas fa-edit"></i></a>
       <a class="delete" title="{{localize 'CSR.tooltip.delete'}}"><i class="fas fa-trash"></i></a>
     </div>
   </div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.quantity'}}</strong>
+  <div class='text-right'>{{quantity}}</div>
+</div>
+
+<hr>
+
+<div class="grid">
+  <strong>{{localize 'CSR.heading.price'}}</strong>
+  <div class='text-right'>{{price}}</div>
 </div>
 
 <hr>

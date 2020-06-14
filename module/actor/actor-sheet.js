@@ -50,6 +50,9 @@ export class CypherSystemActorSheet extends ActorSheet {
 
     this.abilityPoolFilter = -1;
     this.selectedAbility = null;
+
+    this.inventoryTypeFilter = -1;
+    this.selectedInvItem = null;
   }
 
   _generateItemData(data, type, field) {
@@ -61,7 +64,7 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   _filterItemData(data, itemField, filterField, filterValue) {
     const items = data.data.items;
-    items[itemField] = items[itemField].filter(itm => deepProp(itm.data, filterField) === filterValue);
+    items[itemField] = items[itemField].filter(itm => deepProp(itm, filterField) === filterValue);
   }
 
   async _skillData(data) {
@@ -71,10 +74,10 @@ export class CypherSystemActorSheet extends ActorSheet {
     data.skillsTrainingFilter = this.skillsTrainingFilter;
 
     if (data.skillsPoolFilter > -1) {
-      this._filterItemData(data, 'skills', 'pool', parseInt(data.skillsPoolFilter, 10));
+      this._filterItemData(data, 'skills', 'data.pool', parseInt(data.skillsPoolFilter, 10));
     }
     if (data.skillsTrainingFilter > -1) {
-      this._filterItemData(data, 'skills', 'training', parseInt(data.skillsTrainingFilter, 10));
+      this._filterItemData(data, 'skills', 'data.training', parseInt(data.skillsTrainingFilter, 10));
     }
 
     data.selectedSkill = this.selectedSkill;
@@ -90,13 +93,36 @@ export class CypherSystemActorSheet extends ActorSheet {
     data.abilityPoolFilter = this.abilityPoolFilter;
 
     if (data.abilityPoolFilter > -1) {
-      this._filterItemData(data, 'abilities', 'cost.pool', parseInt(data.abilityPoolFilter, 10));
+      this._filterItemData(data, 'abilities', 'data.cost.pool', parseInt(data.abilityPoolFilter, 10));
     }
 
     data.selectedAbility = this.selectedAbility;
     data.abilityInfo = '';
     if (data.selectedAbility) {
       data.abilityInfo = await data.selectedAbility.getInfo();
+    }
+  }
+
+  async _inventoryData(data) {
+    data.inventoryTypes = CSR.inventoryTypes;
+
+    const items = data.data.items;
+    if (!items.inventory) {
+      items.inventory = items.filter(i => CSR.inventoryTypes.includes(i.type));
+      // Group items by their type
+      items.inventory.sort((a, b) => (a.type > b.type) ? 1 : -1);
+    }
+
+    data.inventoryTypeFilter = this.inventoryTypeFilter;
+
+    if (data.inventoryTypeFilter > -1) {
+      this._filterItemData(data, 'inventory', 'type', CSR.inventoryTypes[parseInt(data.inventoryTypeFilter, 10)]);
+    }
+
+    data.selectedInvItem = this.selectedInvItem;
+    data.invItemInfo = '';
+    if (data.selectedInvItem) {
+      data.invItemInfo = await data.selectedInvItem.getInfo();
     }
   }
 
@@ -140,6 +166,7 @@ export class CypherSystemActorSheet extends ActorSheet {
 
     await this._skillData(data);
     await this._abilityData(data);
+    await this._inventoryData(data);
 
     return data;
   }
@@ -240,6 +267,7 @@ export class CypherSystemActorSheet extends ActorSheet {
     });
     skillsPoolFilter.on('change', evt => {
       this.skillsPoolFilter = evt.target.value;
+      this.selectedSkill = null;
     });
 
     const skillsTrainingFilter = html.find('select[name="skillsTrainingFilter"]').select2({
@@ -313,6 +341,7 @@ export class CypherSystemActorSheet extends ActorSheet {
     });
     abilityPoolFilter.on('change', evt => {
       this.abilityPoolFilter = evt.target.value;
+      this.selectedAbility = null;
     });
 
     const abilities = html.find('a.ability');
@@ -361,6 +390,64 @@ export class CypherSystemActorSheet extends ActorSheet {
     }
   }
 
+  _inventoryTabListeners(html) {
+    // Abilities Setup
+    html.find('.add-inventory').click(evt => {
+      evt.preventDefault();
+
+      // TODO: Context menu to choose item type
+    });
+
+    const inventoryTypeFilter = html.find('select[name="inventoryTypeFilter"]').select2({
+      theme: 'numenera',
+      width: '130px',
+      minimumResultsForSearch: Infinity
+    });
+    inventoryTypeFilter.on('change', evt => {
+      this.inventoryTypeFilter = evt.target.value;
+      this.selectedInvItem = null;
+    });
+
+    const invItems = html.find('a.inv-item');
+
+    invItems.on('click', evt => {
+      evt.preventDefault();
+
+      this._onSubmit(evt);
+
+      let el = evt.target;
+      // Account for clicking a child element
+      while (!el.dataset.id) {
+        el = el.parentElement;
+      }
+      const invItemId = el.dataset.id;
+
+      const actor = this.actor;
+      const invItem = actor.getOwnedItem(invItemId);
+
+      this.selectedInvItem = invItem;
+    });
+
+    const { selectedInvItem } = this;
+    if (selectedInvItem) {
+      html.find('.inventory-info .actions .edit').click(evt => {
+        evt.preventDefault();
+
+        this.selectedInvItem.sheet.render(true);
+      });
+
+      html.find('.inventory-info .actions .delete').click(evt => {
+        evt.preventDefault();
+
+        this._deleteItemDialog(this.selectedInvItem._id, didDelete => {
+          if (didDelete) {
+            this.selectedInvItem = null;
+          }
+        });
+      });
+    }
+  }
+
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
@@ -383,5 +470,6 @@ export class CypherSystemActorSheet extends ActorSheet {
     this._statsTabListeners(html);
     this._skillsTabListeners(html);
     this._abilityTabListeners(html);
+    this._inventoryTabListeners(html);
   }
 }

@@ -30,7 +30,7 @@
         <li><a class="item" title="{{localize 'CSR.tooltip.stats'}}" data-tab="stats"><i class="fas fa-vial"></i></a></li>
         <li><a class="item" title="{{localize 'CSR.tooltip.skills'}}" data-tab="skills"><i class="fas fa-hiking"></i></a></li>
         <li><a class="item" title="{{localize 'CSR.tooltip.abilities'}}" data-tab="abilities"><i class="fas fa-book"></i></a></li>
-        <li><a class="item" title="{{localize 'CSR.tooltip.equipment'}}" data-tab="equipment"><i class="fas fa-shield-alt"></i></a></li>
+        <li><a class="item" title="{{localize 'CSR.tooltip.inventory'}}" data-tab="inventory"><i class="fas fa-shield-alt"></i></a></li>
         <li><a class="item" title="{{localize 'CSR.tooltip.biography'}}" data-tab="bio"><i class="fas fa-pen-nib"></i></a></li>
       </ul>
     </nav>
@@ -89,12 +89,12 @@
         </div>
       </div>
 
-      {{!-- Equipment Tab --}}
-      <div class="tab equipment" data-group="primary" data-tab="equipment">
-        <h1>Equipment</h1>
+      {{!-- Inventory Tab --}}
+      <div class="tab inventory" data-group="primary" data-tab="inventory">
+        <h1>Inventory</h1>
 
         <div class="content">
-
+          {{> "systems/cyphersystemClean/templates/actor/partials/inventory.html"}}
         </div>
       </div>
 

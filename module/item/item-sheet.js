@@ -12,8 +12,8 @@ export class CypherSystemItemSheet extends ItemSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["cyphersystem", "sheet", "item"],
-      width: 500,
-      height: 500,
+      width: 300,
+      height: 200,
       tabs: [{
         navSelector: ".sheet-tabs",
         contentSelector: ".sheet-body",
@@ -40,6 +40,20 @@ export class CypherSystemItemSheet extends ItemSheet {
     data.data.stats = CSR.stats;
   }
 
+  _armorData(data) {
+    data.weightClasses = CSR.weightClasses;
+  }
+
+  _weaponData(data) {
+    data.ranges = CSR.ranges;
+    data.weaponTypes = CSR.weaponTypes;
+    data.weightClasses = CSR.weightClasses;
+  }
+
+  _gearData(data) {
+
+  }
+
   /** @override */
   getData() {
     const data = super.getData();
@@ -51,6 +65,15 @@ export class CypherSystemItemSheet extends ItemSheet {
         break;
       case 'ability':
         this._abilityData(data);
+        break;
+      case 'armor':
+        this._armorData(data);
+        break;
+      case 'weapon':
+        this._weaponData(data);
+        break;
+      case 'gear':
+        this._gearData(data);
         break;
     }
 
@@ -118,6 +141,42 @@ export class CypherSystemItemSheet extends ItemSheet {
     });
   }
 
+  _armorListeners(html) {
+    html.closest('.window-app.sheet.item').addClass('armor-window');
+
+    html.find('select[name="data.weight"]').select2({
+      theme: 'numenera',
+      width: '100px',
+      minimumResultsForSearch: Infinity
+    });
+  }
+
+  _weaponListeners(html) {
+    html.closest('.window-app.sheet.item').addClass('weapon-window');
+
+    html.find('select[name="data.weight"]').select2({
+      theme: 'numenera',
+      width: '110px',
+      minimumResultsForSearch: Infinity
+    });
+
+    html.find('select[name="data.weaponType"]').select2({
+      theme: 'numenera',
+      width: '110px',
+      minimumResultsForSearch: Infinity
+    });
+
+    html.find('select[name="data.range"]').select2({
+      theme: 'numenera',
+      width: '120px',
+      minimumResultsForSearch: Infinity
+    });
+  }
+
+  _gearListeners(html) {
+    html.closest('.window-app.sheet.item').addClass('gear-window');
+  }
+
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
@@ -133,6 +192,15 @@ export class CypherSystemItemSheet extends ItemSheet {
         break;
       case 'ability':
         this._abilityListeners(html);
+        break;
+      case 'armor':
+        this._armorListeners(html);
+        break;
+      case 'weapon':
+        this._weaponListeners(html);
+        break;
+      case 'gear':
+        this._gearListeners(html);
         break;
     }
   }

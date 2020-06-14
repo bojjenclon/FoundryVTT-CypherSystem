@@ -1,0 +1,94 @@
+<form class="{{cssClass}} csr item-sheet weapon-sheet" autocomplete="off" id="weapon-sheet-{{item._id}}">
+  <h1><input type="text" name="name" value="{{item.name}}" placeholder="{{localize 'CSR.placeholder.weaponName'}}" /></h1>
+
+  <div class="flexrow">
+    <div class="flexcol lhs">
+      <img class="profile-img" src="{{item.img}}" title="{{item.name}}" data-edit="img" height="150" width="150" />
+    </div>
+
+    <div class="flexcol rhs">
+      <div class="grid">
+        <label>{{localize "CSR.heading.quantity"}}</label>
+
+        <div class="flex-right">
+          <input type="number" name="data.quantity" value="{{data.quantity}}" class="quantity" data-dtype="Number" />
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="grid">
+        <label>{{localize "CSR.heading.weight"}}</label>
+
+        <div class="flex-right">
+          <select name="data.weight" data-dtype="Number">
+            {{#select data.weight}}
+            {{#each weightClasses}}
+            <option value="{{@index}}">{{this}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="grid">
+        <label>{{localize "CSR.heading.weaponCategory"}}</label>
+
+        <div class="flex-right">
+          <select name="data.weaponType" data-dtype="Number">
+            {{#select data.weaponType}}
+            {{#each weaponTypes}}
+            <option value="{{@index}}">{{this}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="grid">
+        <label>{{localize "CSR.heading.damage"}}</label>
+
+        <div class="flex-right">
+          <input type="number" name="data.damage" value="{{data.damage}}" data-dtype="Number" />
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="grid">
+        <label>{{localize "CSR.heading.range"}}</label>
+
+        <div class="flex-right">
+          <select name="data.range" data-dtype="Number">
+            {{#select data.range}}
+            {{#each ranges}}
+            <option value="{{@index}}">{{this}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="grid">
+        <label>{{localize "CSR.heading.price"}}</label>
+
+        <div class="flex-right">
+          <input type="number" name="data.price" value="{{data.price}}" class="price" data-dtype="Number" />
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="flexcol desc-wrapper">
+        <label>{{localize "CSR.heading.description"}}</label>
+        <textarea class="description" name="data.notes">{{data.notes}}</textarea>
+      </div>
+    </div>
+  </div>
+</form>
