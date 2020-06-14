@@ -124,7 +124,7 @@ export class CypherSystemActorSheet extends ActorSheet {
       event,
       parts: ['1d20'],
       data: {
-        statId: pool,
+        pool,
         maxEffort: actorData.effort,
       },
       speaker: ChatMessage.getSpeaker({ actor }),
