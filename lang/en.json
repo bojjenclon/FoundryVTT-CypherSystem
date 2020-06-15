@@ -114,6 +114,8 @@
   "CSR.heading.loot": "Loot",
   "CSR.heading.health": "Health",
   "CSR.heading.movement": "Movement",
+  "CSR.heading.formula": "Formula",
+  "CSR.heading.rollMode": "Roll Mode",
 
   "CSR.ability.enabler": "This ability is an Enabler",
   "CSR.ability.action": "This ability is an Action",
