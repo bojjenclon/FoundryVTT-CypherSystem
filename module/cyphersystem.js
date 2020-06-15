@@ -53,12 +53,24 @@ Hooks.once('init', async function () {
 
 Hooks.on('renderChatMessage', renderChatMessage);
 
-/**
- * Add additional system-specific sidebar directory context menu options for CSR Actor entities
- * 
- * @param {jQuery} html         The sidebar HTML
- * @param {Array} entryOptions  The default array of context menu options
- */
 Hooks.on('getActorDirectoryEntryContext', actorDirectoryContext);
+
+Hooks.on('createActor', async function(actor, options, userId) {
+  const { type } = actor.data;
+  if (type === 'pc') {
+    // Give PCs the "Initiative" skill by default, as it will be used
+    // by the intiative formula in combat.
+    actor.createOwnedItem({
+      name: game.i18n.localize('CSR.skill.initiative'),
+      type: 'skill',
+      data: new CypherSystemItem({
+        'pool': 1, // Speed
+        'training': 1, // Untrained
+        
+        'flags.initiative': true
+      }),
+    });
+  }
+});
 
 Hooks.once('ready', csrSocketListeners);

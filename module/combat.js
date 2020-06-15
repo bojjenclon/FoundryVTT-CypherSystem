@@ -22,11 +22,18 @@ export async function rollInitiative(ids, formula = null, messageOptions = {}) {
     const { type } = actorData;
 
     let initiative;
+    let rollResult;
     switch (type) {
       // PCs use a simple d20 roll modified by any training in an Initiative skill
       case 'pc':
-        const roll = new Roll('1d20').roll();
-        initiative = roll.total;
+        const initBonus = actor.initiativeLevel;
+        const operator = initBonus < 0 ? '-' : '+';
+        const rollFormula = '1d20' + (initBonus === 0 ? '' : `${operator}${3*Math.abs(initBonus)}`);
+
+        const roll = new Roll(rollFormula).roll();
+        initiative = Math.max(roll.total, 0); // Don't let initiative go below 0
+        rollResult = roll.result;
+        
         break;
 
       // NPCs have a fixed initiative based on their level
@@ -47,13 +54,30 @@ export async function rollInitiative(ids, formula = null, messageOptions = {}) {
       const isHidden = token.hidden || combatant.hidden;
       const whisper = isHidden ? game.users.entities.filter(u => u.isGM) : '';
 
-      // TODO: Improve the chat message
+      // TODO: Improve the chat message, this currently
+      // just replicates the normal roll message.
       const template = `
-        <div class="dice-tooltip">
-          <ol class="dice-rolls">
-            <li class="roll die d20">${initiative}</li>
-          </ol>
-        </div>`;
+        <div class="dice-roll">
+          <div class="dice-result">
+            <div class="dice-formula">${rollResult}</div>
+            <div class="dice-tooltip">
+              <section class="tooltip-part">
+                <div class="dice">
+                  <p class="part-formula">
+                    1d20
+                    <span class="part-total">${initiative}</span>
+                  </p>
+
+                  <ol class="dice-rolls">
+                    <li class="roll die d20">${initiative}</li>
+                  </ol>
+                </div>
+              </section>
+            </div>
+            <div class="dice-total">${initiative}</div>
+          </div>
+        </div>
+        `;
 
       const messageData = mergeObject({
         speaker: {

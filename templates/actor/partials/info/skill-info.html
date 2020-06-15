@@ -7,7 +7,9 @@
     <div class="actions">
       <a class="roll" title="{{localize 'CSR.tooltip.roll'}}"><i class="fas fa-dice-d20"></i></a>
       <a class="edit" title="{{localize 'CSR.tooltip.edit'}}"><i class="fas fa-edit"></i></a>
+      {{#unless initiative}}
       <a class="delete" title="{{localize 'CSR.tooltip.delete'}}"><i class="fas fa-trash"></i></a>
+      {{/unless}}
     </div>
   </div>
 </div>

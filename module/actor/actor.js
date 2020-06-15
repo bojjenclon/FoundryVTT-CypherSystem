@@ -108,6 +108,11 @@ export class CypherSystemActor extends Actor {
     }
   }
 
+  get initiativeLevel() {
+    const initSkill = this.data.items.filter(i => i.type === 'skill' && i.data.flags.initiative)[0];
+    return initSkill.data.training - 1;
+  }
+
   getSkillLevel(skill) {
     const { data } = skill.data;
 

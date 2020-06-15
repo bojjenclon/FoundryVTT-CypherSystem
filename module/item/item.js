@@ -22,6 +22,8 @@ export class CypherSystemItem extends Item {
     data.pool = valOrDefault(data.pool, 0);
     data.training = valOrDefault(data.training, 1);
     data.notes = valOrDefault(data.notes, '');
+
+    data.flags = valOrDefault(data.flags, {});
   }
 
   _prepareAbilityData() {
@@ -248,16 +250,19 @@ export class CypherSystemItem extends Item {
    */
 
   async _skillInfo() {
-    const { data } = this;
+    const skillData = this.data;
+    const { data } = skillData;
 
-    const training = EnumTraining[data.data.training];
-    const pool = EnumPools[data.data.pool];
+    const training = EnumTraining[skillData.data.training];
+    const pool = EnumPools[skillData.data.pool];
 
     const params = {
-      name: data.name,
+      name: skillData.name,
       training: training.toLowerCase(),
       pool: pool.toLowerCase(),
-      notes: data.data.notes,
+      notes: data.notes,
+
+      initiative: !!data.flags.initiative
     };
     const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/skill-info.html', params);
 
