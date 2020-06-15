@@ -13,12 +13,7 @@ export class CypherSystemItemSheet extends ItemSheet {
     return mergeObject(super.defaultOptions, {
       classes: ["cyphersystem", "sheet", "item"],
       width: 300,
-      height: 200,
-      tabs: [{
-        navSelector: ".sheet-tabs",
-        contentSelector: ".sheet-body",
-        initial: "description"
-      }]
+      height: 200
     });
   }
 
