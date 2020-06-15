@@ -13,7 +13,7 @@
   
         {{#select inventoryTypeFilter}}
         {{#each inventoryTypes as |type idx|}}
-        <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.inventory." (toLowerCase this))}}</option>
+        <option value="{{@index}}" data-dtype="Number">{{localize (concat "CSR.inventory." this)}}</option>
         {{/each}}
         {{/select}}
       </select>

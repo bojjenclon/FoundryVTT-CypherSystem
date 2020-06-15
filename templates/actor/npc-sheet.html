@@ -1,5 +1,5 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
-  <div class="flexrow">
+  <div class="flexrow header">
     <div class="flexcol lhs">
       <img class="profile-img" src="{{actor.img}}" title="{{actor.name}}" data-edit="img" height="150" width="150" />
     </div>
@@ -7,18 +7,97 @@
     <div class="flexcol rhs">
       <div class="flexrow">
         <div class="main-line">
-          <input type="text" name="actor.name" value="{{actor.name}}" data-dtype="String" />
+          <input class="npc-name" type="text" name="actor.name" value="{{actor.name}}" data-dtype="String" />
 
-          <div class="level">
-            <label for="data.level">Level</label>
+          <div class="input-group npc-level">
+            <label for="data.level">{{localize 'CSR.heading.level'}}</label>
             <input type="number" name="data.level" value="{{data.level}}" min="1" max="99" data-dtype="Number" />
           </div>
         </div>
       </div>
 
-      <div class="flexrow">
+      <hr>
 
+      <div class="flexrow npc-stats">
+        <div class="flexcol flex-center">
+          <label for="data.health.max">{{localize 'CSR.heading.health'}}</label>
+          <input type="number" name="data.health.max" value="{{data.health.max}}" data-dtype="Number" min="0"
+            max="999" />
+        </div>
+
+        <div class="flexcol flex-center">
+          <label for="data.armor">{{localize 'CSR.heading.armor'}}</label>
+          <input type="number" name="data.armor" value="{{data.armor}}" data-dtype="Number" min="0" max="99" />
+        </div>
+
+        <div class="flexcol flex-center">
+          <label for="data.damage">{{localize 'CSR.heading.damage'}}</label>
+          <input type="number" name="data.damage" value="{{data.damage}}" data-dtype="Number" min="0" max="99" />
+        </div>
+
+        <div class="flexcol flex-center">
+          <label for="data.movement">{{localize 'CSR.heading.movement'}}</label>
+          <select name="data.movement">
+            {{#select data.movement}}
+            {{#each ranges}}
+            <option value="{{@index}}">{{localize (concat 'CSR.range.' this)}}</option>
+            {{/each}}
+            {{/select}}
+          </select>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="flexcol npc-mods">
+        <label for="data.modifications">Modifications</label>
+        <textarea name="data.modifications" rows="4">{{data.modifications}}</textarea>
       </div>
     </div>
+  </div>
+
+  <div class="flexrow body">
+    <nav class="sheet-tabs" data-group="primary">
+      <ul>
+        <li><a class="item" title="{{localize 'CSR.tooltip.description'}}" data-tab="description">D</a></li>
+        <li><a class="item" title="{{localize 'CSR.tooltip.motive'}}" data-tab="motive">M</a></li>
+        <li><a class="item" title="{{localize 'CSR.tooltip.combat'}}" data-tab="combat">C</a></li>
+        <li><a class="item" title="{{localize 'CSR.tooltip.interaction'}}" data-tab="interaction">I</a></li>
+        <li><a class="item" title="{{localize 'CSR.tooltip.use'}}" data-tab="use">U</a></li>
+        <li><a class="item" title="{{localize 'CSR.tooltip.loot'}}" data-tab="loot">L</a></li>
+      </ul>
+    </nav>
+
+    <section class="sheet-body">
+      <div class="tab description" data-group="primary" data-tab="description">
+        <h1>{{localize 'CSR.heading.description'}}</h1>
+        <textarea name="data.description">{{data.description}}</textarea>
+      </div>
+
+      <div class="tab motive" data-group="primary" data-tab="motive">
+        <h1>{{localize 'CSR.heading.motive'}}</h1>
+        <textarea name="data.motive">{{data.motive}}</textarea>
+      </div>
+
+      <div class="tab combat" data-group="primary" data-tab="combat">
+        <h1>{{localize 'CSR.heading.combat'}}</h1>
+        <textarea name="data.combat">{{data.combat}}</textarea>
+      </div>
+
+      <div class="tab interaction" data-group="primary" data-tab="interaction">
+        <h1>{{localize 'CSR.heading.interaction'}}</h1>
+        <textarea name="data.interaction">{{data.interaction}}</textarea>
+      </div>
+
+      <div class="tab use" data-group="primary" data-tab="use">
+        <h1>{{localize 'CSR.heading.use'}}</h1>
+        <textarea name="data.use">{{data.use}}</textarea>
+      </div>
+      
+      <div class="tab loot" data-group="primary" data-tab="loot">
+        <h1>{{localize 'CSR.heading.loot'}}</h1>
+        <textarea name="data.loot">{{data.loot}}</textarea>
+      </div>
+    </section>
   </div>
 </form>

@@ -26,8 +26,8 @@
         <div class="flex-right">
           <select name="data.cost.pool" data-dtype="Number">
             {{#select data.cost.pool}}
-            {{#each data.stats}}
-            <option value="{{@index}}">{{this}}</option>
+            {{#each stats}}
+            <option value="{{@index}}">{{localize (concat "CSR.pool." this)}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -56,8 +56,8 @@
         <div class="flex-right">
           <select name="data.range" data-dtype="String">
             {{#select data.range}}
-            {{#each data.ranges}}
-            <option value="{{this}}">{{this}}</option>
+            {{#each ranges}}
+            <option value="{{@index}}">{{localize (concat 'CSR.range.' this)}}</option>
             {{/each}}
             {{/select}}
           </select>

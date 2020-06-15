@@ -24,7 +24,7 @@
           <select name="data.weight" data-dtype="Number">
             {{#select data.weight}}
             {{#each weightClasses}}
-            <option value="{{@index}}">{{this}}</option>
+            <option value="{{@index}}">{{localize (concat 'CSR.weight.' this)}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -40,7 +40,7 @@
           <select name="data.weaponType" data-dtype="Number">
             {{#select data.weaponType}}
             {{#each weaponTypes}}
-            <option value="{{@index}}">{{this}}</option>
+            <option value="{{@index}}">{{localize (concat 'CSR.weapon.' this)}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -66,7 +66,7 @@
           <select name="data.range" data-dtype="Number">
             {{#select data.range}}
             {{#each ranges}}
-            <option value="{{@index}}">{{this}}</option>
+            <option value="{{@index}}">{{localize (concat 'CSR.range.' this)}}</option>
             {{/each}}
             {{/select}}
           </select>

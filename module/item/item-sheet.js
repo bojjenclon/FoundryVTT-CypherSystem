@@ -31,8 +31,8 @@ export class CypherSystemItemSheet extends ItemSheet {
   }
 
   _abilityData(data) {
-    data.data.ranges = CSR.optionalRanges;
-    data.data.stats = CSR.stats;
+    data.ranges = CSR.optionalRanges;
+    data.stats = CSR.stats;
   }
 
   _armorData(data) {

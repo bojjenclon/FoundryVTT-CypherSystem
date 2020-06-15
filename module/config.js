@@ -22,28 +22,28 @@ CSR.inventoryTypes = [
 ];
 
 CSR.weightClasses = [
-  'Light',
-  'Medium',
-  'Heavy'
+  'light',
+  'medium',
+  'heavy'
 ];
 
 CSR.weaponTypes = [
-  'Bashing',
-  'Bladed',
-  'Ranged',
+  'bashing',
+  'bladed',
+  'ranged',
 ]
 
 CSR.stats = [
-  'Might',
-  'Speed',
-  'Intellect',
+  'might',
+  'speed',
+  'intellect',
 ];
 
 CSR.trainingLevels = [
-  'Inability',
-  'Untrained',
-  'Trained',
-  'Specialized'
+  'inability',
+  'untrained',
+  'trained',
+  'specialized'
 ];
 
 CSR.damageTrack = [
@@ -81,13 +81,13 @@ CSR.advances = {
 };
 
 CSR.ranges = [
-  'Immediate',
-  'Short',
-  'Long',
-  'Very Long'
+  'immediate',
+  'short',
+  'long',
+  'veryLong'
 ];
 
-CSR.optionalRanges = ["N/A"].concat(CSR.ranges);
+CSR.optionalRanges = ["na"].concat(CSR.ranges);
 
 CSR.abilityTypes = [
   'Action',

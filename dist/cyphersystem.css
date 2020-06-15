@@ -1246,8 +1246,8 @@ form.roll-dialog input[type="number"].tier {
 
 /* line 1, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window {
-  min-width: 672px;
-  min-height: 600px;
+  min-width: 700px;
+  min-height: 550px;
   max-width: 1280px;
   max-height: 960px;
 }
@@ -1265,70 +1265,85 @@ form.roll-dialog input[type="number"].tier {
 }
 
 /* line 14, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .profile-img {
+.cyphersystem.npc-window .window-content .header {
+  padding: 1em;
+}
+
+/* line 17, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .profile-img {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;
   width: 100%;
   height: auto;
+  max-height: 225px;
+  padding: 0.5em;
+  border: none;
 }
 
-/* line 20, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .lhs {
+/* line 26, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .profile-img:hover {
+  cursor: pointer;
+}
+
+/* line 31, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .lhs {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 33%;
           flex: 0 1 33%;
   margin-right: 1em;
 }
 
-/* line 26, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs {
+/* line 37, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs {
   height: 100%;
   padding: 8px;
 }
 
-/* line 31, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs div:not(:last-child),
-.cyphersystem.npc-window .window-content .rhs hr {
+/* line 42, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs div:not(:last-child),
+.cyphersystem.npc-window .window-content .header .rhs hr {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;
 }
 
-/* line 36, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs .grid {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-/* line 40, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs .main-line {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-/* line 44, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs .main-line * {
-  font-size: 1.5rem;
-}
-
 /* line 47, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs .main-line *:not(:last-child) {
-  margin-right: 8px;
+.cyphersystem.npc-window .window-content .header .rhs hr {
+  width: 100%;
+  margin: 1em 0;
 }
 
 /* line 52, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs .main-line input {
-  height: 1.5em;
+.cyphersystem.npc-window .window-content .header .rhs .grid {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 /* line 56, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs .main-line .level {
+.cyphersystem.npc-window .window-content .header .rhs .input-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/* line 61, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .input-group label {
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-right: 8px;
+}
+
+/* line 69, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .main-line {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1337,15 +1352,122 @@ form.roll-dialog input[type="number"].tier {
           align-items: center;
 }
 
-/* line 60, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs .main-line .level label {
-  margin-right: 8px;
+/* line 76, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .main-line .npc-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  text-align: center;
+  height: 1.4em;
+  margin-right: 1em;
+}
+
+/* line 87, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .main-line .npc-level label,
+.cyphersystem.npc-window .window-content .header .rhs .main-line .npc-level input {
+  font-size: 1.4rem;
   font-weight: bold;
 }
 
-/* line 66, scss/sheets/_npc-sheet.scss */
-.cyphersystem.npc-window .window-content .rhs .main-line .level input {
+/* line 93, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .main-line .npc-level input {
+  height: 1.4em;
+}
+
+/* line 100, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .npc-stats .flexcol:not(:last-child) {
+  margin-right: 1em;
+}
+
+/* line 104, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .npc-stats input[type="number"] {
+  width: 4em;
+}
+
+/* line 107, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .npc-stats input[type="number"].level {
   width: 3em;
+}
+
+/* line 112, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .npc-stats label {
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+/* line 120, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .header .rhs .npc-mods label {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+  margin-bottom: 2px;
+  font-weight: bold;
+}
+
+/* line 131, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .body .sheet-tabs {
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  padding: 6px 4px;
+  border-top: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  border-top-right-radius: 4px;
+}
+
+/* line 140, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .body .sheet-tabs ul {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 153, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .body .sheet-tabs ul li {
+  font-size: 2em;
+}
+
+/* line 156, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .body .sheet-tabs ul li a.active {
+  color: #b72020;
+}
+
+/* line 164, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .body .sheet-body .tab.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1em;
+}
+
+/* line 170, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .body .sheet-body .tab.active h1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 0px;
+          flex: 0 1 0;
+}
+
+/* line 174, scss/sheets/_npc-sheet.scss */
+.cyphersystem.npc-window .window-content .body .sheet-body .tab.active textarea {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
 /* line 1, scss/sheets/_item-sheet.scss */

@@ -14,7 +14,7 @@
           <select name="data.stat" data-dtype="Number">
             {{#select data.stat}}
             {{#each stats}}
-            <option value="{{this}}">{{localize (concat 'CSR.pool.' (toLowerCase this))}}</option>
+            <option value="{{@index}}">{{localize (concat 'CSR.pool.' this)}}</option>
             {{/each}}
             {{/select}}
           </select>
@@ -30,7 +30,7 @@
           <select class="select-skill-level" name="data.training" data-dtype="Number">
             {{#select data.training}}
             {{#each trainingLevels}}
-            <option value="{{@key}}">{{localize (concat 'CSR.training.' (toLowerCase this))}}</option>
+            <option value="{{@index}}">{{localize (concat 'CSR.training.' this)}}</option>
             {{/each}}
             {{/select}}
           </select>

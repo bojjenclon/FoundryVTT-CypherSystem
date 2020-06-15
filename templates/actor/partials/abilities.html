@@ -7,7 +7,7 @@
 
       {{#select abilityPoolFilter}}
       {{#each stats as |stat idx|}}
-      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.pool." (toLowerCase this))}}</option>
+      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.pool." this)}}</option>
       {{/each}}
       {{/select}}
     </select>

@@ -17,8 +17,8 @@ export class CypherSystemActorSheet extends ActorSheet {
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
       classes: ["cyphersystem", "sheet", "actor"],
-      width: 672,
-      height: 600,
+      width: 600,
+      height: 500,
       tabs: [{ 
         navSelector: ".sheet-tabs", 
         contentSelector: ".sheet-body", 
@@ -187,6 +187,7 @@ export class CypherSystemActorSheet extends ActorSheet {
   }
 
   async _npcData(data) {
+    data.ranges = CSR.ranges;
   }
 
   /** @override */
@@ -537,6 +538,12 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   _npcListeners(html) {
     html.closest('.window-app.sheet.actor').addClass('npc-window');
+
+    html.find('select[name="data.movement"]').select2({
+      theme: 'numenera',
+      width: '120px',
+      minimumResultsForSearch: Infinity
+    });
   }
 
   /** @override */

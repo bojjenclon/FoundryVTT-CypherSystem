@@ -7,7 +7,7 @@
 
       {{#select skillsPoolFilter}}
       {{#each stats as |stat idx|}}
-      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.pool." (toLowerCase this))}}</option>
+      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.pool." this)}}</option>
       {{/each}}
       {{/select}}
     </select>
@@ -17,7 +17,7 @@
 
       {{#select skillsTrainingFilter}}
       {{#each trainingLevels as |training idx|}}
-      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.training." (toLowerCase this))}}</option>
+      <option value="{{@index}}" data-dtype="Number">{{localize (concat "CSR.training." this)}}</option>
       {{/each}}
       {{/select}}
     </select>

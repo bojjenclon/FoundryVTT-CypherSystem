@@ -1,6 +1,6 @@
 &.npc-window {
-  min-width : 672px;
-  min-height: 600px;
+  min-width : 700px;
+  min-height: 550px;
 
   max-width: 1280px;
   max-height: 960px;
@@ -11,60 +11,168 @@
 
     height: 100%;
     
-    .profile-img {
-      flex: 0 1 0;
-      width: 100%;
-      height: auto;
-    }
+    .header {
+      padding: 1em;
 
-    .lhs {
-      flex: 0 1 33%;
-  
-      margin-right: 1em;
-    }
-  
-    .rhs {
-      height: 100%;
-  
-      padding: 8px;
-  
-      div:not(:last-child),
-      hr {
+      .profile-img {
         flex: 0 1 0;
-      }
-  
-      .grid {
-        align-items: center;
+        width: 100%;
+        height: auto;
+        max-height: 225px;
+
+        padding: 0.5em;
+        border: none;
+
+        &:hover {
+          cursor: pointer;
+        }
       }
 
-      .main-line {
-        display: flex;
-        align-items: center;
-        
-        * {
-          font-size: 1.5rem;
+      .lhs {
+        flex: 0 1 33%;
+    
+        margin-right: 1em;
+      }
+    
+      .rhs {
+        height: 100%;
+    
+        padding: 8px;
+    
+        div:not(:last-child),
+        hr {
+          flex: 0 1 0;
+        }
 
-          &:not(:last-child) {
+        hr {
+          width: 100%;
+          margin: 1em 0;
+        }
+    
+        .grid {
+          align-items: center;
+        }
+
+        .input-group {
+          display       : flex;
+          flex-direction: row;
+          align-items   : center;
+      
+          label {
+            font-weight: bold;
+            font-size  : 1.3em;
+
             margin-right: 8px;
           }
         }
 
-        input {
-          height: 1.5em;
-        }
+        .main-line {
+          $text-size: 1.4rem;
+          $text-height: 1.4em;
 
-        .level {
           display: flex;
           align-items: center;
-  
-          label {
-            margin-right: 8px;
-  
+
+          .npc-name {
+            font-size  : $text-size;
             font-weight: bold;
+            text-align: center;
+        
+            height: $text-height;
+
+            margin-right: 1em;
+          }
+        
+          .npc-level {
+            label,
+            input {
+              font-size  : $text-size;
+              font-weight: bold;
+            }
+        
+            input {
+              height: $text-height;
+            }
+          }
+        }
+
+        .npc-stats {
+          .flexcol:not(:last-child) {
+            margin-right: 1em;
           }
 
-          input {
-            width: 3em;
+          input[type="number"] {
+            width: 4em;
+    
+            &.level {
+              width: 3em;
+            }
+          }
+    
+          label {
+            font-weight: bold;
+
+            margin-bottom: 2px;
+          }
+        }
+
+        .npc-mods {
+          label {
+            flex: 0 1 0;
+            margin-bottom: 2px;
+
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .body {
+      .sheet-tabs {
+        flex-shrink: 1;
+    
+        padding: 6px 4px;
+    
+        border-top             : 1px solid #aaa;
+        border-right           : 1px solid #aaa;
+        border-top-right-radius: 4px;
+    
+        ul {
+          list-style-type: none;
+    
+          display        : flex;
+          align-items    : center;
+          justify-content: space-between;
+          flex-direction : column;
+    
+          height: 100%;
+    
+          margin : 0;
+          padding: 0;
+    
+          li {
+            font-size: 2em;
+    
+            a.active {
+              color: #b72020;
+            }
+          }
+        }
+      }
+
+      .sheet-body {
+        .tab.active {
+          display: flex;
+          flex-direction: column;
+
+          padding: 1em;
+
+          h1 {
+            flex: 0 1 0;
+          }
+
+          textarea {
+            flex: 1;
           }
         }
       }
