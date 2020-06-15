@@ -1,7 +1,7 @@
 /* globals mergeObject Dialog ContextMenu */
 
 import { CSR } from '../config.js';
-import { CypherRolls } from '../rolls.js';
+import { cypherRoll } from '../rolls.js';
 import { CypherSystemItem } from '../item/item.js';
 import { deepProp } from '../utils.js';
 
@@ -149,6 +149,8 @@ export class CypherSystemActorSheet extends ActorSheet {
   async _pcData(data) {
     data.isGM = game.user.isGM;
 
+    data.currencyName = game.settings.get('cyphersystemClean', 'currencyName');
+
     data.ranges = CSR.ranges;
     data.stats = CSR.stats;
     data.weaponTypes = CSR.weaponTypes;
@@ -222,7 +224,7 @@ export class CypherSystemActorSheet extends ActorSheet {
     const actorData = actor.data.data;
     const poolName = EnumPools[pool];
 
-    CypherRolls.Roll({
+    cypherRoll({
       parts: ['1d20'],
 
       data: {
@@ -257,12 +259,12 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   _deleteItemDialog(itemId, callback) {
     const confirmationDialog = new Dialog({
-      title: game.i18n.localize("CSR.dialog.deleteTitle"),
-      content: `<p>${game.i18n.localize("CSR.dialog.deleteContent")}</p><hr />`,
+      title: game.i18n.localize("CSR.dialog.delete.title"),
+      content: `<p>${game.i18n.localize("CSR.dialog.delete.content")}</p><hr />`,
       buttons: {
         confirm: {
           icon: '<i class="fas fa-check"></i>',
-          label: game.i18n.localize("CSR.dialog.deleteButton"),
+          label: game.i18n.localize("CSR.dialog.button.delete"),
           callback: () => {
             this.actor.deleteOwnedItem(itemId);
 
@@ -273,7 +275,7 @@ export class CypherSystemActorSheet extends ActorSheet {
         },
         cancel: {
           icon: '<i class="fas fa-times"></i>',
-          label: game.i18n.localize("CSR.dialog.cancelButton"),
+          label: game.i18n.localize("CSR.dialog.button.cancel"),
           callback: () => {
             if (callback) {
               callback(false);

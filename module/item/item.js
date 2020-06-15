@@ -1,6 +1,6 @@
 /* globals Item renderTemplate */
 
-import { CypherRolls } from '../rolls.js';
+import { cypherRoll } from '../rolls.js';
 import { valOrDefault } from '../utils.js';
 
 import EnumPools from '../enums/enum-pool.js';
@@ -171,7 +171,7 @@ export class CypherSystemItem extends Item {
       parts.push(`${sign} ${Math.abs(assets) * 3}`);
     }
 
-    CypherRolls.Roll({
+    cypherRoll({
       parts,
 
       data: {
@@ -202,7 +202,7 @@ export class CypherSystemItem extends Item {
       const { pool } = cost;
 
       if (actor.canSpendFromPool(pool, parseInt(cost.amount, 10))) {
-        CypherRolls.Roll({
+        cypherRoll({
           event,
           parts: ['1d20'],
           data: {

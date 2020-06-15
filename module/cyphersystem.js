@@ -9,10 +9,12 @@ import { CypherSystemItemSheet } from "./item/item-sheet.js";
 import { registerHandlebarHelpers } from './handlebars-helpers.js';
 import { preloadHandlebarsTemplates } from './template.js';
 
-import { rollText } from './rolls.js';
+import { registerSystemSettings } from './settings.js';
+import { renderChatMessage } from './chat.js';
+import { actorDirectoryContext } from './context-menu.js';
+import { csrSocketListeners } from './socket.js';
 
 Hooks.once('init', async function () {
-
   game.cyphersystemClean = {
     CypherSystemActor,
     CypherSystemItem
@@ -32,7 +34,8 @@ Hooks.once('init', async function () {
   CONFIG.Item.entityClass = CypherSystemItem;
 
   // Register sheet application classes
-  Actors.unregisterSheet("core", ActorSheet);
+  Actors.unregisterSheet('core', ActorSheet);
+  // TODO: Separate classes per type
   Actors.registerSheet('cyphersystemClean', CypherSystemActorSheet, {
     types: ['pc'],
     makeDefault: true,
@@ -42,33 +45,22 @@ Hooks.once('init', async function () {
     makeDefault: true,
   });
 
-  Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("cyphersystemClean", CypherSystemItemSheet, { makeDefault: true });
+  Items.unregisterSheet('core', ItemSheet);
+  Items.registerSheet('cyphersystemClean', CypherSystemItemSheet, { makeDefault: true });
 
+  registerSystemSettings();
   registerHandlebarHelpers();
   preloadHandlebarsTemplates();
 });
 
-Hooks.on("renderChatMessage", (chatMessage, html, data) => {
-  // Don't apply ChatMessage enhancement to recovery rolls
-  if (chatMessage.roll && !chatMessage.roll.dice[0].options.recovery) {
-    const dieRoll = chatMessage.roll.dice[0].rolls[0].roll;
-    const rollTotal = chatMessage.roll.total;
-    const messages = rollText(dieRoll, rollTotal);
-    const numMessages = messages.length;
+Hooks.on('renderChatMessage', renderChatMessage);
 
-    const messageContainer = $('<div/>');
-    messageContainer.addClass('special-messages');
+/**
+ * Add additional system-specific sidebar directory context menu options for CSR Actor entities
+ * 
+ * @param {jQuery} html         The sidebar HTML
+ * @param {Array} entryOptions  The default array of context menu options
+ */
+Hooks.on('getActorDirectoryEntryContext', actorDirectoryContext);
 
-    messages.forEach((special, idx) => {
-      const { text, color, cls } = special;
-
-      const newContent = `<span class="${cls}" style="color: ${color}">${text}</span>${idx < numMessages - 1 ? '<br />' : ''}`;
-
-      messageContainer.append(newContent);
-    });
-
-    const dt = html.find(".dice-total");
-    messageContainer.insertBefore(dt);
-  }
-});
+Hooks.once('ready', csrSocketListeners);

@@ -1,6 +1,9 @@
 {
   "Cypher System": "Cypher System",
 
+  "SETTINGS.name.currencyName": "Currency Name",
+  "SETTINGS.hint.currencyName": "Assign a name to the currency of the world. This will be used in various sheets.",
+
   "CSR.pool.might": "Might",
   "CSR.pool.speed": "Speed",
   "CSR.pool.intellect": "Intellect",
@@ -105,7 +108,6 @@
   "CSR.heading.form": "Form",
   "CSR.heading.effect": "Effect",
   "CSR.heading.depletion": "Depletion",
-  "CSR.heading.money": "Money",
   "CSR.heading.modifications": "Modifications",
   "CSR.heading.motive": "Motive",
   "CSR.heading.combat": "Combat",
@@ -154,12 +156,27 @@
   "CSR.chat.effect.minor": "Minor Effect",
   "CSR.chat.effect.major": "Major Effect",
 
-  "CSR.dialog.deleteTitle": "Confirm Delete",
-  "CSR.dialog.deleteContent": "Are you sure you want to delete this item? This action cannot be undone, and some items may not be recoverable.",
-  "CSR.dialog.deleteButton": "Delete",
+  "CSR.dialog.delete.title": "Confirm Delete",
+  "CSR.dialog.delete.content": "Are you sure you want to delete this item? This action cannot be undone, and some items may not be recoverable.",
+  
+  "CSR.dialog.button.delete": "Delete",
+  "CSR.dialog.button.cancel": "Cancel",
 
-  "CSR.dialog.cancelButton": "Cancel",
+  "CSR.dialog.intrusion.title": "GM Intrusion!",
+  "CSR.dialog.intrusion.doYouAccept": "The game master offers you an intrusion. Do you accept?",
+  "CSR.dialog.intrusion.acceptInstructions": "Should you ##ACCEPT##, the GM will introduce an unexpected complication for your character; however, you will receive 2 XP, 1 of which you must give to another player.",
+  "CSR.dialog.intrusion.refuseInstructions": "Should you ##REFUSE##, the complication will not happen but 1 XP will be subtracted from your current amount.",
+  "CSR.dialog.intrusion.notEnoughXP": "You don't have enough XP to refuse the instrusion.",
+
+  "CSR.dialog.button.accept": "Accept",
+  "CSR.dialog.button.refuse": "Refuse",
+
+  "CSR.ctxt.intrusion.heading": "GM Intrusion",
+  "CSR.ctxt.intrusion.chat": "The GM offers an intrusion to ##ACTOR##",
 
   "CSR.yes": "Yes",
-  "CSR.no": "No"
+  "CSR.no": "No",
+
+  "CSR.accept": "accept",
+  "CSR.refuse": "refuse"
 }
