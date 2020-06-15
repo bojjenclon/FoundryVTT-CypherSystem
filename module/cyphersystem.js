@@ -1,4 +1,4 @@
-/* global $ */
+/* global Combat */
 
 // Import Modules
 import { CypherSystemActor } from "./actor/actor.js";
@@ -66,7 +66,7 @@ Hooks.on('createActor', async function(actor, options, userId) {
       data: new CypherSystemItem({
         'pool': 1, // Speed
         'training': 1, // Untrained
-        
+
         'flags.initiative': true
       }),
     });
