@@ -40,7 +40,7 @@
 
       {{!-- Stats Tab --}}
       <div class="tab stats" data-group="primary" data-tab="stats">
-        <h1>Stats</h1>
+        <h1>{{localize 'CSR.heading.stats'}}</h1>
 
         <div class="content">
           {{> "systems/cyphersystemClean/templates/actor/partials/pools.html"}}
@@ -48,9 +48,9 @@
           <hr>
 
           <nav class="stats-tabs" data-group="secondary">
-            <a class="item" data-tab="advancement"><i class="fas fa-sort-numeric-up"></i> Advancement</a>
-            <a class="item" data-tab="damage"><i class="fas fa-heartbeat"></i> Damage Track</a>
-            <a class="item" data-tab="recovery"><i class="fas fa-medkit"></i> Recovery</a>
+            <a class="item" data-tab="advancement"><i class="fas fa-sort-numeric-up"></i> {{localize 'CSR.heading.advancement'}}</a>
+            <a class="item" data-tab="damage"><i class="fas fa-heartbeat"></i> {{localize 'CSR.heading.damageTrack'}}</a>
+            <a class="item" data-tab="recovery"><i class="fas fa-medkit"></i> {{localize 'CSR.heading.recovery'}}</a>
           </nav>
 
           <hr>
@@ -73,7 +73,7 @@
 
       {{!-- Skills Tab --}}
       <div class="tab skills" data-group="primary" data-tab="skills">
-        <h1>Skills</h1>
+        <h1>{{localize 'CSR.heading.skills'}}</h1>
 
         <div class="content">
           {{> "systems/cyphersystemClean/templates/actor/partials/skills.html"}}
@@ -82,7 +82,7 @@
 
       {{!-- Abilities Tab --}}
       <div class="tab abilities" data-group="primary" data-tab="abilities">
-        <h1>Abilities</h1>
+        <h1>{{localize 'CSR.heading.abilities'}}</h1>
 
         <div class="content">
           {{> "systems/cyphersystemClean/templates/actor/partials/abilities.html"}}
@@ -91,7 +91,7 @@
 
       {{!-- Inventory Tab --}}
       <div class="tab inventory" data-group="primary" data-tab="inventory">
-        <h1>Inventory</h1>
+        <h1>{{localize 'CSR.heading.inventory'}}</h1>
 
         <div class="content">
           {{> "systems/cyphersystemClean/templates/actor/partials/inventory.html"}}
@@ -100,7 +100,7 @@
 
       {{!-- Biography Tab --}}
       <div class="tab biography" data-group="primary" data-tab="bio">
-        <h1>Bio</h1>
+        <h1>{{localize 'CSR.heading.biography'}}</h1>
 
         <div class="content">
           {{editor content=data.biography target="data.biography" button=true owner=owner editable=editable}}

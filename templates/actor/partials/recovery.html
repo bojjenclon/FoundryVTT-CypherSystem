@@ -2,7 +2,7 @@
   <div class="grid">
     <div class="roll">
       <div class="input-group">
-        <label for="data.recovery">1d6&nbsp;+</label>
+        <label for="data.recovery">{{localize 'CSR.recovery.rollBase'}}</label>
         <input type="number" name="data.recoveryMod" value="{{data.recoveryMod}}" min="0" max="99" data-dtype="Number"
           title="{{localize 'CSR.recoveryInputTooltip'}}" />
   
@@ -11,7 +11,7 @@
     </div>
   
     <div class="input-group">
-      <label for="data.armor">Armor</label>
+      <label for="data.armor">{{localize 'CSR.heading.armor'}}</label>
       <input type="number" name="data.armor" value="{{data.armor}}" class="armor" min="0" max="99" data-dtype="Number" />
     </div>
   </div>

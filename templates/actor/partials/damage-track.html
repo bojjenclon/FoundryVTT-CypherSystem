@@ -1,13 +1,13 @@
 <div class="damage">
   <select name="data.damageTrack" data-dtype="Number">
     {{#select data.damageTrack}}
-    {{#each damageTrackData as |track id|}}
-    <option value="{{id}}">{{this.label}}</option>
+    {{#each damageTrackData as |track idx|}}
+    <option value="{{@index}}">{{localize (concat 'CSR.damage.label.' this)}}</option>
     {{/each}}
     {{/select}}
   </select>
   
   <div class="description">
-    <p>{{damageTrackDescription}}</p>
+    <p>{{localize (concat 'CSR.damage.description.' damageTrack)}}</p>
   </div>  
 </div>

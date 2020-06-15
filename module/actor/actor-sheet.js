@@ -158,21 +158,21 @@ export class CypherSystemActorSheet extends ActorSheet {
       ([key, value]) => {
         return {
           name: key,
-          label: CSR.advances[key],
+          label: game.i18n.localize(`CSR.advance.${key}`),
           isChecked: value,
         };
       }
     );
 
     data.damageTrackData = CSR.damageTrack;
-    data.damageTrackDescription = CSR.damageTrack[data.data.damageTrack].description;
+    data.damageTrack = CSR.damageTrack[data.data.damageTrack];
 
     data.recoveriesData = Object.entries(
       data.actor.data.recoveries
     ).map(([key, value]) => {
       return {
         key,
-        label: CSR.recoveries[key],
+        label: game.i18n.localize(`CSR.recovery.${key}`),
         checked: value,
       };
     });
