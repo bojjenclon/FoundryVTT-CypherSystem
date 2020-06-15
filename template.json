@@ -31,7 +31,7 @@
         "tenHours": false
       },
 
-      "damageTrack": 1,
+      "damageTrack": 0,
       "armor": 0,
 
       "stats": {

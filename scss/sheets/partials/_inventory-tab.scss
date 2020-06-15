@@ -12,6 +12,16 @@
     }
   }
 
+  .money {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    label {
+      margin-right: 8px;
+    }
+  }
+
   .filters {
     display: flex;
     align-items: center;

@@ -1,7 +1,9 @@
 /* global Actor:false */
 
-import EnumPools from '../enums/enum-pool.js';
 import { CSR } from '../config.js';
+import { valOrDefault } from '../utils.js';
+
+import EnumPools from '../enums/enum-pool.js';
 
 /**
  * Extend the base Actor entity by defining a custom roll data structure which is ideal for the Simple system.
@@ -14,13 +16,53 @@ export class CypherSystemActor extends Actor {
   _preparePCData(actorData) {
     const data = actorData.data;
 
-    // Make modifications to data here. For example:
+    data.sentence = valOrDefault(data.sentence, {
+      descriptor: '',
+      type: '',
+      focus: ''
+    });
 
-    // Loop through ability scores, and add their modifiers to our sheet output.
-    // for (let [key, ability] of Object.entries(data.abilities)) {
-    //   // Calculate the modifier using d20 rules.
-    //   ability.mod = Math.floor((ability.value - 10) / 2);
-    // }
+    data.tier = valOrDefault(data.tier, 1);
+    data.effort = valOrDefault(data.effort, 1);
+    data.xp = valOrDefault(data.xp, 0);
+    data.advances = valOrDefault(data.advances, {
+      stats: false,
+      edge: false,
+      effort: false,
+      skills: false,
+      other: false
+    });
+
+    data.recoveryMod = valOrDefault(data.recoveryMod, 1);
+    data.recoveries = valOrDefault(data.recoveries, {
+      action: false,
+      tenMins: false,
+      oneHour: false,
+      tenHours: false
+    });
+
+    data.damageTrack = valOrDefault(data.damageTrack, 0);
+    data.armor = valOrDefault(data.armor, 0);
+
+    data.stats = valOrDefault(data.stats, {
+      might: {
+        value: 0,
+        pool: 0,
+        edge: 0
+      },
+      speed: {
+        value: 0,
+        pool: 0,
+        edge: 0
+      },
+      intellect: {
+        value: 0,
+        pool: 0,
+        edge: 0
+      }
+    });
+
+    data.money = valOrDefault(data.money, 0);
   }
 
   /**
@@ -84,7 +126,7 @@ export class CypherSystemActor extends Actor {
     return value;
   }
 
-  canSpendFromPool(pool, amount, applyEdge=true) {
+  canSpendFromPool(pool, amount, applyEdge = true) {
     const actorData = this.data.data;
     const poolName = EnumPools[pool].toLowerCase();
     const stat = actorData.stats[poolName];

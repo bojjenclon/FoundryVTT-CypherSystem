@@ -1,18 +1,25 @@
 <div class="inventory">
-  <div class="filters">
-    <strong>{{localize "CSR.heading.filter"}}</strong>
+  <div class="grid no-margins">
+    <div class="money">
+      <label for="data.money">Money</label>
+      <input type="number" name="data.money" value="{{data.money}}" min="0" class="money" data-dtype="Number" />
+    </div>
 
-    <select name="inventoryTypeFilter" data-dtype="Number">
-      <option value="-1" data-dtype="Number">{{localize "CSR.heading.type"}}</option>
-
-      {{#select inventoryTypeFilter}}
-      {{#each inventoryTypes as |type idx|}}
-      <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.inventory." (toLowerCase this))}}</option>
-      {{/each}}
-      {{/select}}
-    </select>
-
-    <a class="add-inventory"><i class="fas fa-plus"></i></a>
+    <div class="filters">
+      <strong>{{localize "CSR.heading.filter"}}</strong>
+  
+      <select name="inventoryTypeFilter" data-dtype="Number">
+        <option value="-1" data-dtype="Number">{{localize "CSR.heading.type"}}</option>
+  
+        {{#select inventoryTypeFilter}}
+        {{#each inventoryTypes as |type idx|}}
+        <option value="{{idx}}" data-dtype="Number">{{localize (concat "CSR.inventory." (toLowerCase this))}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+  
+      <a class="add-inventory"><i class="fas fa-plus"></i></a>
+    </div>
   </div>
 
   <hr>
