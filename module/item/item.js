@@ -172,18 +172,21 @@ export class CypherSystemItem extends Item {
     }
 
     CypherRolls.Roll({
-      event,
       parts,
+
       data: {
         pool,
         abilityCost: 0,
         maxEffort: actorData.effort,
         assets
       },
+      event,
+
+      title: game.i18n.localize('CSR.roll.skill.title'),
+      flavor: game.i18n.localize('CSR.roll.skill.flavor').replace('##ACTOR##', actor.name).replace('##POOL##', name),
+
+      actor,
       speaker: ChatMessage.getSpeaker({ actor }),
-      flavor: `${actor.name} used ${name}`,
-      title: 'Use Skill',
-      actor
     });
   }
 

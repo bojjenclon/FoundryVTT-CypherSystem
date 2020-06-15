@@ -223,16 +223,35 @@ export class CypherSystemActorSheet extends ActorSheet {
     const poolName = EnumPools[pool];
 
     CypherRolls.Roll({
-      event,
       parts: ['1d20'],
+
       data: {
         pool,
         maxEffort: actorData.effort,
       },
+      event,
+      
+      title: game.i18n.localize('CSR.roll.pool.title'),
+      flavor: game.i18n.localize('CSR.roll.pool.flavor').replace('##ACTOR##', actor.name).replace('##POOL##', poolName),
+
+      actor,
       speaker: ChatMessage.getSpeaker({ actor }),
-      flavor: `${actor.name} used ${poolName}`,
-      title: 'Use Pool',
-      actor
+    });
+  }
+
+  _rollRecovery() {
+    const { actor } = this;
+    const actorData = actor.data.data;
+
+    const roll = new Roll(`1d6+${actorData.recoveryMod}`).roll();
+
+    // Flag the roll as a recovery roll
+    roll.dice[0].options.recovery = true;
+
+    roll.toMessage({
+      title: game.i18n.localize('CSR.roll.recovery.title'),
+      speaker: ChatMessage.getSpeaker({ actor }),
+      flavor: game.i18n.localize('CSR.roll.recovery.flavor').replace('##ACTOR##', actor.name),
     });
   }
 
@@ -285,6 +304,12 @@ export class CypherSystemActorSheet extends ActorSheet {
       theme: 'numenera',
       width: '130px',
       minimumResultsForSearch: Infinity
+    });
+
+    html.find('.recovery-roll').click(evt => {
+      evt.preventDefault();
+
+      this._rollRecovery();
     });
   }
 

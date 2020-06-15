@@ -136,6 +136,24 @@
   "CSR.tooltip.edit": "Edit",
   "CSR.tooltip.delete": "Delete",
 
+  "CSR.roll.recovery.title": "Recovery Roll",
+  "CSR.roll.recovery.flavor": "##ACTOR## used a recovery",
+
+  "CSR.roll.pool.title": "Use Pool",
+  "CSR.roll.pool.flavor": "##ACTOR## used ##POOL##",
+
+  "CSR.roll.skill.title": "Use Skill",
+  "CSR.roll.skill.flavor": "##ACTOR## used ##SKILL##",
+
+  "CSR.roll.effort.flavor": " with ##EFFORT## Effort",
+
+  "CSR.roll.failed.flavor": "Roll Failed",
+  "CSR.roll.failed.content": "Not enough points in ##POOL## pool.",
+
+  "CSR.chat.intrusion": "GM Intrusion",
+  "CSR.chat.effect.minor": "Minor Effect",
+  "CSR.chat.effect.major": "Major Effect",
+
   "CSR.dialog.deleteTitle": "Confirm Delete",
   "CSR.dialog.deleteContent": "Are you sure you want to delete this item? This action cannot be undone, and some items may not be recoverable.",
   "CSR.dialog.deleteButton": "Delete",

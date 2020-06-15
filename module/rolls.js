@@ -4,6 +4,63 @@ import { RollDialog } from './dialog/roll-dialog.js';
 
 import EnumPools from './enums/enum-pool.js';
 
+export function rollText(dieRoll, rollTotal) {
+  let parts = [];
+
+  const taskLevel = Math.floor(rollTotal / 3);
+  const skillLevel = Math.floor((rollTotal - dieRoll) / 3 + 0.5);
+  const totalAchieved = taskLevel + skillLevel;
+
+  let tnColor = '#000000';
+  if (totalAchieved < 3) {
+    tnColor = '#0a860a';
+  } else if (totalAchieved < 7) {
+    tnColor = '#848409';
+  } else {
+    tnColor = '#0a860a';
+  }
+
+  let successText = `<${totalAchieved}>`;
+  if (skillLevel !== 0) {
+    const sign = skillLevel > 0 ? "+" : "";
+    successText += ` (${taskLevel}${sign}${skillLevel})`;
+  }
+
+  parts.push({
+    text: successText,
+    color: tnColor,
+    cls: 'target-number'
+  })
+
+  switch (dieRoll) {
+    case 1:
+      parts.push({
+        text: game.i18n.localize('CSR.chat.intrusion'),
+        color: '#000000',
+        cls: 'effect'
+      });
+      break;
+
+    case 19:
+      parts.push({
+        text: game.i18n.localize('CSR.chat.effect.minor'),
+        color: '#000000',
+        cls: 'effect'
+      });
+      break;
+
+    case 20:
+      parts.push({
+        text: game.i18n.localize('CSR.chat.effect.major'),
+        color: '#000000',
+        cls: 'effect'
+      });
+      break;
+  }
+
+  return parts;
+}
+
 export class CypherRolls {
   static async Roll({ parts = [], data = {}, actor = null, event = null, speaker = null, flavor = null, title = null, item = false } = {}) {
     let rollMode = game.settings.get('core', 'rollMode');
@@ -25,14 +82,15 @@ export class CypherRolls {
       if (data['effort']) {
         filtered.push(`+${data['effort'] * 3}`);
 
-        flavor += ` with ${data['effort']} Effort`
+        // TODO: Find a better way to localize this
+        flavor += game.i18n.localize('CSR.roll.effort.flavor').replace('##EFFORT##', data['effort']);
       }
 
       const roll = new Roll(filtered.join(''), data).roll();
       // Convert the roll to a chat message and return the roll
       rollMode = form ? form.rollMode.value : rollMode;
       rolled = true;
-      
+
       return roll;
     }
 
@@ -77,8 +135,8 @@ export class CypherRolls {
                 const poolName = EnumPools[pool];
                 ChatMessage.create([{
                   speaker,
-                  flavor: 'Roll Failed',
-                  content: `Not enough points in ${poolName} pool.`
+                  flavor: game.i18n.localize('CSR.roll.failed.flavor'),
+                  content: game.i18n.localize('CSR.roll.failed.content').replace('##POOL##', poolName)
                 }])
               }
             }

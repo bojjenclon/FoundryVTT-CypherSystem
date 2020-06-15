@@ -33,6 +33,23 @@ h2 {
 }
 
 /* Global styles */
+/* line 1, scss/global/_chat.scss */
+.special-messages {
+  margin: 4px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* line 6, scss/global/_chat.scss */
+.special-messages .target-number {
+  font-size: 1rem;
+}
+
+/* line 10, scss/global/_chat.scss */
+.special-messages .effect {
+  font-size: 1.3rem;
+}
+
 /* line 1, scss/global/_window.scss */
 .window-app {
   font-family: "Karla", sans-serif;
@@ -247,12 +264,12 @@ h2 {
   color: white;
 }
 
-/* line 2, scss/global/roll-dialog.scss */
+/* line 2, scss/global/_roll-dialog.scss */
 form.roll-dialog label {
   font-weight: bold;
 }
 
-/* line 6, scss/global/roll-dialog.scss */
+/* line 6, scss/global/_roll-dialog.scss */
 form.roll-dialog input[type="number"] {
   height: 24px;
   background: rgba(0, 0, 0, 0.05);
@@ -269,19 +286,19 @@ form.roll-dialog input[type="number"] {
   -moz-appearance: textfield;
 }
 
-/* line 19, scss/global/roll-dialog.scss */
+/* line 19, scss/global/_roll-dialog.scss */
 form.roll-dialog input[type="number"]::-webkit-outer-spin-button, form.roll-dialog input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 25, scss/global/roll-dialog.scss */
+/* line 25, scss/global/_roll-dialog.scss */
 form.roll-dialog input[type="number"].tier {
   width: calc(1rem + 1ch);
 }
 
 /* Styles limited to cyphersystem sheets */
-/* line 15, scss/cyphersystem.scss */
+/* line 16, scss/cyphersystem.scss */
 .cyphersystem {
   /*Outer box of the fake checkbox*/
   /*Checkmark of the fake checkbox*/
