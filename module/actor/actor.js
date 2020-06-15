@@ -14,7 +14,7 @@ export class CypherSystemActor extends Actor {
    * Prepare Character type specific data
    */
   _preparePCData(actorData) {
-    const data = actorData.data;
+    const { data } = actorData;
 
     data.sentence = valOrDefault(data.sentence, {
       descriptor: '',
@@ -65,6 +65,28 @@ export class CypherSystemActor extends Actor {
     data.money = valOrDefault(data.money, 0);
   }
 
+  _prepareNPCData(actorData) {
+    const { data } = actorData;
+
+    data.level = valOrDefault(data.level, 1);
+
+    data.health = valOrDefault(data.health, {
+      value: 3,
+      max: 3
+    });
+    data.damage = valOrDefault(data.damage, 1);
+    data.armor = valOrDefault(data.armor, 0);
+    data.movement = valOrDefault(data.movement, 1);
+
+    data.description = valOrDefault(data.description, '');
+    data.motive = valOrDefault(data.motive, '');
+    data.modifications = valOrDefault(data.modifications, '');
+    data.combat = valOrDefault(data.combat, '');
+    data.interaction = valOrDefault(data.interaction, '');
+    data.use = valOrDefault(data.use, '');
+    data.loot = valOrDefault(data.loot, '');
+  }
+
   /**
    * Augment the basic actor data with additional dynamic data.
    */
@@ -75,10 +97,14 @@ export class CypherSystemActor extends Actor {
     const data = actorData.data;
     const flags = actorData.flags;
 
-    // Make separate methods for each Actor type (character, npc, etc.) to keep
-    // things organized.
-    if (actorData.type === 'pc') {
-      this._preparePCData(actorData);
+    const { type } = actorData;
+    switch (type) {
+      case 'pc':
+        this._preparePCData(actorData);
+        break;
+      case 'npc':
+        this._prepareNPCData(actorData);
+        break;
     }
   }
 

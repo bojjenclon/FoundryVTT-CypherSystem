@@ -45,9 +45,7 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   /* -------------------------------------------- */
 
-  constructor(...args) {
-    super(...args);
-
+  _pcInit() {
     this.skillsPoolFilter = -1;
     this.skillsTrainingFilter = -1;
     this.selectedSkill = null;
@@ -57,6 +55,23 @@ export class CypherSystemActorSheet extends ActorSheet {
 
     this.inventoryTypeFilter = -1;
     this.selectedInvItem = null;
+  }
+
+  _npcInit() {
+  }
+
+  constructor(...args) {
+    super(...args);
+
+    const { type } = this.actor.data;
+    switch (type) {
+      case 'pc':
+        this._pcInit();
+        break;
+      case 'npc':
+        this._npcInit();
+        break;
+    }
   }
 
   _generateItemData(data, type, field) {
@@ -130,10 +145,7 @@ export class CypherSystemActorSheet extends ActorSheet {
     }
   }
 
-  /** @override */
-  async getData() {
-    const data = super.getData();
-    
+  async _pcData(data) {
     data.isGM = game.user.isGM;
 
     data.ranges = CSR.ranges;
@@ -171,6 +183,24 @@ export class CypherSystemActorSheet extends ActorSheet {
     await this._skillData(data);
     await this._abilityData(data);
     await this._inventoryData(data);
+  }
+
+  async _npcData(data) {
+  }
+
+  /** @override */
+  async getData() {
+    const data = super.getData();
+    
+    const { type } = this.actor.data;
+    switch (type) {
+      case 'pc':
+        await this._pcData(data);
+        break;
+      case 'npc':
+        await this._npcData(data);
+        break;
+    }
 
     return data;
   }
@@ -484,13 +514,8 @@ export class CypherSystemActorSheet extends ActorSheet {
     }
   }
 
-  /** @override */
-  activateListeners(html) {
-    super.activateListeners(html);
-
-    if (!this.options.editable) {
-      return;
-    }
+  _pcListeners(html) {
+    html.closest('.window-app.sheet.actor').addClass('pc-window');
 
     // Hack, for some reason the inner tab's content doesn't show 
     // when changing primary tabs within the sheet
@@ -507,5 +532,28 @@ export class CypherSystemActorSheet extends ActorSheet {
     this._skillsTabListeners(html);
     this._abilityTabListeners(html);
     this._inventoryTabListeners(html);
+  }
+
+  _npcListeners(html) {
+    html.closest('.window-app.sheet.actor').addClass('npc-window');
+  }
+
+  /** @override */
+  activateListeners(html) {
+    super.activateListeners(html);
+
+    if (!this.options.editable) {
+      return;
+    }
+
+    const { type } = this.actor.data;
+    switch (type) {
+      case 'pc':
+        this._pcListeners(data);
+        break;
+      case 'npc':
+        this._npcListeners(data);
+        break;
+    }
   }
 }

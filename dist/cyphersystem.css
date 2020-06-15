@@ -578,7 +578,7 @@ form.roll-dialog input[type="number"].tier {
 }
 
 /* line 1, scss/sheets/_pc-sheet.scss */
-.cyphersystem.sheet.actor {
+.cyphersystem.pc-window {
   min-width: 672px;
   min-height: 600px;
   max-width: 1280px;
