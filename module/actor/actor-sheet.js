@@ -40,7 +40,8 @@ export class CypherSystemActorSheet extends ActorSheet {
    * @type {String}
    */
   get template() {
-    return "systems/cyphersystemClean/templates/actor/pc-sheet.html";
+    const { type } = this.actor.data;
+    return `systems/cyphersystemClean/templates/actor/${type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -549,10 +550,10 @@ export class CypherSystemActorSheet extends ActorSheet {
     const { type } = this.actor.data;
     switch (type) {
       case 'pc':
-        this._pcListeners(data);
+        this._pcListeners(html);
         break;
       case 'npc':
-        this._npcListeners(data);
+        this._npcListeners(html);
         break;
     }
   }
