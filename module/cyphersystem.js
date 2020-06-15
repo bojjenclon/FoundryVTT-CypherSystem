@@ -13,6 +13,7 @@ import { registerSystemSettings } from './settings.js';
 import { renderChatMessage } from './chat.js';
 import { actorDirectoryContext } from './context-menu.js';
 import { csrSocketListeners } from './socket.js';
+import { rollInitiative } from './combat.js';
 
 Hooks.once('init', async function () {
   game.cyphersystemClean = {
@@ -24,10 +25,7 @@ Hooks.once('init', async function () {
    * Set an initiative formula for the system
    * @type {String}
    */
-  CONFIG.Combat.initiative = {
-    formula: "1d20",
-    decimals: 2
-  };
+  Combat.prototype.rollInitiative = rollInitiative;
 
   // Define custom Entity classes
   CONFIG.Actor.entityClass = CypherSystemActor;

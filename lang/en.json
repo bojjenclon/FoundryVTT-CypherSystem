@@ -4,6 +4,8 @@
   "SETTINGS.name.currencyName": "Currency Name",
   "SETTINGS.hint.currencyName": "Assign a name to the currency of the world. This will be used in various sheets.",
 
+  "CSR.initiative.flavor": "##ACTOR## rolls for Initiative!",
+
   "CSR.pool.might": "Might",
   "CSR.pool.speed": "Speed",
   "CSR.pool.intellect": "Intellect",
