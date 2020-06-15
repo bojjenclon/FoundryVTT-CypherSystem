@@ -1,6 +1,7 @@
 /* globals Item renderTemplate */
 
 import { CypherRolls } from '../rolls.js';
+import { valOrDefault } from '../utils.js';
 
 import EnumPools from '../enums/enum-pool.js';
 import EnumTraining from '../enums/enum-training.js';
@@ -17,7 +18,104 @@ export class CypherSystemItem extends Item {
     const itemData = this.data;
     const { data } = itemData;
 
+    data.name = valOrDefault(itemData.name, game.i18n.localize('CSR.new.skill'));
+    data.pool = valOrDefault(data.pool, 0);
+    data.training = valOrDefault(data.training, 1);
+    data.notes = valOrDefault(data.notes, '');
+  }
 
+  _prepareAbilityData() {
+    const itemData = this.data;
+    const { data } = itemData;
+
+    data.name = valOrDefault(itemData.name, game.i18n.localize('CSR.new.ability'));
+    data.sourceType = valOrDefault(data.sourceType, '');
+    data.sourceValue = valOrDefault(data.sourceValue, '');
+    data.isEnabler = valOrDefault(data.isEnabler, true);
+    data.cost = valOrDefault(data.cost, {
+      value: 0,
+      pool: 0
+    });
+    data.range = valOrDefault(data.range, 0);
+    data.notes = valOrDefault(data.notes, '');
+  }
+
+  _prepareArmorData() {
+    const itemData = this.data;
+    const { data } = itemData;
+
+    data.name = valOrDefault(itemData.name, game.i18n.localize('CSR.new.armor'));
+    data.armor = valOrDefault(data.armor, 1);
+    data.additionalSpeedEffortCost = valOrDefault(data.additionalSpeedEffortCost, 1);
+    data.price = valOrDefault(data.price, 0);
+    data.weight = valOrDefault(data.weight, 0);
+    data.quantity = valOrDefault(data.quantity, 1);
+    data.equipped = valOrDefault(data.equipped, false);
+    data.notes = valOrDefault(data.notes, '');
+  }
+
+  _prepareWeaponData() {
+    const itemData = this.data;
+    const { data } = itemData;
+
+    data.name = valOrDefault(itemData.name, game.i18n.localize('CSR.new.weapon'));
+    data.damage = valOrDefault(data.damage, 1);
+    data.category = valOrDefault(data.category, 0);
+    data.range = valOrDefault(data.range, 0);
+    data.price = valOrDefault(data.price, 0);
+    data.weight = valOrDefault(data.weight, 0);
+    data.quantity = valOrDefault(data.quantity, 1);
+    data.equipped = valOrDefault(data.equipped, false);
+    data.notes = valOrDefault(data.notes, '');
+  }
+
+  _prepareGearData() {
+    const itemData = this.data;
+    const { data } = itemData;
+
+    data.name = valOrDefault(itemData.name, game.i18n.localize('CSR.new.gear'));
+    data.price = valOrDefault(data.price, 0);
+    data.quantity = valOrDefault(data.quantity, 1);
+    data.notes = valOrDefault(data.notes, '');
+  }
+
+  _prepareCypherData() {
+    const itemData = this.data;
+    const { data } = itemData;
+
+    data.name = valOrDefault(itemData.name, game.i18n.localize('CSR.new.cypher'));
+    data.identified = valOrDefault(data.identified, false);
+    data.level = valOrDefault(data.level, null);
+    data.levelDie = valOrDefault(data.levelDie, '');
+    data.form = valOrDefault(data.form, '');
+    data.effect = valOrDefault(data.effect, '');
+    data.notes = valOrDefault(data.notes, '');
+  }
+
+  _prepareArtifactData() {
+    const itemData = this.data;
+    const { data } = itemData;
+
+    data.name = valOrDefault(itemData.name, game.i18n.localize('CSR.new.artifact'));
+    data.identified = valOrDefault(data.identified, false);
+    data.level = valOrDefault(data.level, null);
+    data.levelDie = valOrDefault(data.levelDie, '');
+    data.form = valOrDefault(data.form, '');
+    data.effect = valOrDefault(data.effect, '');
+    data.depletion = valOrDefault(data.depletion, {
+      isDepleting: true,
+      die: 'd6',
+      threshold: 1
+    });
+    data.notes = valOrDefault(data.notes, '');
+  }
+
+  _prepareOddityData() {
+    const itemData = this.data;
+    const { data } = itemData;
+
+    data.name = valOrDefault(itemData.name, game.i18n.localize('CSR.new.oddity'));
+    data.notes = valOrDefault(data.notes, '');
   }
 
   /**
@@ -26,8 +124,31 @@ export class CypherSystemItem extends Item {
   prepareData() {
     super.prepareData();
 
-    if (this.type === 'skill') {
-      this._prepareSkillData();
+    switch (this.type) {
+      case 'skill':
+        this._prepareSkillData();
+        break;
+      case 'ability':
+        this._prepareAbilityData();
+        break;
+      case 'armor':
+        this._prepareArmorData();
+        break;
+      case 'weapon':
+        this._prepareWeaponData();
+        break;
+      case 'gear':
+        this._prepareGearData();
+        break;
+      case 'cypher':
+        this._prepareCypherData();
+        break;
+      case 'artifact':
+        this._prepareArtifactData();
+        break;
+      case 'oddity':
+        this._prepareOddityData();
+        break;
     }
   }
 

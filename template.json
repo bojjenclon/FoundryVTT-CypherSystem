@@ -154,6 +154,15 @@
       "training": 1
     },
 
+    "armor": {
+      "templates": ["common", "sellable", "hasWeight", "hasQuantity", "equippable"],
+      
+      "version": 1,
+      
+      "armor": 1,
+      "additionalSpeedEffortCost": 1
+    },
+    
     "weapon": {
       "templates": ["common", "ranged", "sellable", "hasWeight", "hasQuantity", "equippable"],
 
@@ -161,15 +170,6 @@
       
       "damage": 1,
       "category": 0
-    },
-
-    "armor": {
-      "templates": ["common", "sellable", "hasWeight", "hasQuantity", "equippable"],
-      
-      "version": 1,
-      
-      "armor": 0,
-      "additionalSpeedEffortCost": 1
     },
 
     "gear": {

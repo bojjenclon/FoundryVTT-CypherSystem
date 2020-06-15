@@ -42,6 +42,15 @@
   "CSR.placeholder.artifactName": "Artifact Name",
   "CSR.placeholder.oddityName": "Oddity Name",
 
+  "CSR.new.skill": "New Skill",
+  "CSR.new.ability": "New Ability",
+  "CSR.new.armor": "New Armor",
+  "CSR.new.weapon": "New Weapon",
+  "CSR.new.gear": "New Gear",
+  "CSR.new.cypher": "New Cypher",
+  "CSR.new.artifact": "New Artifact",
+  "CSR.new.oddity": "New Oddity",
+
   "CSR.heading.pool": "Pool",
   "CSR.heading.training": "Training",
   "CSR.heading.description": "Description",

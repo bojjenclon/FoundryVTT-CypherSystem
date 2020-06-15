@@ -8,3 +8,11 @@ export function deepProp(obj, path) {
   });
   return val;
 }
+
+export function isDefined(val) {
+  return !(val === null || typeof val === 'undefined');
+}
+
+export function valOrDefault(val, def) {
+  return isDefined(val) ? val : def;
+}
