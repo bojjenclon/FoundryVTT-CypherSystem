@@ -53,12 +53,6 @@ CSR.damageTrack = [
   'dead'
 ];
 
-// CSR.recoveries = {
-//   'action': '1 Action',
-//   'tenMins': '10 mins',
-//   'oneHour': '1 hour',
-//   'tenHours': '10 hours'
-// };
 CSR.recoveries = [
   'action',
   'tenMins',
@@ -84,8 +78,8 @@ CSR.ranges = [
 CSR.optionalRanges = ["na"].concat(CSR.ranges);
 
 CSR.abilityTypes = [
-  'Action',
-  'Enabler',
+  'action',
+  'enabler',
 ];
 
 CSR.supportsMacros = [

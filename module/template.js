@@ -10,8 +10,8 @@ export const preloadHandlebarsTemplates = async() => {
   const templatePaths = [
 
       // Actor Sheets
-      "systems/cyphersystemClean/templates/actor/actor-sheet.html",
       "systems/cyphersystemClean/templates/actor/pc-sheet.html",
+      "systems/cyphersystemClean/templates/actor/npc-sheet.html",
 
       // Actor Partials
       "systems/cyphersystemClean/templates/actor/partials/pools.html",
@@ -32,7 +32,7 @@ export const preloadHandlebarsTemplates = async() => {
       "systems/cyphersystemClean/templates/actor/partials/info/artifact-info.html",
       "systems/cyphersystemClean/templates/actor/partials/info/oddity-info.html",
 
-      //Item Sheets
+      // Item Sheets
       "systems/cyphersystemClean/templates/item/item-sheet.html",
       "systems/cyphersystemClean/templates/item/skill-sheet.html",
       "systems/cyphersystemClean/templates/item/armor-sheet.html",
@@ -41,6 +41,9 @@ export const preloadHandlebarsTemplates = async() => {
       "systems/cyphersystemClean/templates/item/cypher-sheet.html",
       "systems/cyphersystemClean/templates/item/artifact-sheet.html",
       "systems/cyphersystemClean/templates/item/oddity-sheet.html",
+
+      // Dialogs
+      "systems/cyphersystemClean/templates/dialog/roll-dialog.html",
   ];
 
   // Load the template parts
