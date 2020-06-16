@@ -50,8 +50,8 @@
         <label>{{localize "CSR.heading.weaponCategory"}}</label>
 
         <div class="flex-right">
-          <select name="data.weaponType" data-dtype="Number">
-            {{#select data.weaponType}}
+          <select name="data.category" data-dtype="Number">
+            {{#select data.category}}
             {{#each weaponTypes}}
             <option value="{{@index}}">{{localize (concat 'CSR.weapon.' this)}}</option>
             {{/each}}

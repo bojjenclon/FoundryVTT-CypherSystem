@@ -175,7 +175,7 @@ export class CypherSystemItemSheet extends ItemSheet {
       minimumResultsForSearch: Infinity
     });
 
-    html.find('select[name="data.weaponType"]').select2({
+    html.find('select[name="data.category"]').select2({
       theme: 'numenera',
       width: '110px',
       minimumResultsForSearch: Infinity

@@ -151,8 +151,14 @@ export class CypherSystemActorSheet extends ActorSheet {
         items.inventory = items.inventory.filter(i => !!i.data.equipped);
       }
 
-      // Group items by their type
-      items.inventory.sort((a, b) => (a.type > b.type) ? 1 : -1);
+      // Group items by their type, then alphanumerically
+      items.inventory.sort((a, b) => {
+        if (a.type === b.type) {
+          return (a.name > b.name) ? 1 : -1
+        }
+  
+        return (a.type > b.type) ? 1 : -1;
+      });
     }
 
     data.cypherCount = items.reduce((count, i) => i.type === 'cypher' ? ++count : count, 0);

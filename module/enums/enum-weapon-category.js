@@ -1,6 +1,6 @@
 const EnumWeaponCategory = [
-  "Bladed",
   "Bashing",
+  "Bladed",
   "Ranged"
 ];
 
