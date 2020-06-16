@@ -1,8 +1,17 @@
 <div class="inventory">
   <div class="grid no-margins">
-    <div class="money">
-      <label for="data.money">{{currencyName}}</label>
-      <input type="number" name="data.money" value="{{data.money}}" min="0" class="money" data-dtype="Number" />
+    <div class="inputs">
+      <div class="money">
+        <label for="data.money">{{currencyName}}</label>
+        <input type="number" name="data.money" value="{{data.money}}" min="0" class="money" data-dtype="Number" />
+      </div>
+  
+      <div class="cypher-count">
+        <label for="data.cypherLimit">{{localize 'CSR.heading.cyphers'}}</label>
+        <input type="number" name="cypherCount" value="{{cypherCount}}" disabled {{#if overCypherLimit}}class="over"{{/if}} />
+        <span>&nbsp;/&nbsp;</span>
+        <input type="number" name="data.cypherLimit" value="{{data.cypherLimit}}" min="0" max="99" class="cypherLimit" data-dtype="Number" />
+      </div>
     </div>
 
     <div class="filters">

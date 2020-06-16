@@ -133,6 +133,9 @@ export class CypherSystemActorSheet extends ActorSheet {
       items.inventory.sort((a, b) => (a.type > b.type) ? 1 : -1);
     }
 
+    data.cypherCount = items.reduce((count, i) => i.type === 'cypher' ? ++count : count, 0);
+    data.overCypherLimit = this.actor.isOverCypherLimit;
+
     data.inventoryTypeFilter = this.inventoryTypeFilter;
 
     if (data.inventoryTypeFilter > -1) {

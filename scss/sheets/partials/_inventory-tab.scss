@@ -12,6 +12,13 @@
     }
   }
 
+  .inputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
   .money {
     display: flex;
     align-items: center;
@@ -23,6 +30,20 @@
 
     input {
       width: 6em;
+    }
+  }
+
+  .cypher-count {
+    input {
+      width: 3em;
+
+      &:disabled {
+        border-color: #0b6b2b;
+
+        &.over {
+          border-color: #bd1b1b;
+        }
+      }
     }
   }
 

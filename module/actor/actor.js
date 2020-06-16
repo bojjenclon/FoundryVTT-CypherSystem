@@ -27,6 +27,8 @@ export class CypherSystemActor extends Actor {
     data.tier = valOrDefault(data.tier, 1);
     data.effort = valOrDefault(data.effort, 1);
     data.xp = valOrDefault(data.xp, 0);
+    data.cypherLimit = valOrDefault(data.cypherLimit, 1);
+
     data.advances = valOrDefault(data.advances, {
       stats: false,
       edge: false,
@@ -119,6 +121,11 @@ export class CypherSystemActor extends Actor {
     const { data } = this.data;
 
     return data.xp > 0;
+  }
+
+  get isOverCypherLimit() {
+    const cyphers = this.getEmbeddedCollection("OwnedItem").filter(i => i.type === "cypher");
+    return this.data.data.cypherLimit < cyphers.length;
   }
 
   getSkillLevel(skill) {

@@ -14,6 +14,7 @@
       "tier": 1,
       "effort": 1,
       "xp": 0,
+      "cypherLimit": 1,
 
       "advances": {
         "stats": false,
