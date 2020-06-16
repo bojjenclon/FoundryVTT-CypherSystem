@@ -264,7 +264,7 @@ export class CypherSystemItem extends Item {
 
       initiative: !!data.flags.initiative
     };
-    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/skill-info.html', params);
+    const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/skill-info.html', params);
 
     return html;
   }
@@ -280,7 +280,7 @@ export class CypherSystemItem extends Item {
       isEnabler: data.data.isEnabler,
       notes: data.data.notes,
     };
-    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/ability-info.html', params);
+    const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/ability-info.html', params);
 
     return html;
   }
@@ -301,7 +301,7 @@ export class CypherSystemItem extends Item {
       price: data.data.price,
       notes: data.data.notes,
     };
-    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/armor-info.html', params);
+    const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/armor-info.html', params);
 
     return html;
   }
@@ -325,7 +325,7 @@ export class CypherSystemItem extends Item {
       price: data.data.price,
       notes: data.data.notes,
     };
-    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/weapon-info.html', params);
+    const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/weapon-info.html', params);
 
     return html;
   }
@@ -340,7 +340,7 @@ export class CypherSystemItem extends Item {
       price: data.data.price,
       notes: data.data.notes,
     };
-    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/gear-info.html', params);
+    const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/gear-info.html', params);
 
     return html;
   }
@@ -357,7 +357,7 @@ export class CypherSystemItem extends Item {
       form: data.data.form,
       effect: data.data.effect,
     };
-    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/cypher-info.html', params);
+    const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/cypher-info.html', params);
 
     return html;
   }
@@ -377,7 +377,7 @@ export class CypherSystemItem extends Item {
       depletionDie: data.data.depletion.die,
       effect: data.data.effect,
     };
-    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/artifact-info.html', params);
+    const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/artifact-info.html', params);
 
     return html;
   }
@@ -390,7 +390,7 @@ export class CypherSystemItem extends Item {
       type: this.type,
       notes: data.data.notes,
     };
-    const html = await renderTemplate('systems/cyphersystemClean/templates/actor/partials/info/oddity-info.html', params);
+    const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/oddity-info.html', params);
 
     return html;
   }

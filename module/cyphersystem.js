@@ -16,7 +16,7 @@ import { csrSocketListeners } from './socket.js';
 import { rollInitiative } from './combat.js';
 
 Hooks.once('init', async function () {
-  game.cyphersystemClean = {
+  game.cyphersystem = {
     CypherSystemActor,
     CypherSystemItem
   };
@@ -34,17 +34,17 @@ Hooks.once('init', async function () {
   // Register sheet application classes
   Actors.unregisterSheet('core', ActorSheet);
   // TODO: Separate classes per type
-  Actors.registerSheet('cyphersystemClean', CypherSystemActorSheet, {
+  Actors.registerSheet('cyphersystem', CypherSystemActorSheet, {
     types: ['pc'],
     makeDefault: true,
   });
-  Actors.registerSheet('cyphersystemClean', CypherSystemActorSheet, {
+  Actors.registerSheet('cyphersystem', CypherSystemActorSheet, {
     types: ['npc'],
     makeDefault: true,
   });
 
   Items.unregisterSheet('core', ItemSheet);
-  Items.registerSheet('cyphersystemClean', CypherSystemItemSheet, { makeDefault: true });
+  Items.registerSheet('cyphersystem', CypherSystemItemSheet, { makeDefault: true });
 
   registerSystemSettings();
   registerHandlebarHelpers();

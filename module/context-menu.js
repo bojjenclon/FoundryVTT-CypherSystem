@@ -14,7 +14,7 @@ export function actorDirectoryContext(html, entryOptions) {
         })
         .map(usersPermissions => usersPermissions[0]);
 
-      game.socket.emit('system.cyphersystemClean', {
+      game.socket.emit('system.cyphersystem', {
         type: 'gmIntrusion',
         data: {
           userIds: ownerIds,

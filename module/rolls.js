@@ -93,7 +93,7 @@ export async function cypherRoll({ parts = [], data = {}, actor = null, event = 
     return roll;
   }
 
-  const template = 'systems/cyphersystemClean/templates/dialog/roll-dialog.html';
+  const template = 'systems/cyphersystem/templates/dialog/roll-dialog.html';
   let dialogData = {
     formula: filtered.join(' '),
     maxEffort: maxEffort,

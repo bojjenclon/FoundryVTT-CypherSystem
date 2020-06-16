@@ -1,7 +1,7 @@
 import { GMIntrusionDialog } from "./dialog/gm-intrusion-dialog.js";
 
 export function csrSocketListeners() {
-  game.socket.on('system.cyphersystemClean', handleMessage);
+  game.socket.on('system.cyphersystem', handleMessage);
 }
 
 function handleMessage(args) {

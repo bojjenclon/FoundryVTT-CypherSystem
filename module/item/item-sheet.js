@@ -19,7 +19,7 @@ export class CypherSystemItemSheet extends ItemSheet {
 
   /** @override */
   get template() {
-    const path = "systems/cyphersystemClean/templates/item";
+    const path = "systems/cyphersystem/templates/item";
     return `${path}/${this.item.data.type}-sheet.html`;
   }
 

@@ -10,40 +10,40 @@ export const preloadHandlebarsTemplates = async() => {
   const templatePaths = [
 
       // Actor Sheets
-      "systems/cyphersystemClean/templates/actor/pc-sheet.html",
-      "systems/cyphersystemClean/templates/actor/npc-sheet.html",
+      "systems/cyphersystem/templates/actor/pc-sheet.html",
+      "systems/cyphersystem/templates/actor/npc-sheet.html",
 
       // Actor Partials
-      "systems/cyphersystemClean/templates/actor/partials/pools.html",
-      "systems/cyphersystemClean/templates/actor/partials/advancement.html",
-      "systems/cyphersystemClean/templates/actor/partials/damage-track.html",
-      "systems/cyphersystemClean/templates/actor/partials/recovery.html",
+      "systems/cyphersystem/templates/actor/partials/pools.html",
+      "systems/cyphersystem/templates/actor/partials/advancement.html",
+      "systems/cyphersystem/templates/actor/partials/damage-track.html",
+      "systems/cyphersystem/templates/actor/partials/recovery.html",
 
-      "systems/cyphersystemClean/templates/actor/partials/skills.html",
-      "systems/cyphersystemClean/templates/actor/partials/abilities.html",
-      "systems/cyphersystemClean/templates/actor/partials/inventory.html",
+      "systems/cyphersystem/templates/actor/partials/skills.html",
+      "systems/cyphersystem/templates/actor/partials/abilities.html",
+      "systems/cyphersystem/templates/actor/partials/inventory.html",
 
-      "systems/cyphersystemClean/templates/actor/partials/info/skill-info.html",
-      "systems/cyphersystemClean/templates/actor/partials/info/ability-info.html",
-      "systems/cyphersystemClean/templates/actor/partials/info/armor-info.html",
-      "systems/cyphersystemClean/templates/actor/partials/info/weapon-info.html",
-      "systems/cyphersystemClean/templates/actor/partials/info/gear-info.html",
-      "systems/cyphersystemClean/templates/actor/partials/info/cypher-info.html",
-      "systems/cyphersystemClean/templates/actor/partials/info/artifact-info.html",
-      "systems/cyphersystemClean/templates/actor/partials/info/oddity-info.html",
+      "systems/cyphersystem/templates/actor/partials/info/skill-info.html",
+      "systems/cyphersystem/templates/actor/partials/info/ability-info.html",
+      "systems/cyphersystem/templates/actor/partials/info/armor-info.html",
+      "systems/cyphersystem/templates/actor/partials/info/weapon-info.html",
+      "systems/cyphersystem/templates/actor/partials/info/gear-info.html",
+      "systems/cyphersystem/templates/actor/partials/info/cypher-info.html",
+      "systems/cyphersystem/templates/actor/partials/info/artifact-info.html",
+      "systems/cyphersystem/templates/actor/partials/info/oddity-info.html",
 
       // Item Sheets
-      "systems/cyphersystemClean/templates/item/item-sheet.html",
-      "systems/cyphersystemClean/templates/item/skill-sheet.html",
-      "systems/cyphersystemClean/templates/item/armor-sheet.html",
-      "systems/cyphersystemClean/templates/item/weapon-sheet.html",
-      "systems/cyphersystemClean/templates/item/gear-sheet.html",
-      "systems/cyphersystemClean/templates/item/cypher-sheet.html",
-      "systems/cyphersystemClean/templates/item/artifact-sheet.html",
-      "systems/cyphersystemClean/templates/item/oddity-sheet.html",
+      "systems/cyphersystem/templates/item/item-sheet.html",
+      "systems/cyphersystem/templates/item/skill-sheet.html",
+      "systems/cyphersystem/templates/item/armor-sheet.html",
+      "systems/cyphersystem/templates/item/weapon-sheet.html",
+      "systems/cyphersystem/templates/item/gear-sheet.html",
+      "systems/cyphersystem/templates/item/cypher-sheet.html",
+      "systems/cyphersystem/templates/item/artifact-sheet.html",
+      "systems/cyphersystem/templates/item/oddity-sheet.html",
 
       // Dialogs
-      "systems/cyphersystemClean/templates/dialog/roll-dialog.html",
+      "systems/cyphersystem/templates/dialog/roll-dialog.html",
   ];
 
   // Load the template parts

@@ -41,7 +41,7 @@ export class CypherSystemActorSheet extends ActorSheet {
    */
   get template() {
     const { type } = this.actor.data;
-    return `systems/cyphersystemClean/templates/actor/${type}-sheet.html`;
+    return `systems/cyphersystem/templates/actor/${type}-sheet.html`;
   }
 
   /* -------------------------------------------- */
@@ -152,7 +152,7 @@ export class CypherSystemActorSheet extends ActorSheet {
   async _pcData(data) {
     data.isGM = game.user.isGM;
 
-    data.currencyName = game.settings.get('cyphersystemClean', 'currencyName');
+    data.currencyName = game.settings.get('cyphersystem', 'currencyName');
 
     data.ranges = CSR.ranges;
     data.stats = CSR.stats;

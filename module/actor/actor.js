@@ -224,7 +224,7 @@ export class CypherSystemActor extends Actor {
       const otherActors = game.actors.filter(actor => actor._id !== this._id && actor.data.type === 'pc');
 
       const dialog = new PlayerChoiceDialog(otherActors, (chosenActorId) => {
-        game.socket.emit('system.cyphersystemClean', {
+        game.socket.emit('system.cyphersystem', {
           type: 'awardXP',
           data: {
             actorId: chosenActorId,
