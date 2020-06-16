@@ -146,6 +146,8 @@
   "CSR.tooltip.sourceType": "Source (eg. Type, Focus, etc.)",
   "CSR.tooltip.sourceValue": "Source Value (eg. Nano, Jack, Masters Weaponry, etc.)",
   "CSR.tooltip.cypherLimit": "Cypher Limit",
+  "CSR.tooltip.filterEquipped": "Show Only Equipped",
+  "CSR.tooltip.new": "Create New",
 
   "CSR.tooltip.roll": "Roll",
   "CSR.tooltip.edit": "Edit",

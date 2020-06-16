@@ -56,6 +56,7 @@ export class CypherSystemActorSheet extends ActorSheet {
 
     this.inventoryTypeFilter = -1;
     this.selectedInvItem = null;
+    this.filterEquipped = false;
   }
 
   _npcInit() {
@@ -145,6 +146,11 @@ export class CypherSystemActorSheet extends ActorSheet {
     const items = data.data.items;
     if (!items.inventory) {
       items.inventory = items.filter(i => CSR.inventoryTypes.includes(i.type));
+
+      if (this.filterEquipped) {
+        items.inventory = items.inventory.filter(i => !!i.data.equipped);
+      }
+
       // Group items by their type
       items.inventory.sort((a, b) => (a.type > b.type) ? 1 : -1);
     }
@@ -153,6 +159,7 @@ export class CypherSystemActorSheet extends ActorSheet {
     data.overCypherLimit = this.actor.isOverCypherLimit;
 
     data.inventoryTypeFilter = this.inventoryTypeFilter;
+    data.filterEquipped = this.filterEquipped;
 
     if (data.inventoryTypeFilter > -1) {
       this._filterItemData(data, 'inventory', 'type', CSR.inventoryTypes[parseInt(data.inventoryTypeFilter, 10)]);
@@ -520,6 +527,14 @@ export class CypherSystemActorSheet extends ActorSheet {
     inventoryTypeFilter.on('change', evt => {
       this.inventoryTypeFilter = evt.target.value;
       this.selectedInvItem = null;
+    });
+
+    html.find('.filter-equipped').click(evt => {
+      evt.preventDefault();
+
+      this.filterEquipped = !this.filterEquipped;
+
+      this._onSubmit(evt);
     });
 
     const invItems = html.find('a.inv-item');

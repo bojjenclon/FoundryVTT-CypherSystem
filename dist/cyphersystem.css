@@ -1256,28 +1256,40 @@ form.roll-dialog input[name="effort"] {
 
 /* line 61, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .filters > span {
-  margin-right: 4px;
+  margin-right: 6px;
 }
 
-/* line 66, scss/sheets/partials/_inventory-tab.scss */
-.cyphersystem .content .sheet-body .tab.inventory .add-inventory {
-  margin-left: 8px;
+/* line 65, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .filters .filter-equipped {
+  margin: 0 2px;
   font-size: 1.1em;
+  color: rgba(0, 0, 0, 0.4);
 }
 
 /* line 71, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .filters .filter-equipped.active {
+  color: #148c12;
+}
+
+/* line 77, scss/sheets/partials/_inventory-tab.scss */
+.cyphersystem .content .sheet-body .tab.inventory .add-inventory {
+  margin-left: 8px;
+  font-size: 1.2em;
+}
+
+/* line 82, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .wrapper {
   overflow: hidden;
 }
 
-/* line 75, scss/sheets/partials/_inventory-tab.scss */
+/* line 86, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list {
   overflow-y: auto;
   margin: 0;
   padding: 0 0 0 0.5em;
 }
 
-/* line 81, scss/sheets/partials/_inventory-tab.scss */
+/* line 92, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li {
   overflow: hidden;
   -o-text-overflow: ellipsis;
@@ -1287,41 +1299,41 @@ form.roll-dialog input[name="effort"] {
   font-weight: bold;
 }
 
-/* line 89, scss/sheets/partials/_inventory-tab.scss */
+/* line 100, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li:not(:first-child) {
   margin-top: 8px;
 }
 
-/* line 93, scss/sheets/partials/_inventory-tab.scss */
+/* line 104, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li .icons {
   font-size: 0.8em;
   vertical-align: middle;
 }
 
-/* line 98, scss/sheets/partials/_inventory-tab.scss */
+/* line 109, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li a.active {
   color: #b72020;
 }
 
-/* line 104, scss/sheets/partials/_inventory-tab.scss */
+/* line 115, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .inventory-info {
   overflow-y: auto;
   padding-right: 1em;
 }
 
-/* line 109, scss/sheets/partials/_inventory-tab.scss */
+/* line 120, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .inventory-info > .grid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-/* line 113, scss/sheets/partials/_inventory-tab.scss */
+/* line 124, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .inventory-info .actions {
   font-size: 1.1em;
 }
 
-/* line 116, scss/sheets/partials/_inventory-tab.scss */
+/* line 127, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .inventory-info .actions a:not(:last-child) {
   margin-right: 4px;
 }
