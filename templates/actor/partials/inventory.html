@@ -5,29 +5,32 @@
         <label for="data.money">{{currencyName}}</label>
         <input type="number" name="data.money" value="{{data.money}}" min="0" class="money" data-dtype="Number" />
       </div>
-  
+
       <div class="cypher-count">
         <label for="data.cypherLimit">{{localize 'CSR.heading.cyphers'}}</label>
-        <input type="number" name="cypherCount" value="{{cypherCount}}" disabled {{#if overCypherLimit}}class="over"{{/if}} />
+        <input type="number" name="cypherCount" value="{{cypherCount}}" disabled {{#if overCypherLimit}}class="over"
+          {{/if}} />
         <span>&nbsp;/&nbsp;</span>
-        <input type="number" name="data.cypherLimit" value="{{data.cypherLimit}}" min="0" max="99" class="cypherLimit" title="{{localize 'CSR.tooltip.cypherLimit'}}" data-dtype="Number" />
+        <input type="number" name="data.cypherLimit" value="{{data.cypherLimit}}" min="0" max="99" class="cypherLimit"
+          title="{{localize 'CSR.tooltip.cypherLimit'}}" data-dtype="Number" />
       </div>
     </div>
 
     <div class="filters">
       <strong>{{localize "CSR.heading.filter"}}</strong>
-  
+
       <select name="inventoryTypeFilter" data-dtype="Number">
         <option value="-1" data-dtype="Number">{{localize "CSR.heading.type"}}</option>
-  
+
         {{#select inventoryTypeFilter}}
         {{#each inventoryTypes as |type idx|}}
         <option value="{{@index}}" data-dtype="Number">{{localize (concat "CSR.inventory." this)}}</option>
         {{/each}}
         {{/select}}
       </select>
-      
-      <a class="filter-equipped {{#if filterEquipped}}active{{/if}}" title="{{localize 'CSR.tooltip.filterEquipped'}}"><i class="fas fa-shield-alt"></i></a>
+
+      <a class="filter-equipped {{#if filterEquipped}}active{{/if}}"
+        title="{{localize 'CSR.tooltip.filterEquipped'}}"><i class="fas fa-shield-alt"></i></a>
       <a class="add-inventory" title="{{localize 'CSR.tooltip.new'}}"><i class="fas fa-plus"></i></a>
     </div>
   </div>
@@ -38,7 +41,8 @@
     <ul class="inventory-list">
       {{#each data.items.inventory as |item|}}
       <li class="no-pip">
-        <a class="inv-item {{#if (eq item._id ../selectedInvItem._id)}}active{{/if}}" data-id="{{item._id}}"><span class='monospace icons'>{{{typeIcon item.type}}}</span> {{item.name}}</a>
+        <a class="inv-item {{#if (eq item._id ../selectedInvItem._id)}}active{{/if}}" title="{{item.name}}"
+          data-id="{{item._id}}"><span class='monospace icons'>{{{typeIcon item.type}}}</span> {{item.name}}</a>
       </li>
       {{/each}}
     </ul>
