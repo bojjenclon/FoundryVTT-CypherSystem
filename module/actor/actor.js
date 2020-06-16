@@ -3,6 +3,8 @@
 import { CSR } from '../config.js';
 import { valOrDefault } from '../utils.js';
 
+import { PlayerChoiceDialog } from '../dialog/player-choice-dialog.js';
+
 import EnumPools from '../enums/enum-pool.js';
 
 /**
@@ -113,6 +115,12 @@ export class CypherSystemActor extends Actor {
     return initSkill.data.training - 1;
   }
 
+  get canRefuseIntrusion() {
+    const { data } = this.data;
+
+    return data.xp > 0;
+  }
+
   getSkillLevel(skill) {
     const { data } = skill.data;
 
@@ -180,6 +188,45 @@ export class CypherSystemActor extends Actor {
     this.update(data);
 
     return true;
+  }
+
+  async onGMIntrusion(accepted) {
+    let xp = this.data.data.xp;
+    
+    let chatContent = `<h2>${game.i18n.localize('CSR.intrusion.chat.heading')}</h2><br>`;
+    if (accepted) {
+      xp++;
+
+      chatContent += game.i18n.localize('CSR.intrusion.chat.accept').replace('##ACTOR##', this.data.name);
+    } else {
+      xp--;
+
+      chatContent += game.i18n.localize('CSR.intrusion.chat.refuse').replace('##ACTOR##', this.data.name);
+    }
+
+    this.update({
+      _id: this._id,
+      'data.xp': xp,
+    });
+
+    ChatMessage.create({
+      content: chatContent
+    });
+
+    if (accepted) {
+      const otherActors = game.actors.filter(actor => actor._id !== this._id && actor.data.type === 'pc');
+
+      const dialog = new PlayerChoiceDialog(otherActors, (chosenActorId) => {
+        game.socket.emit('system.cyphersystemClean', {
+          type: 'awardXP',
+          data: {
+            actorId: chosenActorId,
+            xpAmount: 1
+          }
+        })
+      });
+      dialog.render(true);
+    }
   }
 
   /**

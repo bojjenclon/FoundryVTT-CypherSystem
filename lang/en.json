@@ -172,11 +172,18 @@
   "CSR.dialog.intrusion.refuseInstructions": "Should you ##REFUSE##, the complication will not happen but 1 XP will be subtracted from your current amount.",
   "CSR.dialog.intrusion.notEnoughXP": "You don't have enough XP to refuse the instrusion.",
 
+  "CSR.dialog.player.title": "Choose a Player",
+  "CSR.dialog.player.content": "Choose one of the players from the list.",
+
   "CSR.dialog.button.accept": "Accept",
   "CSR.dialog.button.refuse": "Refuse",
 
   "CSR.ctxt.intrusion.heading": "GM Intrusion",
   "CSR.ctxt.intrusion.chat": "The GM offers an intrusion to ##ACTOR##",
+  "CSR.intrusion.awardXP": "##ACTOR## is given 1 XP",
+  "CSR.intrusion.chat.heading": "GM Intrusion",
+  "CSR.intrusion.chat.accept": "##ACTOR## accepts the intrusion",
+  "CSR.intrusion.chat.refuse": "##ACTOR## refuses the intrusion",
 
   "CSR.yes": "Yes",
   "CSR.no": "No",

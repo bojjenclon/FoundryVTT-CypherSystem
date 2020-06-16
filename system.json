@@ -18,6 +18,7 @@
       "path": "lang/en.json"
     }
   ],
+  "socket": true,
   "gridDistance": 5,
   "gridUnits": "ft",
   "primaryTokenAttribute": "health",

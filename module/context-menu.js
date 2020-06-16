@@ -1,3 +1,5 @@
+/* globals ENTITY_PERMISSIONS */
+
 export function actorDirectoryContext(html, entryOptions) {
   entryOptions.push({
     name: game.i18n.localize('CSR.ctxt.intrusion.heading'),

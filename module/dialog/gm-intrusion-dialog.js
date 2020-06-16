@@ -1,4 +1,8 @@
+/* globals mergeObject Dialog */
+
 /**
+ * Prompts the user with a choice of a GM Intrusion.
+ * 
  * @export
  * @class GMIntrusionDialog
  * @extends {Dialog}
@@ -18,7 +22,7 @@ export class GMIntrusionDialog extends Dialog {
     const acceptInstructions = game.i18n.localize('CSR.dialog.intrusion.acceptInstructions')
       .replace('##ACCEPT##', `<span style="color: green">${game.i18n.localize('CSR.accept')}</span>`);
     const refuseInstructions = game.i18n.localize('CSR.dialog.intrusion.refuseInstructions')
-      .replace('##ACCEPT##', `<span style="color: red">${game.i18n.localize('CSR.refuse')}</span>`);
+      .replace('##REFUSE##', `<span style="color: red">${game.i18n.localize('CSR.refuse')}</span>`);
 
     let dialogContent = `
     <div class="row">
@@ -71,7 +75,7 @@ export class GMIntrusionDialog extends Dialog {
     }
 
     const dialogData = {
-      title: game.i8n.localize('CSR.dialog.intrusion.title'),
+      title: game.i18n.localize('CSR.dialog.intrusion.title'),
       content: dialogContent,
       buttons: dialogButtons,
       defaultYes: false,

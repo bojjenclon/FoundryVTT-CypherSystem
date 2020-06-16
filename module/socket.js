@@ -42,4 +42,8 @@ function handleAwardXP(args) {
   actor.update({
     'data.xp': actor.data.data.xp + xpAmount
   });
+
+  ChatMessage.create({
+    content: game.i18n.localize('CSR.intrusion.awardXP').replace('##ACTOR##', actor.data.name)
+  });
 }

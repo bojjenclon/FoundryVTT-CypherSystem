@@ -180,6 +180,8 @@
         }
 
         .current {
+          align-items: center;
+
           label {
             font-size    : 1em;
             margin-bottom: 4px;
@@ -190,6 +192,12 @@
 
             height: 60px;
             width : 100px;
+          }
+        }
+
+        .max-edge {
+          input {
+            width: 4em;
           }
         }
 
@@ -254,6 +262,12 @@
         }
 
         .recovery {
+          > .grid {
+            input {
+              width: 4em;
+            }
+          }
+
           .roll {
             .input-group {
               align-items: center;
@@ -283,13 +297,7 @@
       @import './partials/skills-tab';
       @import './partials/abilities-tab';
       @import './partials/inventory-tab';
-
-      // Bio Tab
-      &.bio {
-        .editor {
-          flex: 1;
-        }
-      }
+      @import './partials/bio-tab';
     }
   }
 }

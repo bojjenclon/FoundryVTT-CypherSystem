@@ -1,27 +1,33 @@
 <form class="csr roll-dialog">
   <div class="grid">
     <label>{{localize 'CSR.heading.formula'}}</label>
-    <input type="text" name="formula" value="{{formula}}" disabled />
+    <div class="flex-right">
+      <input type="text" name="formula" value="{{formula}}" disabled />
+    </div>
   </div>
 
   <hr />
 
   <div class="grid">
     <label>{{localize 'CSR.heading.effort'}}</label>
-    <input type="number" name="effort" value="0" min="0" max="{{maxEffort}}" />
+    <div class="flex-right">
+      <input type="number" name="effort" value="0" min="0" max="{{maxEffort}}" />
+    </div>
   </div>
 
   <hr />
 
   <div class="grid">
     <label>{{localize 'CSR.heading.rollMode'}}</label>
-    <select name="rollMode">
-      {{#select rollMode}}
-      {{#each rollModes as |label mode|}}
-      <option value="{{mode}}">{{localize label}}</option>
-      {{/each}}
-      {{/select}}
-    </select>
+    <div class="flex-right">
+      <select name="rollMode">
+        {{#select rollMode}}
+        {{#each rollModes as |label mode|}}
+        <option value="{{mode}}">{{localize label}}</option>
+        {{/each}}
+        {{/select}}
+      </select>
+    </div>
   </div>
 
   <hr />
