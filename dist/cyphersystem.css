@@ -1682,8 +1682,8 @@ form.roll-dialog input[name="effort"] {
 
 /* line 1, scss/sheets/_armor-sheet.scss */
 .cyphersystem.armor-window {
-  min-width: 630px;
-  min-height: 575px;
+  min-width: 650px;
+  min-height: 600px;
 }
 
 /* line 7, scss/sheets/_armor-sheet.scss */
@@ -1703,8 +1703,8 @@ form.roll-dialog input[name="effort"] {
 
 /* line 1, scss/sheets/_weapon-sheet.scss */
 .cyphersystem.weapon-window {
-  min-width: 565px;
-  min-height: 625px;
+  min-width: 575px;
+  min-height: 650px;
 }
 
 /* line 7, scss/sheets/_weapon-sheet.scss */

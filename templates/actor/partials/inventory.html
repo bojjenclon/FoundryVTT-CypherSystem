@@ -10,7 +10,7 @@
         <label for="data.cypherLimit">{{localize 'CSR.heading.cyphers'}}</label>
         <input type="number" name="cypherCount" value="{{cypherCount}}" disabled {{#if overCypherLimit}}class="over"{{/if}} />
         <span>&nbsp;/&nbsp;</span>
-        <input type="number" name="data.cypherLimit" value="{{data.cypherLimit}}" min="0" max="99" class="cypherLimit" data-dtype="Number" />
+        <input type="number" name="data.cypherLimit" value="{{data.cypherLimit}}" min="0" max="99" class="cypherLimit" title="{{localize 'CSR.tooltip.cypherLimit'}}" data-dtype="Number" />
       </div>
     </div>
 

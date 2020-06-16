@@ -293,7 +293,7 @@ export class CypherSystemItem extends Item {
     const params = {
       name: this.name,
       type: this.type,
-      equipped: data.equipped,
+      equipped: data.data.equipped,
       quantity: data.data.quantity,
       weight: weight.toLowerCase(),
       armor: data.data.armor,
@@ -316,7 +316,7 @@ export class CypherSystemItem extends Item {
     const params = {
       name: this.name,
       type: this.type,
-      equipped: data.equipped,
+      equipped: data.data.equipped,
       quantity: data.data.quantity,
       weight: weight.toLowerCase(),
       range: range.toLowerCase(),

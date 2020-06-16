@@ -89,6 +89,14 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   async _skillData(data) {
     this._generateItemData(data, 'skill', 'skills');
+    // Group skills by their pool, then alphanumerically
+    data.data.items.skills.sort((a, b) => {
+      if (a.data.pool === b.data.pool) {
+        return (a.name > b.name) ? 1 : -1
+      }
+
+      return (a.data.pool > b.data.pool) ? 1 : -1;
+    });
 
     data.skillsPoolFilter = this.skillsPoolFilter;
     data.skillsTrainingFilter = this.skillsTrainingFilter;
@@ -109,6 +117,14 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   async _abilityData(data) {
     this._generateItemData(data, 'ability', 'abilities');
+    // Group abilities by their pool, then alphanumerically
+    data.data.items.abilities.sort((a, b) => {
+      if (a.data.cost.pool === b.data.cost.pool) {
+        return (a.name > b.name) ? 1 : -1
+      }
+
+      return (a.data.cost.pool > b.data.cost.pool) ? 1 : -1;
+    });
 
     data.abilityPoolFilter = this.abilityPoolFilter;
 
