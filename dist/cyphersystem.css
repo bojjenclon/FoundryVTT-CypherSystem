@@ -369,38 +369,38 @@ form.roll-dialog input[name="effort"] {
   border-bottom: 0;
 }
 
-/* line 31, scss/components/_forms.scss */
+/* line 32, scss/components/_forms.scss */
 .cyphersystem .sheet-header h1.charname input {
   width: 100%;
   height: 100%;
   margin: 0;
 }
 
-/* line 39, scss/components/_forms.scss */
+/* line 40, scss/components/_forms.scss */
 .cyphersystem .sheet-tabs {
   -webkit-box-flex: 0;
       -ms-flex: 0;
           flex: 0;
 }
 
-/* line 43, scss/components/_forms.scss */
+/* line 44, scss/components/_forms.scss */
 .cyphersystem .sheet-body,
 .cyphersystem .sheet-body .tab,
 .cyphersystem .sheet-body .tab .editor {
   height: 100%;
 }
 
-/* line 50, scss/components/_forms.scss */
+/* line 51, scss/components/_forms.scss */
 .cyphersystem .tox .tox-editor-container {
   background: #fff;
 }
 
-/* line 54, scss/components/_forms.scss */
+/* line 55, scss/components/_forms.scss */
 .cyphersystem .tox .tox-edit-area {
   padding: 0 8px;
 }
 
-/* line 59, scss/components/_forms.scss */
+/* line 60, scss/components/_forms.scss */
 .cyphersystem input[type="number"] {
   height: 24px;
   background: rgba(0, 0, 0, 0.05);
@@ -417,44 +417,44 @@ form.roll-dialog input[name="effort"] {
   -moz-appearance: textfield;
 }
 
-/* line 72, scss/components/_forms.scss */
+/* line 73, scss/components/_forms.scss */
 .cyphersystem input[type="number"]::-webkit-outer-spin-button, .cyphersystem input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-/* line 78, scss/components/_forms.scss */
+/* line 79, scss/components/_forms.scss */
 .cyphersystem input[type="number"].tier {
   width: calc(1rem + 1ch);
 }
 
-/* line 83, scss/components/_forms.scss */
+/* line 84, scss/components/_forms.scss */
 .cyphersystem input:disabled,
 .cyphersystem input:disabled:hover {
   border: 1px solid #7a7971;
   color: #6b6969;
 }
 
-/* line 89, scss/components/_forms.scss */
+/* line 90, scss/components/_forms.scss */
 .cyphersystem textarea {
   font-family: Karla;
   border-color: #7a7971;
   resize: none;
 }
 
-/* line 97, scss/components/_forms.scss */
+/* line 98, scss/components/_forms.scss */
 .cyphersystem textarea:focus {
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-/* line 102, scss/components/_forms.scss */
+/* line 103, scss/components/_forms.scss */
 .cyphersystem li.no-pip {
   list-style-type: none;
 }
 
-/* line 106, scss/components/_forms.scss */
+/* line 107, scss/components/_forms.scss */
 .cyphersystem h1 input[type="text"] {
   height: auto;
   margin-bottom: 0.25em;
@@ -1017,7 +1017,7 @@ form.roll-dialog input[name="effort"] {
 /* line 18, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .add-skill {
   margin-left: 8px;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 /* line 23, scss/sheets/partials/_skills-tab.scss */
@@ -1103,7 +1103,7 @@ form.roll-dialog input[name="effort"] {
 /* line 18, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities .add-ability {
   margin-left: 8px;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 
 /* line 23, scss/sheets/partials/_abilities-tab.scss */
