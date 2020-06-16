@@ -25,6 +25,10 @@
     padding: 0 0 0 0.5em;
 
     li {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      
       font-size: 1.2em;
       font-weight: bold;
 

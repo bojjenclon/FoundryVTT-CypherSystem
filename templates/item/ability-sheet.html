@@ -19,9 +19,9 @@
       <hr>
 
       <div class="grid grid-3col">
-        <label>Cost</label>
+        <label>{{localize 'CSR.heading.cost'}}</label>
 
-        <input type="number" name="data.cost.amount" value="{{data.cost.amount}}" min="0" data-dtype="Number" />
+        <input type="number" name="data.cost.value" value="{{data.cost.value}}" min="0" data-dtype="Number" />
 
         <div class="flex-right">
           <select name="data.cost.pool" data-dtype="Number">
@@ -37,14 +37,14 @@
       <hr>
 
       <div class="grid grid-3col">
-        <label>Category</label>
+        <label>{{localize 'CSR.heading.source'}}</label>
 
-        <input type="text" name="data.category" value="{{data.category}}" placeholder="Category"
-          title="Category (eg. Type, Focus, etc.)" />
+        <input type="text" name="data.sourceType" value="{{data.sourceType}}" placeholder="{{localize 'CSR.placeholder.sourceType'}}"
+          title="{{localize 'CSR.tooltip.sourceType'}}" />
 
         <div class="flex-right">
-          <input type="text" name="data.categoryValue" value="{{data.categoryValue}}" placeholder="Category Value"
-            title="Category Value (eg. Nano, Jack, Masters Weaponry, etc.)" />
+          <input type="text" name="data.sourceValue" value="{{data.sourceValue}}" placeholder="{{localize 'CSR.placeholder.sourceValue'}}"
+            title="{{localize 'CSR.tooltip.sourceValue'}}" />
         </div>
       </div>
 

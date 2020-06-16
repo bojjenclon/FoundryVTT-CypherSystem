@@ -1028,44 +1028,48 @@ form.roll-dialog input[name="effort"] {
 
 /* line 27, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 31, scss/sheets/partials/_skills-tab.scss */
+/* line 35, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li:not(:first-child) {
   margin-top: 8px;
 }
 
-/* line 35, scss/sheets/partials/_skills-tab.scss */
+/* line 39, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li .icons {
   font-size: 0.8em;
   vertical-align: middle;
 }
 
-/* line 40, scss/sheets/partials/_skills-tab.scss */
+/* line 44, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills ul.skill-list li a.active {
   color: #b72020;
 }
 
-/* line 46, scss/sheets/partials/_skills-tab.scss */
+/* line 50, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info {
   padding-right: 0.5em;
 }
 
-/* line 49, scss/sheets/partials/_skills-tab.scss */
+/* line 53, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info > .grid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-/* line 53, scss/sheets/partials/_skills-tab.scss */
+/* line 57, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info .actions {
   font-size: 1.1em;
 }
 
-/* line 56, scss/sheets/partials/_skills-tab.scss */
+/* line 60, scss/sheets/partials/_skills-tab.scss */
 .cyphersystem .content .sheet-body .tab.skills .skill-info .actions a:not(:last-child) {
   margin-right: 4px;
 }
@@ -1110,44 +1114,48 @@ form.roll-dialog input[name="effort"] {
 
 /* line 27, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities ul.ability-list li {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 31, scss/sheets/partials/_abilities-tab.scss */
+/* line 35, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities ul.ability-list li:not(:first-child) {
   margin-top: 8px;
 }
 
-/* line 35, scss/sheets/partials/_abilities-tab.scss */
+/* line 39, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities ul.ability-list li .icons {
   font-size: 0.8em;
   vertical-align: middle;
 }
 
-/* line 40, scss/sheets/partials/_abilities-tab.scss */
+/* line 44, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities ul.ability-list li a.active {
   color: #b72020;
 }
 
-/* line 46, scss/sheets/partials/_abilities-tab.scss */
+/* line 50, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities .ability-info {
   padding-right: 0.5em;
 }
 
-/* line 49, scss/sheets/partials/_abilities-tab.scss */
+/* line 53, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities .ability-info > .grid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-/* line 53, scss/sheets/partials/_abilities-tab.scss */
+/* line 57, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities .ability-info .actions {
   font-size: 1.1em;
 }
 
-/* line 56, scss/sheets/partials/_abilities-tab.scss */
+/* line 60, scss/sheets/partials/_abilities-tab.scss */
 .cyphersystem .content .sheet-body .tab.abilities .ability-info .actions a:not(:last-child) {
   margin-right: 4px;
 }
@@ -1271,45 +1279,49 @@ form.roll-dialog input[name="effort"] {
 
 /* line 81, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li {
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+     text-overflow: ellipsis;
+  white-space: nowrap;
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 85, scss/sheets/partials/_inventory-tab.scss */
+/* line 89, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li:not(:first-child) {
   margin-top: 8px;
 }
 
-/* line 89, scss/sheets/partials/_inventory-tab.scss */
+/* line 93, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li .icons {
   font-size: 0.8em;
   vertical-align: middle;
 }
 
-/* line 94, scss/sheets/partials/_inventory-tab.scss */
+/* line 98, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory ul.inventory-list li a.active {
   color: #b72020;
 }
 
-/* line 100, scss/sheets/partials/_inventory-tab.scss */
+/* line 104, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .inventory-info {
   overflow-y: auto;
   padding-right: 1em;
 }
 
-/* line 105, scss/sheets/partials/_inventory-tab.scss */
+/* line 109, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .inventory-info > .grid {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-/* line 109, scss/sheets/partials/_inventory-tab.scss */
+/* line 113, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .inventory-info .actions {
   font-size: 1.1em;
 }
 
-/* line 112, scss/sheets/partials/_inventory-tab.scss */
+/* line 116, scss/sheets/partials/_inventory-tab.scss */
 .cyphersystem .content .sheet-body .tab.inventory .inventory-info .actions a:not(:last-child) {
   margin-right: 4px;
 }

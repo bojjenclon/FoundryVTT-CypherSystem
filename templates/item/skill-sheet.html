@@ -11,8 +11,8 @@
         <label>{{localize "CSR.heading.pool"}}</label>
 
         <div class="flex-right">
-          <select name="data.stat" data-dtype="Number">
-            {{#select data.stat}}
+          <select name="data.pool" data-dtype="Number">
+            {{#select data.pool}}
             {{#each stats}}
             <option value="{{@index}}">{{localize (concat 'CSR.pool.' this)}}</option>
             {{/each}}

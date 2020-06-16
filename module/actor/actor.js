@@ -84,6 +84,7 @@ export class CypherSystemActor extends Actor {
 
     data.description = valOrDefault(data.description, '');
     data.motive = valOrDefault(data.motive, '');
+    data.environment = valOrDefault(data.environment, '');
     data.modifications = valOrDefault(data.modifications, '');
     data.combat = valOrDefault(data.combat, '');
     data.interaction = valOrDefault(data.interaction, '');

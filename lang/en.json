@@ -49,6 +49,8 @@
   "CSR.placeholder.cypherName": "Cypher Name",
   "CSR.placeholder.artifactName": "Artifact Name",
   "CSR.placeholder.oddityName": "Oddity Name",
+  "CSR.placeholder.sourceType": "Source",
+  "CSR.placeholder.sourceValue": "Source Value",
 
   "CSR.new.skill": "New Skill",
   "CSR.new.ability": "New Ability",
@@ -123,6 +125,8 @@
   "CSR.heading.formula": "Formula",
   "CSR.heading.rollMode": "Roll Mode",
   "CSR.heading.cyphers": "Cyphers",
+  "CSR.heading.cost": "Cost",
+  "CSR.heading.source": "Source",
 
   "CSR.ability.enabler": "This ability is an Enabler",
   "CSR.ability.action": "This ability is an Action",
@@ -134,10 +138,13 @@
   "CSR.tooltip.biography": "Biography",
   "CSR.tooltip.description": "Description",
   "CSR.tooltip.motive": "Motive",
+  "CSR.tooltip.environment": "Environment",
   "CSR.tooltip.combat": "Combat",
   "CSR.tooltip.interaction": "Interaction",
   "CSR.tooltip.use": "Use",
   "CSR.tooltip.loot": "Loot",
+  "CSR.tooltip.sourceType": "Source (eg. Type, Focus, etc.)",
+  "CSR.tooltip.sourceValue": "Source Value (eg. Nano, Jack, Masters Weaponry, etc.)",
 
   "CSR.tooltip.roll": "Roll",
   "CSR.tooltip.edit": "Edit",

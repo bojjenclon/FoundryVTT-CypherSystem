@@ -111,7 +111,7 @@ export class CypherSystemItemSheet extends ItemSheet {
   _skillListeners(html) {
     html.closest('.window-app.sheet.item').addClass('skill-window');
 
-    html.find('select[name="data.stat"]').select2({
+    html.find('select[name="data.pool"]').select2({
       theme: 'numenera',
       width: '110px',
       minimumResultsForSearch: Infinity
