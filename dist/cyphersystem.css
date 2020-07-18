@@ -1750,13 +1750,18 @@ form.roll-dialog input[name="effort"] {
 }
 
 /* line 7, scss/sheets/_armor-sheet.scss */
+.cyphersystem .armor-sheet input[type="number"] {
+  width: 10em;
+}
+
+/* line 11, scss/sheets/_armor-sheet.scss */
 .cyphersystem .armor-sheet .desc-wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 10, scss/sheets/_armor-sheet.scss */
+/* line 14, scss/sheets/_armor-sheet.scss */
 .cyphersystem .armor-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
@@ -1771,13 +1776,18 @@ form.roll-dialog input[name="effort"] {
 }
 
 /* line 7, scss/sheets/_weapon-sheet.scss */
+.cyphersystem .weapon-sheet input[type="number"] {
+  width: 10em;
+}
+
+/* line 11, scss/sheets/_weapon-sheet.scss */
 .cyphersystem .weapon-sheet .desc-wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 10, scss/sheets/_weapon-sheet.scss */
+/* line 14, scss/sheets/_weapon-sheet.scss */
 .cyphersystem .weapon-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
@@ -1792,13 +1802,18 @@ form.roll-dialog input[name="effort"] {
 }
 
 /* line 7, scss/sheets/_gear-sheet.scss */
+.cyphersystem .gear-sheet input[type="number"] {
+  width: 10em;
+}
+
+/* line 11, scss/sheets/_gear-sheet.scss */
 .cyphersystem .gear-sheet .desc-wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 10, scss/sheets/_gear-sheet.scss */
+/* line 14, scss/sheets/_gear-sheet.scss */
 .cyphersystem .gear-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
@@ -1813,13 +1828,18 @@ form.roll-dialog input[name="effort"] {
 }
 
 /* line 7, scss/sheets/_cypher-sheet.scss */
+.cyphersystem .cypher-sheet input[name="data.level"] {
+  width: 5em;
+}
+
+/* line 11, scss/sheets/_cypher-sheet.scss */
 .cyphersystem .cypher-sheet .desc-wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 10, scss/sheets/_cypher-sheet.scss */
+/* line 14, scss/sheets/_cypher-sheet.scss */
 .cyphersystem .cypher-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
@@ -1834,13 +1854,18 @@ form.roll-dialog input[name="effort"] {
 }
 
 /* line 7, scss/sheets/_artifact-sheet.scss */
+.cyphersystem .artifact-sheet input[name="data.level"] {
+  width: 5em;
+}
+
+/* line 11, scss/sheets/_artifact-sheet.scss */
 .cyphersystem .artifact-sheet .desc-wrapper {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-/* line 10, scss/sheets/_artifact-sheet.scss */
+/* line 14, scss/sheets/_artifact-sheet.scss */
 .cyphersystem .artifact-sheet .desc-wrapper label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;

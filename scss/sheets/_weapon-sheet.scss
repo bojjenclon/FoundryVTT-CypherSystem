@@ -4,6 +4,10 @@
 }
 
 .weapon-sheet {
+  input[type="number"] {
+    width: 10em;
+  }
+  
   .desc-wrapper {
     flex: 1;
 

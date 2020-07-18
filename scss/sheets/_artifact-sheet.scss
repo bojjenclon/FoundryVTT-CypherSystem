@@ -4,6 +4,10 @@
 }
 
 .artifact-sheet {
+  input[name="data.level"] {
+    width: 5em;
+  }
+  
   .desc-wrapper {
     flex: 1;
 
