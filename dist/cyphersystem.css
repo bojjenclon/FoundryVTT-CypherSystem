@@ -1534,30 +1534,31 @@ form.roll-dialog input[name="effort"] {
 /* line 93, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .header .rhs .main-line .npc-level input {
   height: 1.4em;
+  width: 3em;
 }
 
-/* line 100, scss/sheets/_npc-sheet.scss */
+/* line 101, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .header .rhs .npc-stats .flexcol:not(:last-child) {
   margin-right: 1em;
 }
 
-/* line 104, scss/sheets/_npc-sheet.scss */
+/* line 105, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .header .rhs .npc-stats input[type="number"] {
   width: 4em;
 }
 
-/* line 107, scss/sheets/_npc-sheet.scss */
+/* line 108, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .header .rhs .npc-stats input[type="number"].level {
   width: 3em;
 }
 
-/* line 112, scss/sheets/_npc-sheet.scss */
+/* line 113, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .header .rhs .npc-stats label {
   font-weight: bold;
   margin-bottom: 2px;
 }
 
-/* line 120, scss/sheets/_npc-sheet.scss */
+/* line 121, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .header .rhs .npc-mods label {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
@@ -1566,7 +1567,7 @@ form.roll-dialog input[name="effort"] {
   font-weight: bold;
 }
 
-/* line 131, scss/sheets/_npc-sheet.scss */
+/* line 132, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-tabs {
   -ms-flex-negative: 1;
       flex-shrink: 1;
@@ -1576,7 +1577,7 @@ form.roll-dialog input[name="effort"] {
   border-top-right-radius: 4px;
 }
 
-/* line 140, scss/sheets/_npc-sheet.scss */
+/* line 141, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-tabs ul {
   list-style-type: none;
   display: -webkit-box;
@@ -1597,17 +1598,17 @@ form.roll-dialog input[name="effort"] {
   padding: 0;
 }
 
-/* line 153, scss/sheets/_npc-sheet.scss */
+/* line 154, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-tabs ul li {
   font-size: 2em;
 }
 
-/* line 156, scss/sheets/_npc-sheet.scss */
+/* line 157, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-tabs ul li a.active {
   color: #b72020;
 }
 
-/* line 164, scss/sheets/_npc-sheet.scss */
+/* line 165, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-body .tab.active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1619,14 +1620,14 @@ form.roll-dialog input[name="effort"] {
   padding: 1em;
 }
 
-/* line 170, scss/sheets/_npc-sheet.scss */
+/* line 171, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-body .tab.active h1 {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;
 }
 
-/* line 174, scss/sheets/_npc-sheet.scss */
+/* line 175, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-body .tab.active textarea {
   -webkit-box-flex: 1;
       -ms-flex: 1;
