@@ -273,7 +273,7 @@ export class CypherSystemItem extends Item {
     const { data } = this;
 
     const pool = EnumPools[data.data.cost.pool];
-
+    
     const params = {
       name: data.name,
       pool: pool.toLowerCase(),

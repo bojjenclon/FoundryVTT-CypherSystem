@@ -1,4 +1,17 @@
 &.abilities {
+  .content {
+    overflow-y: hidden;
+
+    padding-right: 0;
+
+    .abilities {
+      display: flex;
+      flex-direction: column;
+
+      overflow: hidden;
+    }
+  }
+
   .filters {
     display: flex;
     align-items: center;
@@ -20,7 +33,13 @@
     font-size: 1.2em;
   }
 
+  .wrapper {
+    overflow: hidden;
+  }
+
   ul.ability-list {
+    overflow-y: auto;
+
     margin: 0;
     padding: 0 0 0 0.5em;
 
@@ -48,7 +67,9 @@
   }
 
   .ability-info {
-    padding-right: 0.5em;
+    overflow-y: auto;
+
+    padding-right: 1em;
 
     > .grid {
       align-items: center;
