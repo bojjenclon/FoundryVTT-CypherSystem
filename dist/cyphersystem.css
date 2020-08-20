@@ -1824,7 +1824,7 @@ form.roll-dialog input[name="effort"] {
 /* line 1, scss/sheets/_cypher-sheet.scss */
 .cyphersystem.cypher-window {
   min-width: 525px;
-  min-height: 475px;
+  min-height: 525px;
 }
 
 /* line 7, scss/sheets/_cypher-sheet.scss */
@@ -1850,7 +1850,7 @@ form.roll-dialog input[name="effort"] {
 /* line 1, scss/sheets/_artifact-sheet.scss */
 .cyphersystem.artifact-window {
   min-width: 575px;
-  min-height: 550px;
+  min-height: 600px;
 }
 
 /* line 7, scss/sheets/_artifact-sheet.scss */

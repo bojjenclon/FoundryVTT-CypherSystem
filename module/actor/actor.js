@@ -74,10 +74,7 @@ export class CypherSystemActor extends Actor {
 
     data.level = valOrDefault(data.level, 1);
 
-    data.health = valOrDefault(data.health, {
-      value: 3,
-      max: 3
-    });
+    data.health = valOrDefault(data.health, 3);
     data.damage = valOrDefault(data.damage, 1);
     data.armor = valOrDefault(data.armor, 0);
     data.movement = valOrDefault(data.movement, 1);

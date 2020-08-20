@@ -12,6 +12,7 @@ import { preloadHandlebarsTemplates } from './template.js';
 import { registerSystemSettings } from './settings.js';
 import { renderChatMessage } from './chat.js';
 import { actorDirectoryContext } from './context-menu.js';
+import { migrate } from './migrations/migrate';
 import { csrSocketListeners } from './socket.js';
 import { rollInitiative } from './combat.js';
 
@@ -55,7 +56,8 @@ Hooks.on('renderChatMessage', renderChatMessage);
 
 Hooks.on('getActorDirectoryEntryContext', actorDirectoryContext);
 
-Hooks.on('createActor', async function(actor, options, userId) {
+// Hooks.on('createActor', async function(actor, options, userId) {
+Hooks.on('createActor', async function(actor) {
   const { type } = actor.data;
   if (type === 'pc') {
     // Give PCs the "Initiative" skill by default, as it will be used
@@ -73,4 +75,5 @@ Hooks.on('createActor', async function(actor, options, userId) {
   }
 });
 
+Hooks.once('ready', migrate);
 Hooks.once('ready', csrSocketListeners);

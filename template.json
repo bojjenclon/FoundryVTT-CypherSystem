@@ -57,14 +57,11 @@
     },
 
     "npc": {
-      "version": 1,
+      "version": 2,
 
       "level": 1,
 
-      "health": {
-        "value": 3,
-        "max": 3
-      },
+      "health": 3,
       "damage": 1,
       "armor": 0,
       "movement": 1,
