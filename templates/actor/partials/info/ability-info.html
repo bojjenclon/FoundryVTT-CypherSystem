@@ -14,5 +14,12 @@
 
 <hr>
 
+{{#unless isEnabler}}
+<div class="grid">
+  <strong>{{localize 'CSR.heading.cost'}}</strong>
+  <div class='text-right'>{{cost}}</div>
+</div>
+{{/unless}}
+
 <strong>{{localize 'CSR.heading.description'}}</strong>
 <p>{{notes}}</p>

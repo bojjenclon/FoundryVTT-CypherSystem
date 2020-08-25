@@ -284,14 +284,16 @@ export class CypherSystemItem extends Item {
 
   async _abilityInfo() {
     const { data } = this;
+    const ability = data.data;
 
-    const pool = EnumPools[data.data.cost.pool];
+    const pool = EnumPools[ability.cost.pool];
 
     const params = {
       name: data.name,
       pool: pool.toLowerCase(),
-      isEnabler: data.data.isEnabler,
-      notes: data.data.notes,
+      isEnabler: ability.isEnabler,
+      cost: ability.cost.value,
+      notes: ability.notes,
     };
     const html = await renderTemplate('systems/cyphersystem/templates/actor/partials/info/ability-info.html', params);
 

@@ -40,6 +40,26 @@ const SUPPORTED_TYPES = [
   // 'cypher'
 ];
 
+function itemSupportsMacros(item) {
+  if (!SUPPORTED_TYPES.includes(item.type)) {
+    return false;
+  }
+
+  if (item.type === 'ability' && item.data.isEnabler) {
+    return false;
+  }
+
+  return true;
+}
+
+function unsupportedItemMessage(item) {
+  if (item.type === 'ability' && item.data.isEnabler) {
+    return game.i18n.localize('CSR.macro.create.abilityEnabler');
+  }
+
+  return game.i18n.localize('CSR.macro.create.unsupportedType');
+}
+
 /**
  * Create a Macro from an Item drop.
  * Get an existing item macro if one exists, otherwise create a new one.
@@ -54,8 +74,8 @@ export async function createCypherMacro(data, slot) {
   }
 
   const item = data.data;
-  if (!SUPPORTED_TYPES.includes(item.type)) {
-    return ui.notifications.warn(game.i18n.localize('CSR.macro.create.unsupportedType'));
+  if (!itemSupportsMacros(item)) {
+    return ui.notifications.warn(unsupportedItemMessage(item));
   }
 
   const typeTitleCase = item.type.substr(0, 1).toUpperCase() + item.type.substr(1);

@@ -201,6 +201,7 @@
 
   "CSR.macro.create.notOwned": "You may only created macros for items you own.",
   "CSR.macro.create.unsupportedType": "This item does not currently support macros.",
+  "CSR.macro.create.abilityEnabler": "Enabler abilities cannot be macros.",
 
   "CSR.ctxt.intrusion.heading": "GM Intrusion",
   "CSR.ctxt.intrusion.chat": "The GM offers an intrusion to ##ACTOR##",
