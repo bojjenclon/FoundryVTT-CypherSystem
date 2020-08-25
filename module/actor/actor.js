@@ -147,16 +147,16 @@ export class CypherSystemActor extends Actor {
     const poolName = EnumPools[pool];
     const stat = actorData.stats[poolName.toLowerCase()];
 
-    //The first effort level costs 3 pts from the pool, extra levels cost 2
-    //Substract the related Edge, too
+    // The first effort level costs 3 pts from the pool, extra levels cost 2
+    // Substract the related Edge, too
     const availableEffortFromPool = (stat.value + stat.edge - 1) / 2;
 
-    //A PC can use as much as their Effort score, but not more
-    //They're also limited by their current pool value
+    // A PC can use as much as their Effort score, but not more
+    // They're also limited by their current pool value
     const finalEffort = Math.min(effortLevel, actorData.effort, availableEffortFromPool);
     const cost = 1 + 2 * finalEffort - stat.edge;
 
-    //TODO take free levels of Effort into account here
+    // TODO take free levels of Effort into account here
 
     let warning = null;
     if (effortLevel > availableEffortFromPool) {
@@ -168,6 +168,20 @@ export class CypherSystemActor extends Actor {
     value.warning = warning;
 
     return value;
+  }
+
+  getEdgeFromStat(pool) {
+    const actorData = this.data.data;
+    const poolName = EnumPools[pool];
+    const stat = actorData.stats[poolName.toLowerCase()];
+
+    return stat.edge;
+  }
+
+  getFreeEffortFromStat(pool) {
+    const edge = this.getEdgeFromStat(pool);
+
+    return Math.floor((edge - 1) / 2);
   }
 
   canSpendFromPool(pool, amount, applyEdge = true) {

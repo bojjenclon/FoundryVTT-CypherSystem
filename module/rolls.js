@@ -68,6 +68,14 @@ export async function cypherRoll({ parts = [], data = {}, actor = null, event = 
     return el != '' && el;
   });
 
+  // Indicates free levels of effort
+  let startingEffort = 0;
+  let minEffort = 0;
+  if (data['effort']) {
+    startingEffort = parseInt(data['effort'], 10) || 0;
+    minEffort = startingEffort;
+  }
+
   let maxEffort = 1;
   if (data['maxEffort']) {
     maxEffort = parseInt(data['maxEffort'], 10) || 1;
@@ -78,6 +86,7 @@ export async function cypherRoll({ parts = [], data = {}, actor = null, event = 
     if (form !== null) {
       data['effort'] = parseInt(form.effort.value, 10);
     }
+
     if (data['effort']) {
       filtered.push(`+${data['effort'] * 3}`);
 
@@ -96,6 +105,8 @@ export async function cypherRoll({ parts = [], data = {}, actor = null, event = 
   const template = 'systems/cyphersystem/templates/dialog/roll-dialog.html';
   let dialogData = {
     formula: filtered.join(' '),
+    effort: startingEffort,
+    minEffort: minEffort,
     maxEffort: maxEffort,
     data: data,
     rollMode: rollMode,
@@ -121,7 +132,7 @@ export async function cypherRoll({ parts = [], data = {}, actor = null, event = 
             const { pool } = data;
             const amountOfEffort = parseInt(data['effort'] || 0, 10);
             const effortCost = actor.getEffortCostFromStat(pool, amountOfEffort);
-            const totalCost = parseInt(data['abilityCost'] || 0, 10) + parseInt(effortCost.cost, 10);
+            const totalCost = parseInt(data['poolCost'] || 0, 10) + parseInt(effortCost.cost, 10);
 
             if (actor.canSpendFromPool(pool, totalCost) && !effortCost.warning) {
               roll.toMessage({

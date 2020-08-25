@@ -160,6 +160,13 @@
   "CSR.roll.pool.title": "Use Pool",
   "CSR.roll.pool.flavor": "##ACTOR## used ##POOL##",
 
+  "CSR.roll.ability.title": "Use Ability",
+  "CSR.roll.ability.flavor": "##ACTOR## used ##ABILITY##",
+  "CSR.roll.ability.invalid.flavor": "Invalid Ability",
+  "CSR.roll.ability.invalid.content": "This ability is an Enabler and cannot be rolled for.",
+  "CSR.roll.ability.failed.flavor": "Ability Failed",
+  "CSR.roll.ability.failed.content": "Not enough points in ##POOL## pool.",
+
   "CSR.roll.skill.title": "Use Skill",
   "CSR.roll.skill.flavor": "##ACTOR## used ##SKILL##",
 
@@ -167,6 +174,8 @@
 
   "CSR.roll.failed.flavor": "Roll Failed",
   "CSR.roll.failed.content": "Not enough points in ##POOL## pool.",
+
+  "CSR.roll.ability.free": "Ability cost reduced to 0, action was free.",
 
   "CSR.chat.intrusion": "GM Intrusion",
   "CSR.chat.effect.minor": "Minor Effect",
@@ -189,6 +198,9 @@
 
   "CSR.dialog.button.accept": "Accept",
   "CSR.dialog.button.refuse": "Refuse",
+
+  "CSR.macro.create.notOwned": "You may only created macros for items you own.",
+  "CSR.macro.create.unsupportedType": "This item does not currently support macros.",
 
   "CSR.ctxt.intrusion.heading": "GM Intrusion",
   "CSR.ctxt.intrusion.chat": "The GM offers an intrusion to ##ACTOR##",

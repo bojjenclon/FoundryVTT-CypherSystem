@@ -166,7 +166,8 @@ export class CypherSystemItem extends Item {
     const item = this.data;
     const { pool } = item.data;
     const assets = actor.getSkillLevel(this);
-    
+    const freeEffort = actor.getFreeEffortFromStat(pool);
+
     const parts = ['1d20'];
     if (assets !== 0) {
       const sign = assets < 0 ? '-' : '+';
@@ -178,7 +179,8 @@ export class CypherSystemItem extends Item {
 
       data: {
         pool,
-        abilityCost: 0,
+        poolCost: 0,
+        effort: freeEffort,
         maxEffort: actorData.effort,
         assets
       },
@@ -201,35 +203,46 @@ export class CypherSystemItem extends Item {
     const { isEnabler, cost } = item.data;
 
     if (!isEnabler) {
-      const { pool, value:amount } = cost;
+      const { pool, value: amount } = cost;
+      const edge = actor.getEdgeFromStat(pool);
+      const adjustedAmounted = Math.max(amount - edge, 0);
+      const freeEffort = actor.getFreeEffortFromStat(pool);
 
-      if (actor.canSpendFromPool(pool, parseInt(amount, 10))) {
+      // Edge has made this ability free, so just use it
+      if (adjustedAmounted === 0) {
+        ChatMessage.create([{
+          speaker: ChatMessage.getSpeaker({ actor }),
+          flavor: game.i18n.localize('CSR.roll.ability.flavor').replace('##ACTOR##', actor.name).replace('##ABILITY##', name),
+          content: game.i18n.localize('CSR.roll.ability.free'),
+        }]);
+      } else if (actor.canSpendFromPool(pool, parseInt(amount, 10))) {
         cypherRoll({
           event,
           parts: ['1d20'],
           data: {
             pool,
-            abilityCost: amount,
+            poolCost: adjustedAmounted,
+            effort: freeEffort,
             maxEffort: actorData.effort
           },
           speaker: ChatMessage.getSpeaker({ actor }),
           flavor: `${actor.name} used ${name}`,
-          title: 'Use Ability',
+          title: game.i18n.localize('CSR.roll.ability.title'),
           actor
         });
       } else {
         const poolName = EnumPools[pool];
         ChatMessage.create([{
           speaker: ChatMessage.getSpeaker({ actor }),
-          flavor: 'Ability Failed',
-          content: `Not enough points in ${poolName} pool.`
+          flavor: game.i18n.localize('CSR.roll.ability.failed.flavor'),
+          content: game.i18n.localize('CSR.roll.ability.failed.content').replace('##POOL##', poolName)
         }]);
       }
     } else {
       ChatMessage.create([{
         speaker: ChatMessage.getSpeaker({ actor }),
-        flavor: 'Invalid Ability',
-        content: `This ability is an Enabler and cannot be rolled for.`
+        flavor: game.i18n.localize('CSR.roll.ability.invalid.flavor'),
+        content: game.i18n.localize('CSR.roll.ability.invalid.content')
       }]);
     }
   }
@@ -273,7 +286,7 @@ export class CypherSystemItem extends Item {
     const { data } = this;
 
     const pool = EnumPools[data.data.cost.pool];
-    
+
     const params = {
       name: data.name,
       pool: pool.toLowerCase(),

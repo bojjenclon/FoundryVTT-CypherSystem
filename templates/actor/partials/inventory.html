@@ -42,7 +42,7 @@
       {{#each data.items.inventory as |item|}}
       <li class="no-pip">
         <a class="inv-item {{#if (eq item._id ../selectedInvItem._id)}}active{{/if}}" title="{{item.name}}"
-          data-id="{{item._id}}"><span class='monospace icons'>{{{typeIcon item.type}}}</span> {{item.name}}</a>
+          data-item-id="{{item._id}}"><span class='monospace icons'>{{{typeIcon item.type}}}</span> {{item.name}}</a>
       </li>
       {{/each}}
     </ul>

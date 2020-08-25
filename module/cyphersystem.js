@@ -15,11 +15,18 @@ import { actorDirectoryContext } from './context-menu.js';
 import { migrate } from './migrations/migrate';
 import { csrSocketListeners } from './socket.js';
 import { rollInitiative } from './combat.js';
+import { useSkillMacro, useAbilityMacro, useCypherMacro, createCypherMacro } from './macros.js';
 
 Hooks.once('init', async function () {
   game.cyphersystem = {
     CypherSystemActor,
-    CypherSystemItem
+    CypherSystemItem,
+
+    macro: {
+      useSkill: useSkillMacro,
+      useAbility: useAbilityMacro,
+      useCypher: useCypherMacro
+    }
   };
 
   /**
@@ -77,3 +84,7 @@ Hooks.on('createActor', async function(actor) {
 
 Hooks.once('ready', migrate);
 Hooks.once('ready', csrSocketListeners);
+// Register hooks
+Hooks.once('ready', () => {
+  Hooks.on('hotbarDrop', (_, data, slot) => createCypherMacro(data, slot));
+});

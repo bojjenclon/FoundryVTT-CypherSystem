@@ -19,10 +19,10 @@ export class CypherSystemActorSheet extends ActorSheet {
       classes: ["cyphersystem", "sheet", "actor"],
       width: 600,
       height: 500,
-      tabs: [{ 
-        navSelector: ".sheet-tabs", 
-        contentSelector: ".sheet-body", 
-        initial: "description" 
+      tabs: [{
+        navSelector: ".sheet-tabs",
+        contentSelector: ".sheet-body",
+        initial: "description"
       }, {
         navSelector: '.stats-tabs',
         contentSelector: '.stats-body',
@@ -156,7 +156,7 @@ export class CypherSystemActorSheet extends ActorSheet {
         if (a.type === b.type) {
           return (a.name > b.name) ? 1 : -1
         }
-  
+
         return (a.type > b.type) ? 1 : -1;
       });
     }
@@ -227,7 +227,7 @@ export class CypherSystemActorSheet extends ActorSheet {
   /** @override */
   async getData() {
     const data = super.getData();
-    
+
     const { type } = this.actor.data;
     switch (type) {
       case 'pc':
@@ -264,7 +264,7 @@ export class CypherSystemActorSheet extends ActorSheet {
         maxEffort: actorData.effort,
       },
       event,
-      
+
       title: game.i18n.localize('CSR.roll.pool.title'),
       flavor: game.i18n.localize('CSR.roll.pool.flavor').replace('##ACTOR##', actor.name).replace('##POOL##', poolName),
 
@@ -354,7 +354,7 @@ export class CypherSystemActorSheet extends ActorSheet {
 
       this._createItem('skill');
     });
-    
+
     const skillsPoolFilter = html.find('select[name="skillsPoolFilter"]').select2({
       theme: 'numenera',
       width: '130px',
@@ -383,10 +383,10 @@ export class CypherSystemActorSheet extends ActorSheet {
 
       let el = evt.target;
       // Account for clicking a child element
-      while (!el.dataset.id) {
+      while (!el.dataset.itemId) {
         el = el.parentElement;
       }
-      const skillId = el.dataset.id;
+      const skillId = el.dataset.itemId;
 
       const actor = this.actor;
       const skill = actor.getOwnedItem(skillId);
@@ -394,13 +394,20 @@ export class CypherSystemActorSheet extends ActorSheet {
       this.selectedSkill = skill;
     });
 
+    if (this.actor.owner) {
+      const handler = ev => this._onDragItemStart(ev);
+      skills.each((_, el) => {
+        el.setAttribute('draggable', true);
+        el.addEventListener('dragstart', handler, false);
+      });
+    }
+
     const { selectedSkill } = this;
     if (selectedSkill) {
       html.find('.skill-info .actions .roll').click(evt => {
         evt.preventDefault();
 
         selectedSkill.roll();
-        // this._rollItemDialog(selectedSkill.data.data.pool);
       });
 
       html.find('.skill-info .actions .edit').click(evt => {
@@ -448,16 +455,24 @@ export class CypherSystemActorSheet extends ActorSheet {
 
       let el = evt.target;
       // Account for clicking a child element
-      while (!el.dataset.id) {
+      while (!el.dataset.itemId) {
         el = el.parentElement;
       }
-      const abilityId = el.dataset.id;
+      const abilityId = el.dataset.itemId;
 
       const actor = this.actor;
       const ability = actor.getOwnedItem(abilityId);
 
       this.selectedAbility = ability;
     });
+
+    if (this.actor.owner) {
+      const handler = ev => this._onDragItemStart(ev);
+      abilities.each((_, el) => {
+        el.setAttribute('draggable', true);
+        el.addEventListener('dragstart', handler, false);
+      });
+    }
 
     const { selectedAbility } = this;
     if (selectedAbility) {
@@ -502,7 +517,7 @@ export class CypherSystemActorSheet extends ActorSheet {
       });
     });
     const ctxtMenuObj = new ContextMenu(html, '.active', menuItems);
-    
+
     addInvBtn.click(evt => {
       evt.preventDefault();
 
@@ -552,16 +567,24 @@ export class CypherSystemActorSheet extends ActorSheet {
 
       let el = evt.target;
       // Account for clicking a child element
-      while (!el.dataset.id) {
+      while (!el.dataset.itemId) {
         el = el.parentElement;
       }
-      const invItemId = el.dataset.id;
+      const invItemId = el.dataset.itemId;
 
       const actor = this.actor;
       const invItem = actor.getOwnedItem(invItemId);
 
       this.selectedInvItem = invItem;
     });
+
+    if (this.actor.owner) {
+      const handler = ev => this._onDragItemStart(ev);
+      invItems.each((_, el) => {
+        el.setAttribute('draggable', true);
+        el.addEventListener('dragstart', handler, false);
+      });
+    }
 
     const { selectedInvItem } = this;
     if (selectedInvItem) {
@@ -630,5 +653,22 @@ export class CypherSystemActorSheet extends ActorSheet {
         this._npcListeners(html);
         break;
     }
+  }
+
+  /** @override */
+  _onDragItemStart(event) {
+    const itemId = event.currentTarget.dataset.itemId;
+    const clickedItem = this.actor.getEmbeddedEntity('OwnedItem', itemId)
+
+    event.dataTransfer.setData(
+      'text/plain',
+
+      JSON.stringify({
+        actorId: this.actor.id,
+        data: clickedItem,
+      })
+    );
+
+    return super._onDragItemStart(event);
   }
 }

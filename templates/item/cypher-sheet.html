@@ -46,7 +46,7 @@
 
         <div class="flex-right">
           {{#if (or data.identified isGM)}}
-          <textarea name="data.form" rows="4">{{data.form}}</textarea>
+          <textarea name="data.form" rows="3">{{data.form}}</textarea>
           {{else}}
           <input type="hidden" name="data.form" value="{{data.form}}" data-dtype="String" />
           <input type="text" value="?" data-dtype="String" disabled />

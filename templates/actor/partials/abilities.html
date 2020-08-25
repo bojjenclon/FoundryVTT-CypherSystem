@@ -22,7 +22,7 @@
       {{#each data.items.abilities as |ability|}}
       <li class="no-pip">
         <a class="ability {{#if (eq ability._id ../selectedAbility._id)}}active{{/if}}"
-          title="{{ability.name}}" data-id="{{ability._id}}"><span
+          title="{{ability.name}}" data-item-id="{{ability._id}}"><span
             class='monospace icons'>{{{poolIcon ability.data.cost.pool}}}</span> {{ability.name}}</a>
       </li>
       {{/each}}
