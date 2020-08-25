@@ -157,7 +157,7 @@
   "CSR.roll.recovery.title": "Recovery Roll",
   "CSR.roll.recovery.flavor": "##ACTOR## used a recovery",
 
-  "CSR.roll.pool.title": "Use Pool",
+  "CSR.roll.pool.title": "Use ##POOL## Pool",
   "CSR.roll.pool.flavor": "##ACTOR## used ##POOL##",
 
   "CSR.roll.ability.title": "Use Ability",
@@ -202,6 +202,7 @@
   "CSR.macro.create.notOwned": "You may only created macros for items you own.",
   "CSR.macro.create.unsupportedType": "This item does not currently support macros.",
   "CSR.macro.create.abilityEnabler": "Enabler abilities cannot be macros.",
+  "CSR.macro.pool.name": "Roll ##POOL##",
 
   "CSR.ctxt.intrusion.heading": "GM Intrusion",
   "CSR.ctxt.intrusion.chat": "The GM offers an intrusion to ##ACTOR##",

@@ -15,7 +15,7 @@ import { actorDirectoryContext } from './context-menu.js';
 import { migrate } from './migrations/migrate';
 import { csrSocketListeners } from './socket.js';
 import { rollInitiative } from './combat.js';
-import { useSkillMacro, useAbilityMacro, useCypherMacro, createCypherMacro } from './macros.js';
+import { usePoolMacro, useSkillMacro, useAbilityMacro, useCypherMacro, createCypherMacro } from './macros.js';
 
 Hooks.once('init', async function () {
   game.cyphersystem = {
@@ -23,6 +23,7 @@ Hooks.once('init', async function () {
     CypherSystemItem,
 
     macro: {
+      usePool: usePoolMacro,
       useSkill: useSkillMacro,
       useAbility: useAbilityMacro,
       useCypher: useCypherMacro

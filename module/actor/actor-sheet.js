@@ -255,17 +255,19 @@ export class CypherSystemActorSheet extends ActorSheet {
     const { actor } = this;
     const actorData = actor.data.data;
     const poolName = EnumPools[pool];
+    const freeEffort = actor.getFreeEffortFromStat(pool);
 
     cypherRoll({
       parts: ['1d20'],
 
       data: {
         pool,
+        effort: freeEffort,
         maxEffort: actorData.effort,
       },
       event,
 
-      title: game.i18n.localize('CSR.roll.pool.title'),
+      title: game.i18n.localize('CSR.roll.pool.title').replace('##POOL##', poolName),
       flavor: game.i18n.localize('CSR.roll.pool.flavor').replace('##ACTOR##', actor.name).replace('##POOL##', poolName),
 
       actor,
@@ -322,7 +324,8 @@ export class CypherSystemActorSheet extends ActorSheet {
 
   _statsTabListeners(html) {
     // Stats Setup
-    html.find('.roll-pool').click(evt => {
+    const poolRolls = html.find('.roll-pool');
+    poolRolls.click(evt => {
       evt.preventDefault();
 
       let el = evt.target;
@@ -333,6 +336,29 @@ export class CypherSystemActorSheet extends ActorSheet {
 
       this._rollPoolDialog(parseInt(pool, 10));
     });
+
+    if (this.actor.owner) {
+      // Pools require custom drag logic since we're  
+      // not creating a macro for an item
+      const handler = ev => {
+        ev.dataTransfer.setData(
+          'text/plain',
+    
+          JSON.stringify({
+            actorId: this.actor.id,
+            data: {
+              type: 'pool',
+              pool: ev.currentTarget.dataset.pool
+            },
+          })
+        );
+      };
+
+      poolRolls.each((_, el) => {
+        el.setAttribute('draggable', true);
+        el.addEventListener('dragstart', handler, false);
+      });
+    }
 
     html.find('select[name="data.damageTrack"]').select2({
       theme: 'numenera',
