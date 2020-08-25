@@ -185,7 +185,7 @@ export class CypherSystemItem extends Item {
       event,
 
       title: game.i18n.localize('CSR.roll.skill.title'),
-      flavor: game.i18n.localize('CSR.roll.skill.flavor').replace('##ACTOR##', actor.name).replace('##POOL##', name),
+      flavor: game.i18n.localize('CSR.roll.skill.flavor').replace('##ACTOR##', actor.name).replace('##SKILL##', name),
 
       actor,
       speaker: ChatMessage.getSpeaker({ actor }),
@@ -201,15 +201,15 @@ export class CypherSystemItem extends Item {
     const { isEnabler, cost } = item.data;
 
     if (!isEnabler) {
-      const { pool } = cost;
+      const { pool, value:amount } = cost;
 
-      if (actor.canSpendFromPool(pool, parseInt(cost.amount, 10))) {
+      if (actor.canSpendFromPool(pool, parseInt(amount, 10))) {
         cypherRoll({
           event,
           parts: ['1d20'],
           data: {
             pool,
-            abilityCost: cost.amount,
+            abilityCost: amount,
             maxEffort: actorData.effort
           },
           speaker: ChatMessage.getSpeaker({ actor }),
