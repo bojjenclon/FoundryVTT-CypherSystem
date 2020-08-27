@@ -110,6 +110,10 @@ export class CypherSystemItemSheet extends ItemSheet {
 
   _skillListeners(html) {
     html.closest('.window-app.sheet.item').addClass('skill-window');
+    
+    if (!this.options.editable) {
+      return;
+    }
 
     html.find('select[name="data.pool"]').select2({
       theme: 'numenera',
@@ -126,6 +130,10 @@ export class CypherSystemItemSheet extends ItemSheet {
 
   _abilityListeners(html) {
     html.closest('.window-app.sheet.item').addClass('ability-window');
+
+    if (!this.options.editable) {
+      return;
+    }
 
     html.find('select[name="data.isEnabler"]').select2({
       theme: 'numenera',
@@ -159,6 +167,10 @@ export class CypherSystemItemSheet extends ItemSheet {
   _armorListeners(html) {
     html.closest('.window-app.sheet.item').addClass('armor-window');
 
+    if (!this.options.editable) {
+      return;
+    }
+
     html.find('select[name="data.weight"]').select2({
       theme: 'numenera',
       width: '100px',
@@ -169,6 +181,10 @@ export class CypherSystemItemSheet extends ItemSheet {
   _weaponListeners(html) {
     html.closest('.window-app.sheet.item').addClass('weapon-window');
 
+    if (!this.options.editable) {
+      return;
+    }
+    
     html.find('select[name="data.weight"]').select2({
       theme: 'numenera',
       width: '110px',
@@ -207,10 +223,6 @@ export class CypherSystemItemSheet extends ItemSheet {
   /** @override */
   activateListeners(html) {
     super.activateListeners(html);
-
-    if (!this.options.editable) {
-      return;
-    }
 
     const { type } = this.item.data;
     switch (type) {
