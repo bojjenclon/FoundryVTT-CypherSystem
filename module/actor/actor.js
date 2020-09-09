@@ -181,7 +181,7 @@ export class CypherSystemActor extends Actor {
   getFreeEffortFromStat(pool) {
     const edge = this.getEdgeFromStat(pool);
 
-    return Math.floor((edge - 1) / 2);
+    return Math.max(Math.floor((edge - 1) / 2), 0);
   }
 
   canSpendFromPool(pool, amount, applyEdge = true) {
