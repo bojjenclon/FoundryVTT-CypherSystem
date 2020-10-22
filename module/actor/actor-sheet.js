@@ -405,8 +405,6 @@ export class CypherSystemActorSheet extends ActorSheet {
     skills.on('click', evt => {
       evt.preventDefault();
 
-      this._onSubmit(evt);
-
       let el = evt.target;
       // Account for clicking a child element
       while (!el.dataset.itemId) {
@@ -418,6 +416,8 @@ export class CypherSystemActorSheet extends ActorSheet {
       const skill = actor.getOwnedItem(skillId);
 
       this.selectedSkill = skill;
+
+      this.render(true);
     });
 
     if (this.actor.owner) {
@@ -477,8 +477,6 @@ export class CypherSystemActorSheet extends ActorSheet {
     abilities.on('click', evt => {
       evt.preventDefault();
 
-      this._onSubmit(evt);
-
       let el = evt.target;
       // Account for clicking a child element
       while (!el.dataset.itemId) {
@@ -490,6 +488,8 @@ export class CypherSystemActorSheet extends ActorSheet {
       const ability = actor.getOwnedItem(abilityId);
 
       this.selectedAbility = ability;
+
+      this.render(true);
     });
 
     if (this.actor.owner) {
@@ -581,15 +581,13 @@ export class CypherSystemActorSheet extends ActorSheet {
 
       this.filterEquipped = !this.filterEquipped;
 
-      this._onSubmit(evt);
+      this.render(true);
     });
 
     const invItems = html.find('a.inv-item');
 
     invItems.on('click', evt => {
       evt.preventDefault();
-
-      this._onSubmit(evt);
 
       let el = evt.target;
       // Account for clicking a child element
@@ -602,6 +600,8 @@ export class CypherSystemActorSheet extends ActorSheet {
       const invItem = actor.getOwnedItem(invItemId);
 
       this.selectedInvItem = invItem;
+
+      this.render(true);
     });
 
     if (this.actor.owner) {

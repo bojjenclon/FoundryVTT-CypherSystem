@@ -3,7 +3,7 @@ import { rollText } from './rolls.js';
 export function renderChatMessage(chatMessage, html, data) {
   // Don't apply ChatMessage enhancement to recovery rolls
   if (chatMessage.roll && !chatMessage.roll.dice[0].options.recovery) {
-    const dieRoll = chatMessage.roll.dice[0].rolls[0].roll;
+    const dieRoll = chatMessage.roll.dice[0].rolls[0].result;
     const rollTotal = chatMessage.roll.total;
     const messages = rollText(dieRoll, rollTotal);
     const numMessages = messages.length;

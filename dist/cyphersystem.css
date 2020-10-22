@@ -713,6 +713,15 @@ form.roll-dialog input[name="effort"] {
 
 /* line 85, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-tabs {
+  /* Override Default Styles */
+  height: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  margin: 0;
+  line-height: normal;
+  border: none;
+  /* Override Default Styles */
   -ms-flex-negative: 1;
       flex-shrink: 1;
   padding: 6px 4px;
@@ -721,7 +730,7 @@ form.roll-dialog input[name="effort"] {
   border-top-right-radius: 4px;
 }
 
-/* line 94, scss/sheets/_pc-sheet.scss */
+/* line 102, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-tabs ul {
   list-style-type: none;
   display: -webkit-box;
@@ -742,17 +751,17 @@ form.roll-dialog input[name="effort"] {
   padding: 0;
 }
 
-/* line 107, scss/sheets/_pc-sheet.scss */
+/* line 115, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-tabs ul li {
   font-size: 2em;
 }
 
-/* line 110, scss/sheets/_pc-sheet.scss */
+/* line 118, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-tabs ul li a.active {
   color: #b72020;
 }
 
-/* line 117, scss/sheets/_pc-sheet.scss */
+/* line 125, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body {
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
@@ -761,18 +770,18 @@ form.roll-dialog input[name="effort"] {
   padding-bottom: 8px;
 }
 
-/* line 123, scss/sheets/_pc-sheet.scss */
+/* line 131, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body hr {
   width: 100%;
   margin: 1em 0;
 }
 
-/* line 128, scss/sheets/_pc-sheet.scss */
+/* line 136, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab {
   padding-right: 8px;
 }
 
-/* line 131, scss/sheets/_pc-sheet.scss */
+/* line 139, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -783,7 +792,7 @@ form.roll-dialog input[name="effort"] {
           flex-direction: column;
 }
 
-/* line 136, scss/sheets/_pc-sheet.scss */
+/* line 144, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab .content {
   overflow-y: auto;
   -webkit-box-orient: vertical;
@@ -793,7 +802,7 @@ form.roll-dialog input[name="effort"] {
   padding-right: 6px;
 }
 
-/* line 143, scss/sheets/_pc-sheet.scss */
+/* line 151, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab .input-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -804,18 +813,18 @@ form.roll-dialog input[name="effort"] {
           flex-direction: row;
 }
 
-/* line 147, scss/sheets/_pc-sheet.scss */
+/* line 155, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab .input-group label {
   font-weight: bold;
   font-size: 1.5em;
 }
 
-/* line 155, scss/sheets/_pc-sheet.scss */
+/* line 163, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats label {
   margin: 0 0.5em 0 0.5em;
 }
 
-/* line 159, scss/sheets/_pc-sheet.scss */
+/* line 167, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -833,54 +842,54 @@ form.roll-dialog input[name="effort"] {
   margin-bottom: 2px;
 }
 
-/* line 167, scss/sheets/_pc-sheet.scss */
+/* line 175, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool {
   white-space: nowrap;
 }
 
-/* line 170, scss/sheets/_pc-sheet.scss */
+/* line 178, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool label {
   display: inline-block;
   margin: 0;
   cursor: pointer;
 }
 
-/* line 176, scss/sheets/_pc-sheet.scss */
+/* line 184, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .pool-action .roll-pool i {
   margin-left: 4px;
 }
 
-/* line 182, scss/sheets/_pc-sheet.scss */
+/* line 190, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .current {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-/* line 185, scss/sheets/_pc-sheet.scss */
+/* line 193, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .current label {
   font-size: 1em;
   margin-bottom: 4px;
 }
 
-/* line 190, scss/sheets/_pc-sheet.scss */
+/* line 198, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .current input {
   font-size: 2.8rem;
   height: 60px;
   width: 100px;
 }
 
-/* line 199, scss/sheets/_pc-sheet.scss */
+/* line 207, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .max-edge input {
   width: 4em;
 }
 
-/* line 204, scss/sheets/_pc-sheet.scss */
+/* line 212, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .flexcol:first-child {
   margin-right: 4px;
 }
 
-/* line 208, scss/sheets/_pc-sheet.scss */
+/* line 216, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .stat-pools {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -892,7 +901,7 @@ form.roll-dialog input[name="effort"] {
           flex: 1;
 }
 
-/* line 213, scss/sheets/_pc-sheet.scss */
+/* line 221, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .stat-pools label {
   display: block;
   margin-bottom: 2px;
@@ -900,7 +909,7 @@ form.roll-dialog input[name="effort"] {
   text-align: center;
 }
 
-/* line 221, scss/sheets/_pc-sheet.scss */
+/* line 229, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -909,30 +918,30 @@ form.roll-dialog input[name="effort"] {
       justify-content: space-around;
 }
 
-/* line 225, scss/sheets/_pc-sheet.scss */
+/* line 233, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs a {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-/* line 229, scss/sheets/_pc-sheet.scss */
+/* line 237, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats nav.stats-tabs a.active {
   color: #b72020;
 }
 
-/* line 236, scss/sheets/_pc-sheet.scss */
+/* line 244, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .tier-grid .input-group {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-/* line 240, scss/sheets/_pc-sheet.scss */
+/* line 248, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .tier-grid input[type="number"] {
   width: 3em;
 }
 
-/* line 245, scss/sheets/_pc-sheet.scss */
+/* line 253, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .advances {
   margin-top: 8px;
   padding-top: 8px;
@@ -940,24 +949,24 @@ form.roll-dialog input[name="effort"] {
   font-size: 1.2em;
 }
 
-/* line 253, scss/sheets/_pc-sheet.scss */
+/* line 261, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .damage {
   text-align: center;
 }
 
-/* line 256, scss/sheets/_pc-sheet.scss */
+/* line 264, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .damage .description {
   text-align: left;
   margin-top: 1em;
   font-size: 1.5em;
 }
 
-/* line 266, scss/sheets/_pc-sheet.scss */
+/* line 274, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery > .grid input {
   width: 4em;
 }
 
-/* line 272, scss/sheets/_pc-sheet.scss */
+/* line 280, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -967,7 +976,7 @@ form.roll-dialog input[name="effort"] {
           justify-content: center;
 }
 
-/* line 276, scss/sheets/_pc-sheet.scss */
+/* line 284, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group label,
 .cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group input {
   -webkit-box-flex: 0;
@@ -975,12 +984,12 @@ form.roll-dialog input[name="effort"] {
           flex-grow: 0;
 }
 
-/* line 281, scss/sheets/_pc-sheet.scss */
+/* line 289, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery .roll .input-group i {
   margin-left: 0.5em;
 }
 
-/* line 287, scss/sheets/_pc-sheet.scss */
+/* line 295, scss/sheets/_pc-sheet.scss */
 .cyphersystem .content .sheet-body .tab.stats .recovery .actions {
   margin-top: 16px;
   padding-top: 16px;
@@ -1402,7 +1411,7 @@ form.roll-dialog input[name="effort"] {
           flex: 1;
 }
 
-/* line 305, scss/sheets/_pc-sheet.scss */
+/* line 313, scss/sheets/_pc-sheet.scss */
 .cyphersystem .contextmenu {
   position: absolute;
 }
@@ -1569,6 +1578,15 @@ form.roll-dialog input[name="effort"] {
 
 /* line 132, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-tabs {
+  /* Override Default Styles */
+  height: auto;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  margin: 0;
+  line-height: normal;
+  border: none;
+  /* Override Default Styles */
   -ms-flex-negative: 1;
       flex-shrink: 1;
   padding: 6px 4px;
@@ -1577,7 +1595,7 @@ form.roll-dialog input[name="effort"] {
   border-top-right-radius: 4px;
 }
 
-/* line 141, scss/sheets/_npc-sheet.scss */
+/* line 149, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-tabs ul {
   list-style-type: none;
   display: -webkit-box;
@@ -1598,17 +1616,17 @@ form.roll-dialog input[name="effort"] {
   padding: 0;
 }
 
-/* line 154, scss/sheets/_npc-sheet.scss */
+/* line 162, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-tabs ul li {
   font-size: 2em;
 }
 
-/* line 157, scss/sheets/_npc-sheet.scss */
+/* line 165, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-tabs ul li a.active {
   color: #b72020;
 }
 
-/* line 165, scss/sheets/_npc-sheet.scss */
+/* line 173, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-body .tab.active {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1620,14 +1638,14 @@ form.roll-dialog input[name="effort"] {
   padding: 1em;
 }
 
-/* line 171, scss/sheets/_npc-sheet.scss */
+/* line 179, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-body .tab.active h1 {
   -webkit-box-flex: 0;
       -ms-flex: 0 1 0px;
           flex: 0 1 0;
 }
 
-/* line 175, scss/sheets/_npc-sheet.scss */
+/* line 183, scss/sheets/_npc-sheet.scss */
 .cyphersystem.npc-window .window-content .body .sheet-body .tab.active textarea {
   -webkit-box-flex: 1;
       -ms-flex: 1;

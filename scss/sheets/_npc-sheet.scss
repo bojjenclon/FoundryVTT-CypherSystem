@@ -130,6 +130,14 @@
 
     .body {
       .sheet-tabs {
+        /* Override Default Styles */
+        height: auto;
+        flex: none;
+        margin: 0;
+        line-height: normal;
+        border: none;
+        /* Override Default Styles */
+        
         flex-shrink: 1;
     
         padding: 6px 4px;
