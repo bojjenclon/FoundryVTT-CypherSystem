@@ -33,7 +33,6 @@ export const preloadHandlebarsTemplates = async() => {
       "systems/cyphersystem/templates/actor/partials/info/oddity-info.html",
 
       // Item Sheets
-      "systems/cyphersystem/templates/item/item-sheet.html",
       "systems/cyphersystem/templates/item/skill-sheet.html",
       "systems/cyphersystem/templates/item/armor-sheet.html",
       "systems/cyphersystem/templates/item/weapon-sheet.html",

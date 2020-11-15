@@ -199,7 +199,7 @@
   "CSR.dialog.button.accept": "Accept",
   "CSR.dialog.button.refuse": "Refuse",
 
-  "CSR.macro.create.notOwned": "You may only created macros for items you own.",
+  "CSR.macro.create.notOwned": "You may only create macros for items you own.",
   "CSR.macro.create.unsupportedType": "This item does not currently support macros.",
   "CSR.macro.create.abilityEnabler": "Enabler abilities cannot be macros.",
   "CSR.macro.pool.name": "Roll ##POOL##",

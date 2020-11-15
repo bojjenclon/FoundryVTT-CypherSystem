@@ -83,7 +83,7 @@ export async function cypherRoll({ parts = [], data = {}, actor = null, event = 
 
   const _roll = (form = null) => {
     // Optionally include effort
-    if (form !== null) {
+    if (form) {
       data['effort'] = parseInt(form.effort.value, 10);
     }
 
@@ -125,7 +125,7 @@ export async function cypherRoll({ parts = [], data = {}, actor = null, event = 
           label: 'OK',
           icon: '<i class="fas fa-check"></i>',
           callback: (html) => {
-            roll = _roll(html[0].children[0]);
+            roll = _roll(html.find('form')[0]);
 
             // TODO: check roll.result against target number
 

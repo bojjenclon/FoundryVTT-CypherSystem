@@ -209,13 +209,7 @@ export class CypherSystemItem extends Item {
       const freeEffort = actor.getFreeEffortFromStat(pool);
 
       // Edge has made this ability free, so just use it
-      if (adjustedAmounted === 0) {
-        ChatMessage.create([{
-          speaker: ChatMessage.getSpeaker({ actor }),
-          flavor: game.i18n.localize('CSR.roll.ability.flavor').replace('##ACTOR##', actor.name).replace('##ABILITY##', name),
-          content: game.i18n.localize('CSR.roll.ability.free'),
-        }]);
-      } else if (actor.canSpendFromPool(pool, parseInt(amount, 10))) {
+      if (actor.canSpendFromPool(pool, parseInt(amount, 10))) {
         cypherRoll({
           event,
           parts: ['1d20'],

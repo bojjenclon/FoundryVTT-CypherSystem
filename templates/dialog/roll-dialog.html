@@ -2,7 +2,7 @@
   <div class="grid">
     <label>{{localize 'CSR.heading.formula'}}</label>
     <div class="flex-right">
-      <input type="text" name="formula" value="{{formula}}" disabled />
+      <input type="text" name="formula" value="{{formula}}" d-type="String" disabled />
     </div>
   </div>
 
@@ -11,7 +11,7 @@
   <div class="grid">
     <label>{{localize 'CSR.heading.effort'}}</label>
     <div class="flex-right">
-      <input type="number" name="effort" value="{{effort}}" min="{{minEffort}}" max="{{maxEffort}}" />
+      <input type="number" name="effort" value="{{effort}}" min="{{minEffort}}" max="{{maxEffort}}" d-type="Number" />
     </div>
   </div>
 
