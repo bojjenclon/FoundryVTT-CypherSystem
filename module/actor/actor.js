@@ -211,7 +211,7 @@ export class CypherSystemActor extends Actor {
 
   async onGMIntrusion(accepted) {
     let xp = this.data.data.xp;
-    
+
     let chatContent = `<h2>${game.i18n.localize('CSR.intrusion.chat.heading')}</h2><br>`;
     if (accepted) {
       xp++;
