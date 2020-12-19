@@ -140,7 +140,7 @@ export async function cypherRoll({ parts = [], data = {}, actor = null, event = 
                 flavor: flavor
               }, { rollMode });
 
-              actor.spendFromPool(pool, totalCost);
+              actor.spendFromPool(pool, Math.max(totalCost, 0));
             } else {
               const poolName = EnumPools[pool];
               ChatMessage.create([{
