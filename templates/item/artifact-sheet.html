@@ -46,7 +46,7 @@
 
         <div class="flex-right">
           {{#if (or data.identified isGM)}}
-          <textarea name="data.form" rows="4">{{data.form}}</textarea>
+          <textarea spellcheck="true" name="data.form" rows="4">{{data.form}}</textarea>
           {{else}}
           <input type="hidden" name="data.form" value="{{data.form}}" data-dtype="String" />
           <input type="text" value="?" data-dtype="String" disabled />
@@ -80,7 +80,7 @@
 
       <div class="flexcol desc-wrapper">
         <label>{{localize "CSR.heading.effect"}}</label>
-        <textarea class="description" name="data.effect">{{data.effect}}</textarea>
+        <textarea spellcheck="true" class="description" name="data.effect">{{data.effect}}</textarea>
       </div>
     </div>
   </div>
