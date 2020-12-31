@@ -49,7 +49,7 @@
 				"gulp-terser": "1.1.7",
 				"jshint-stylish": "2.2.1",
 				"lazypipe": "1.0.1",
-				"node-sass": "4.13.0",
+				"node-sass": "4.13.1",
 				"vinyl-buffer": "^1.0.1",
 				"vinyl-source-stream": "^2.0.0"
 		},
